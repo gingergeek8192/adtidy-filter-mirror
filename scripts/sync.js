@@ -2,7 +2,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const { sourceFiltersJson, sourceFilterBase, mirrorBase, outputDir, outputFiltersJson } = require('./config');
+const { sourceFiltersJson, mirrorBase, outputDir, outputFiltersJson } = require('./config');
 
 function fetch(url) {
   return new Promise((resolve, reject) => {
@@ -27,8 +27,8 @@ function atomicWrite(dest, data) {
   fs.renameSync(tmp, dest);
 }
 
-async function downloadFilter(filterId) {
-  const data = await fetch(`${sourceFilterBase}/${filterId}.txt`);
+async function downloadFilter(filterId, sourceUrl) {
+  const data = await fetch(sourceUrl);
   if (data.length === 0) throw new Error(`Empty response for filter ${filterId}`);
 
   const text = data.toString('utf8');
@@ -57,7 +57,7 @@ async function main() {
   const eligible = filters.filter(f => !f.deprecated);
   console.log(`Syncing ${eligible.length} filters (non-deprecated)`);
 
-  const results = await Promise.allSettled(eligible.map(f => downloadFilter(f.filterId)));
+  const results = await Promise.allSettled(eligible.map(f => downloadFilter(f.filterId, f.downloadUrl)));
 
   const failed = results.filter(r => r.status === 'rejected');
   if (failed.length) {
@@ -69,7 +69,7 @@ async function main() {
 
   const mirroredFilters = eligible
     .filter(f => succeeded.has(f.filterId))
-    .map(f => ({ ...f, downloadUrl: `${mirrorBase}/${f.filterId}.txt` }));
+    .map(f => ({ ...f, mirrorUrl: `${mirrorBase}/${f.filterId}.txt` }));
 
   const original = JSON.parse(raw.toString());
   original.filters = mirroredFilters;
