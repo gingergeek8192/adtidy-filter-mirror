@@ -1,16 +1,16 @@
-! Checksum: UJMyhxnCnl9HpKKIr6Unig
-! Diff-Path: ../patches/118/118-s-1793795979-14400.patch
+! Checksum: fJgW62kBTCVmFX3lkYQEJw
+! Diff-Path: ../patches/118/118-s-1793839688-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.33
-! TimeUpdated: 2026-11-04T12:36:36+00:00
+! Version: 2.1.74.36
+! TimeUpdated: 2026-11-05T00:45:35+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202611041212
+! OriginalVersion: 202611050036
 ! Title: EasyPrivacy
-! Last modified: 04 Nov 2026 12:12 UTC
+! Last modified: 05 Nov 2026 00:36 UTC
 ! Expires: 4 days (update frequency)
-! Commit: eb9b29bf6f6a704555f962ea28fdc8999ed0dc37
+! Commit: 6f44ba09fe0d524756607449a4e4cc5b0cdd5979
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -235,6 +235,7 @@
 /alog.min.js
 /alog/dp.min.js
 /amazon_linker.min.js
+/amc.gif?
 /amp-access/cta/*
 /amp-access/cta?
 /amp-access/ping?
@@ -1043,6 +1044,7 @@
 /fsrscripts/triggerParams.js
 /funnel-builder/assets/live/js/tracks.min.js
 /fusion/lucid/data/*
+/g/collect?
 /g_track.php?
 /ga-audiences?
 /ga-events.js
@@ -2718,6 +2720,7 @@
 /v1/stats/track
 /v1/tracker.js
 /v1/viewport_events
+/v1/vitals?
 /v2/pv-data?
 /v4/analytics/*$~xmlhttprequest
 /v4/metrics
@@ -7376,6 +7379,7 @@ omni.soundestlink.com$image
 ||dewdroplagoon.com^
 ||dharmabrats.com^
 ||dicecandies.com^
+||dicezing.com^
 ||difficultfog.com^
 ||digestiondrawer.com^
 ||digitalatticnewsletter.com^
@@ -8365,10 +8369,12 @@ omni.soundestlink.com$image
 ||passwordbyte.com^
 ||pastoralroad.com^
 ||pawsnug.com^
+||payiris.com^
 ||peacefullimit.com^
 ||peakcreator.com^
 ||pearpouch.com^
 ||peatfarming.com^
+||pedaldudes.com^
 ||pedropanther.com^
 ||peeringhost.net^
 ||pegsbuttons.com^
@@ -10253,6 +10259,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||adpick.co.kr^$third-party
 ||adtive.com^$third-party
 ||aicontents.net^$third-party
+||alphwidget.com^$third-party
 ||contentsfeed.com^$third-party
 ||dawin.tv^$third-party
 ||logger.co.kr^$third-party
@@ -14921,13 +14928,17 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||adlc-exchange.toast.com^
 ||applog.ssgdfs.com^
 ||assets.datarize.ai^
+||assets.poxo.com/jet/jet.js
 ||cafe24.com/cfa.js
 ||cafe24.com/weblog.js
+||cdn.datamanager.co.kr/0/tcsdm.js
+||cdn.onetag.co.kr/0/tcs.js
 ||cm-exchange.toast.com^
 ||dadispapi.gmarket.co.kr^
 ||dco.coupang.com^
 ||dtr-onsite-feed.datarize.ai^
 ||event.hackle.io^
+||js-error-tracer-api.cafe24.com^
 ||log.adplex.co.kr^
 ||log.cizion.com^
 ||log.mofa.go.kr^
@@ -14939,6 +14950,8 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||mtag.mman.kr^
 ||naver.com/mcollector/
 ||ngc1.nsm-corp.com^
+||ntm.pstatic.net/ex/nlog-v2.js
+||ntm.pstatic.net/ex/nlog.js
 ||performanceplay.co.kr^
 ||realtime-profiling.datarize.ai^
 ||recobell.io/rest/logs?
@@ -15360,7 +15373,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||abysscdn.com/cdn-cgi/trace
 ||academia.edu/record_hit?
 ||acast.com/api/stats
-||accor.com/g/collect?
 ||accuterm.com/data/stat.js
 ||acjs.aliyun.com^
 ||acronymfinder.com/~/tr.ashx
@@ -16505,7 +16517,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||mangakoma.net/ajax/manga/view
 ||manomano.*/api/v1/sp-tracking/
 ||manscaped.com/rud-dataplane/
-||manua.ls/g/collect?
 ||manua.ls/gtag
 ||mapcarta.com/logs
 ||mapquest.com/logger
@@ -16765,7 +16776,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||phonearena.com/_track.php
 ||pi.ai/proxy/api/event
 ||pics-view.com/ad-track
-||pie.org/g/collect?
 ||pie.org/v1/experiments/view
 ||pikbest.com/?m=Stats&
 ||ping.anizm.net^
