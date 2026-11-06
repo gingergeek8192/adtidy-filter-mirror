@@ -10,9 +10,9 @@ function ping(url) {
   return new Promise((resolve) => {
     const req = https.get(url, (res) => {
       res.resume();
-      resolve({ url, status: res.statusCode, cached: (res.headers['x-cache'] || res.headers['cf-cache-status'] || 'unknown').split(',').pop().trim() });
-    }).on('error', (e) => resolve({ url, status: e.message, cached: 'error' }));
-    req.setTimeout(15000, () => { req.destroy(); resolve({ url, status: 'timeout', cached: 'error' }); });
+      resolve({ url, status: res.statusCode });
+    }).on('error', (e) => resolve({ url, status: e.message }));
+    req.setTimeout(15000, () => { req.destroy(); resolve({ url, status: 'timeout' }); });
   });
 }
 
@@ -35,7 +35,7 @@ async function main() {
   }
 
   const failed = results.filter(r => r.status !== 200);
-  results.forEach(r => console.log(`  ${r.status === 200 ? '✓' : '✗'} [${r.cached}] ${r.url}`));
+  results.forEach(r => console.log(`  ${r.status === 200 ? '✓' : '✗'} [${r.status}] ${r.url}`));
   if (failed.length) console.warn(`${failed.length} URLs did not return 200`);
 
   const report = {
@@ -43,7 +43,7 @@ async function main() {
     total: results.length,
     ok: results.filter(r => r.status === 200).length,
     failed: failed.length,
-    results: results.map(r => ({ url: r.url, status: r.status, cached: r.cached })),
+    results: results.map(r => ({ url: r.url, status: r.status })),
   };
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'));
   console.log(`Report written to ${reportPath}`);
