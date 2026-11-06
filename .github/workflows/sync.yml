@@ -21,6 +21,9 @@ jobs:
       - name: Download filters
         run: node scripts/sync.js
 
+      - name: Update ping
+        run: echo "{\"ok\":true,\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > public/ping.json
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
