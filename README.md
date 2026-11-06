@@ -43,6 +43,40 @@ Each filter entry includes three URL fields pointing to the same current filter 
 - `mirrorUrl` — raw.githubusercontent.com
 - `jsDelivrUrl` — cdn.jsdelivr.net
 
+```js
+	"filters": [
+		{
+			"filterId": 1,
+			"name": "AdGuard Russian filter",
+			"description": "Filter that enables ad blocking on websites in Russian language.",
+			"timeAdded": "2014-06-30T07:56:55+0000",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 864000,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
+			"trustLevel": "full",
+			"version": "2.1.9.50",
+			"timeUpdated": "2026-11-06T09:09:03+0000",
+			"deprecated": false,
+			"languages": [
+				"ru"
+			],
+			"tags": [
+				1,
+				8,
+				10,
+				11
+			],
+			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
+			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/1.txt",
+			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt"
+		},
+        {...},
+        {...}
+    ]
+```
+
 ## Checksum verification
 
 Each `.txt` filter file is verified before being stored using the MD5 `! Checksum:` header line stripped. Files that fail verification are discarded and the previous version is left intact.
