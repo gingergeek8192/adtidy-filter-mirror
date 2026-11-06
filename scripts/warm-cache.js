@@ -8,10 +8,11 @@ const reportPath = 'public/jsdelivr-cache-report.json';
 
 function ping(url) {
   return new Promise((resolve) => {
-    https.get(url, (res) => {
+    const req = https.get(url, (res) => {
       res.resume();
-      resolve({ url, status: res.statusCode, cached: res.headers['x-cache'] || res.headers['cf-cache-status'] || 'unknown' });
+      resolve({ url, status: res.statusCode, cached: (res.headers['x-cache'] || res.headers['cf-cache-status'] || 'unknown').split(',').pop().trim() });
     }).on('error', (e) => resolve({ url, status: e.message, cached: 'error' }));
+    req.setTimeout(15000, () => { req.destroy(); resolve({ url, status: 'timeout', cached: 'error' }); });
   });
 }
 
@@ -26,7 +27,12 @@ async function main() {
   ];
 
   console.log(`Warming ${urls.length} jsDelivr URLs...`);
-  const results = await Promise.all(urls.map(ping));
+  const results = [];
+  const BATCH = 10;
+  for (let i = 0; i < urls.length; i += BATCH) {
+    const batch = await Promise.all(urls.slice(i, i + BATCH).map(ping));
+    results.push(...batch);
+  }
 
   const failed = results.filter(r => r.status !== 200);
   results.forEach(r => console.log(`  ${r.status === 200 ? '✓' : '✗'} [${r.cached}] ${r.url}`));
