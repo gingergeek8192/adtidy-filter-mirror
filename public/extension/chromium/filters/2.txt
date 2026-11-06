@@ -1,9 +1,9 @@
-! Checksum: CWEQ7+1duenZ7acL2aQP4g
-! Diff-Path: ../patches/2/2-s-1793992226-3600.patch
+! Checksum: Msz21/aG7ZLe2ZOr2EZchw
+! Diff-Path: ../patches/2/2-s-1793999403-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.2.60
-! TimeUpdated: 2026-11-06T19:06:27+00:00
+! Version: 2.5.2.62
+! TimeUpdated: 2026-11-06T21:07:07+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -91807,6 +91807,7 @@ browsershots.org#@#.advert_area
 ||ajrvxfhoiusdv.site^
 ||ajscdn.com^
 ||ajskgbnmafymf.space^
+||ajtcqmlorjesx.site^
 ||ajuhjaeaztfor.site^
 ||ajujqdualdsao.space^
 ||ajump1.com^
@@ -94330,6 +94331,7 @@ browsershots.org#@#.advert_area
 ||bnwqxlwbfyeho.online^
 ||bnxuskszzoijr.site^
 ||bnynihjbciywe.online^
+||bnyudysiqapdc.space^
 ||boannre.com^
 ||boardceyxgrissel.cyou^
 ||boarderoomph.cyou^
@@ -97199,6 +97201,7 @@ browsershots.org#@#.advert_area
 ||csdinjagkvyvn.space^
 ||csdoranmotswo.site^
 ||csdrifzovbhjq.site^
+||csebphyoobgko.website^
 ||csenajeurcvoc.space^
 ||csezczpngywzt.website^
 ||csfijhywqxquh.space^
@@ -98679,6 +98682,7 @@ browsershots.org#@#.advert_area
 ||dlqetfcxdfzxr.online^
 ||dlrectdates.com^
 ||dltbdrldufloi.site^
+||dltcauxfnkcgg.website^
 ||dlvakopvbuiwi.website^
 ||dlvtovzizpsie.online^
 ||dlwmkldaebzds.website^
@@ -101458,6 +101462,7 @@ browsershots.org#@#.advert_area
 ||fckhwsfvgsebk.website^
 ||fclbiubcoldcy.space^
 ||fcluqlutsbzgc.com^
+||fclvqcvpcxho.com^
 ||fcmsplqtivmls.space^
 ||fcnbkyzloyfgx.site^
 ||fcnhjomrydsct.website^
@@ -104790,6 +104795,7 @@ browsershots.org#@#.advert_area
 ||herspqrsawohn.site^
 ||heruliaramus.com^
 ||herynore.com^
+||heshdewqlrdaj.online^
 ||hesitationsection.com^
 ||hessafifqgqoq.online^
 ||hestyoaesnqpq.site^
@@ -105129,6 +105135,7 @@ browsershots.org#@#.advert_area
 ||hmafbkrm.com^
 ||hmbcfccmdpcmg.space^
 ||hmbqxnpgbljnh.online^
+||hmbubvqlpkeby.site^
 ||hmcaubeen.com^
 ||hmdwkducpuclm.online^
 ||hmdypadvcolcw.space^
@@ -106180,6 +106187,7 @@ browsershots.org#@#.advert_area
 ||ijxrtdogtuwrs.website^
 ||ijyyunqcjscfa.website^
 ||ik8f68pffhmbhxc89wg8z.cfd^
+||ikaeibrnztebr.site^
 ||ikahnruntx.com^
 ||ikcfbfcsusubx.site^
 ||ikdcsxcojvcif.space^
@@ -107042,6 +107050,7 @@ browsershots.org#@#.advert_area
 ||iuqtmoblgqkgq.site^
 ||iursfmecmatxp.site^
 ||iutlrtovfnlbj.online^
+||iuwtsworgzl.com^
 ||iuwzdf.com^
 ||iuwzyhoamhcqb.site^
 ||iuyytxwoigubr.space^
@@ -107700,6 +107709,7 @@ browsershots.org#@#.advert_area
 ||jlpuzawkaasxh.site^
 ||jlrgovibptuzp.online^
 ||jltczmewqabda.online^
+||jltpxzdwnnwuj.space^
 ||jltryuulcnluk.website^
 ||jlujxipdixrw.com^
 ||jlvhwqtkmttgq.site^
@@ -109393,6 +109403,7 @@ browsershots.org#@#.advert_area
 ||labourerardent.com^
 ||labourprincessmeek.com^
 ||labracatenaunidly.cyou^
+||labraskulmet.com^
 ||laccaseberoll.com^
 ||laccasesenatus.com^
 ||lacemendaimons.com^
@@ -109726,6 +109737,7 @@ browsershots.org#@#.advert_area
 ||legalizeshort.com^
 ||legallydune.com^
 ||legbaratwind.com^
+||legerpirate.click^
 ||leggyenglishdemonstration.com^
 ||leggyintimidatebullying.com^
 ||leggymomme.top^
@@ -113642,6 +113654,7 @@ browsershots.org#@#.advert_area
 ||ntvpwpush.com^
 ||ntwkbc21.com^
 ||ntwkbc42.com^
+||ntwufvfhovece.website^
 ||ntyivmvvzscaj.store^
 ||ntyuisdqdckij.space^
 ||ntzgwekoefmwq.site^
@@ -116785,6 +116798,7 @@ browsershots.org#@#.advert_area
 ||poxedtigress.com^
 ||poxorfdldbzdr.online^
 ||pozkbycypzgty.site^
+||pozvieqpeujtu.site^
 ||ppaamxfm.com^
 ||ppauvlzcsdotc.website^
 ||ppbbhvizrkryo.website^
@@ -117521,6 +117535,7 @@ browsershots.org#@#.advert_area
 ||pveldvvjrvgru.site^
 ||pvewcgqdsgbnn.website^
 ||pvgbwckgrfmic.site^
+||pvhlnalfjazfk.space^
 ||pvhlrsqduzzfv.website^
 ||pvhnpsxvmczcz.site^
 ||pviwmynoguqxv.site^
@@ -117843,6 +117858,7 @@ browsershots.org#@#.advert_area
 ||qgauajujymtaw.site^
 ||qgbhjzjoduaqe.site^
 ||qgcgkwgszxjbd.site^
+||qgelsuqzssxpl.space^
 ||qgerr.com^
 ||qgfdmuyzgrosw.online^
 ||qgfkv4wyj7t8m6nk4.cfd^
@@ -120236,6 +120252,7 @@ browsershots.org#@#.advert_area
 ||rxvyaqqvdnblc.space^
 ||rxwjetugafkwt.online^
 ||ryapalta.com^
+||rybatquick.com^
 ||rycfrmbkirh.com^
 ||rydckndzviabm.online^
 ||ryddiuaiixndo.site^
@@ -122952,6 +122969,7 @@ browsershots.org#@#.advert_area
 ||swepcepheusspurry.cfd^
 ||swervemunchfibber.com^
 ||swesomepop.com^
+||swhyspqaijpjp.online^
 ||swidgenoetian.cfd^
 ||swiftemergency.pro^
 ||swiftenwhindle.com^
@@ -125711,6 +125729,7 @@ browsershots.org#@#.advert_area
 ||unwelcometown.com^
 ||unwelthterai.cyou^
 ||unwindjokerago.com^
+||unwindmangeyobus.cfd^
 ||unwindrecordersquare.com^
 ||unwindrevision.com^
 ||unwisepoliticallybenignity.com^
@@ -125764,6 +125783,7 @@ browsershots.org#@#.advert_area
 ||updaight.com^
 ||updaterack.com^
 ||updaterelic.cfd^
+||updfcisoyimay.space^
 ||updomeodontic.qpon^
 ||updoqrprgdjyr.online^
 ||updosflusher.cfd^
@@ -126232,6 +126252,7 @@ browsershots.org#@#.advert_area
 ||vaguelyspecialty.com^
 ||vaguemad.com^
 ||vahwhnqhkkpts.site^
+||vaidiceffendi.com^
 ||vaikijie.net^
 ||vaimucuvikuwu.net^
 ||vain-cause.pro^
@@ -127348,6 +127369,7 @@ browsershots.org#@#.advert_area
 ||wabayoagrest.com^
 ||wabbersedgy.com^
 ||wabewxwoytqpi.website^
+||wabgcqbhsvxgr.website^
 ||wabgqrrsvdqza.space^
 ||wabsyederly.com^
 ||wacimltzklfmg.online^
@@ -130235,6 +130257,7 @@ browsershots.org#@#.advert_area
 ||yohxkdhlsmvue.website^
 ||yoimeuyjstcyw.space^
 ||yojaalyurovox.space^
+||yojuanestorifycairned.cyou^
 ||yojyfahrhuonw.online^
 ||yojymjmj.com^
 ||yokeagemanila.cyou^
@@ -130376,6 +130399,7 @@ browsershots.org#@#.advert_area
 ||yrujkbsgmarpf.space^
 ||yrupvrsguhuln.site^
 ||yrvamtdweysom.site^
+||yrzdrmkyhnfcg.website^
 ||ys73fwrg.xyz^
 ||ysaohbqahvvyq.online^
 ||ysarhyrgeanij.site^
