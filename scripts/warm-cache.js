@@ -4,6 +4,7 @@ const path = require('path');
 const { jsDelivrBase, outputDir } = require('./config');
 
 const jsDelivrFiltersJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json';
+const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium';
 const reportPath = 'public/jsdelivr-cache-report.json';
 
 function ping(url) {
@@ -21,16 +22,26 @@ async function main() {
     .filter(f => f.endsWith('.txt'))
     .map(f => path.basename(f, '.txt'));
 
-  const urls = [
+  const cdnUrls = [
     jsDelivrFiltersJson,
     ...ids.map(id => `${jsDelivrBase}/${id}.txt`),
   ];
 
-  console.log(`Warming ${urls.length} jsDelivr URLs...`);
-  const results = [];
+  const purgeUrls = [
+    `${purgeBase}/filters.json`,
+    ...ids.map(id => `${purgeBase}/filters/${id}.txt`),
+  ];
+
+  console.log(`Purging ${purgeUrls.length} jsDelivr URLs...`);
   const BATCH = 10;
-  for (let i = 0; i < urls.length; i += BATCH) {
-    const batch = await Promise.all(urls.slice(i, i + BATCH).map(ping));
+  for (let i = 0; i < purgeUrls.length; i += BATCH) {
+    await Promise.all(purgeUrls.slice(i, i + BATCH).map(ping));
+  }
+
+  console.log(`Warming ${cdnUrls.length} jsDelivr URLs...`);
+  const results = [];
+  for (let i = 0; i < cdnUrls.length; i += BATCH) {
+    const batch = await Promise.all(cdnUrls.slice(i, i + BATCH).map(ping));
     results.push(...batch);
   }
 
