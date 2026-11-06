@@ -38,3 +38,16 @@ jobs:
         run: |
           git add public/jsdelivr-cache-report.json
           git diff --cached --quiet || (git commit -m "chore: update jsdelivr cache report" && git push)
+
+      - name: Mirror to GitLab
+        run: |
+          git clone https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/gingergeek8192/redundancy-layers.git /tmp/redundancy-layers
+          cp public/ping.json /tmp/redundancy-layers/public/ping.json
+          cp public/extension/chromium/filters.json /tmp/redundancy-layers/public/extension/chromium/filters.json
+          cp public/extension/chromium/filters/*.txt /tmp/redundancy-layers/public/extension/chromium/filters/
+          cd /tmp/redundancy-layers
+          git remote set-url origin https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/gingergeek8192/redundancy-layers.git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/
+          git diff --cached --quiet || (git commit -m "chore: sync filters" && git push)
