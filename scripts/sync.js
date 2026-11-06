@@ -2,7 +2,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const { sourceFiltersJson, mirrorBase, jsDelivrBase, outputDir, outputFiltersJson } = require('./config');
+const { sourceFiltersJson, mirrorBase, jsDelivrBase, gitlabBase, outputDir, outputFiltersJson } = require('./config');
 
 function fetch(url) {
   return new Promise((resolve, reject) => {
@@ -73,6 +73,7 @@ async function main() {
       ...f,
       mirrorUrl: `${mirrorBase}/${f.filterId}.txt`,
       jsDelivrUrl: `${jsDelivrBase}/${f.filterId}.txt`,
+      gitlabUrl: `${gitlabBase}/${f.filterId}.txt`,
     }));
 
   const original = JSON.parse(raw.toString());
