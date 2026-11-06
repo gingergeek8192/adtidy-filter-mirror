@@ -35,7 +35,7 @@ async function main() {
   }
 
   const failed = results.filter(r => r.status !== 200);
-  results.forEach(r => console.log(`  ${r.status === 200 ? '✓' : '✗'} [${r.status}] ${r.url}`));
+  results.forEach(r => console.log(`  ${r.status === 200 ? '🟢' : '🔴'} [${r.status}] ${r.url}`));
   if (failed.length) console.warn(`${failed.length} URLs did not return 200`);
 
   const report = {
