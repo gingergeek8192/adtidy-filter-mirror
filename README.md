@@ -79,7 +79,7 @@ Each filter entry includes three URL fields pointing to the same current filter 
 
 ## Checksum verification
 
-Each `.txt` filter file is verified before being stored using the MD5 `! Checksum:` header line stripped. Files that fail verification are discarded and the previous version is left intact.
+Each `.txt` filter file is verified before being stored using the MD5 `! Checksum:` header. Files that fail verification are discarded and the previous version is left intact.
 
 - All non-deprecated filters
 - Deprecated filters: excluded
