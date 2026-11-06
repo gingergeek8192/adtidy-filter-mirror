@@ -29,6 +29,12 @@ public/extension/chromium/filters/2.txt
 | filters.json | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json` |
 | Filter N jsDelivrUrl | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/N.txt` |
 
+### GitLab
+| Resource | URL |
+|---|---|
+| filters.json | `https://gitlab.com/gingergeek8192/redundancy-layers/-/raw/main/public/extension/chromium/filters.json` |
+| Filter N gitlabUrl | `https://gitlab.com/gingergeek8192/redundancy-layers/-/raw/main/public/extension/chromium/filters/N.txt` |
+
 ### adtidy CDN
 | Resource | URL |
 |---|---|
@@ -42,6 +48,7 @@ Each filter entry includes three URL fields pointing to the same current filter 
 - `downloadUrl` — original AdTidy CDN URL (unchanged)
 - `mirrorUrl` — raw.githubusercontent.com
 - `jsDelivrUrl` — cdn.jsdelivr.net
+- `gitlabUrl` — gitlab.com
 
 ```js
 	"filters": [
@@ -70,7 +77,8 @@ Each filter entry includes three URL fields pointing to the same current filter 
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/1.txt",
-			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt"
+			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt",
+			"gitlabUrl": "https://gitlab.com/gingergeek8192/redundancy-layers/-/raw/main/public/extension/chromium/filters/1.txt"
 		},
         {...},
         {...}
