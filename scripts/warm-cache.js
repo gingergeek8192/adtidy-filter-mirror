@@ -1,16 +1,17 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const { jsDelivrBase, outputDir, outputFiltersJson } = require('./config');
+const { jsDelivrBase, outputDir } = require('./config');
 
 const jsDelivrFiltersJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json';
+const reportPath = 'public/jsdelivr-cache-report.json';
 
 function ping(url) {
   return new Promise((resolve) => {
     https.get(url, (res) => {
       res.resume();
-      resolve({ url, status: res.statusCode });
-    }).on('error', (e) => resolve({ url, status: e.message }));
+      resolve({ url, status: res.statusCode, cached: res.headers['x-cache'] || res.headers['cf-cache-status'] || 'unknown' });
+    }).on('error', (e) => resolve({ url, status: e.message, cached: 'error' }));
   });
 }
 
@@ -28,8 +29,18 @@ async function main() {
   const results = await Promise.all(urls.map(ping));
 
   const failed = results.filter(r => r.status !== 200);
-  results.forEach(r => console.log(`  ${r.status === 200 ? '✓' : '✗'} ${r.url}`));
+  results.forEach(r => console.log(`  ${r.status === 200 ? '✓' : '✗'} [${r.cached}] ${r.url}`));
   if (failed.length) console.warn(`${failed.length} URLs did not return 200`);
+
+  const report = {
+    updatedAt: new Date().toISOString(),
+    total: results.length,
+    ok: results.filter(r => r.status === 200).length,
+    failed: failed.length,
+    results: results.map(r => ({ url: r.url, status: r.status, cached: r.cached })),
+  };
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'));
+  console.log(`Report written to ${reportPath}`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

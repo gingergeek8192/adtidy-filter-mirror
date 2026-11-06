@@ -33,3 +33,8 @@ jobs:
 
       - name: Warm jsDelivr cache
         run: node scripts/warm-cache.js
+
+      - name: Commit cache report
+        run: |
+          git add public/jsdelivr-cache-report.json
+          git diff --cached --quiet || (git commit -m "chore: update jsdelivr cache report" && git push)
