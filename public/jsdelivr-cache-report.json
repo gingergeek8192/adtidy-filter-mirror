@@ -1,0 +1,448 @@
+{
+	"updatedAt": "2026-11-06T11:41:55.147Z",
+	"total": 88,
+	"ok": 77,
+	"failed": 11,
+	"results": [
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/10.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/101.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/102.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/103.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/104.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/105.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/106.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/107.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/108.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/109.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/11.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/110.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/111.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/112.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/113.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/114.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/118.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/119.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/120.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/121.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/122.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/123.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/124.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/13.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/16.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/17.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/18.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/19.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/20.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/201.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/202.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/203.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/204.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/206.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/207.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/208.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/21.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/212.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/214.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/216.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/217.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/218.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/22.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/220.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/221.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/224.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/225.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/227.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/228.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/23.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/231.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/232.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/233.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/234.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/235.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/236.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/237.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/239.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/241.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/243.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/244.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/246.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/247.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/249.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/25.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/250.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/251.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/252.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/253.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/254.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/255.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/256.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/257.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/258.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/259.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/26.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/260.txt",
+			"status": 403,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/27.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/3.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/4.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/5.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/6.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/7.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/8.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		},
+		{
+			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/9.txt",
+			"status": 200,
+			"cached": "MISS, MISS"
+		}
+	]
+}
