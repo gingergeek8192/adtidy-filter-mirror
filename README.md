@@ -1,10 +1,10 @@
 # adtidy-filter-mirror
 
-A GitHub-hosted mirror of AdTidy filter lists, synced every 12 hours.
+A GitHub-hosted mirror of AdTidy filter lists, synced every 12 hours, providing an additional online first-run fallback for **Adblock-Electron** — an upcoming npm package currently in active development, built on AdGuard's tsurlfilters library.
 
 ## What it does
 
-Every 12 hours a workflow fetches all non-deprecated filter lists from the AdTidy CDN, verifies each file against its embedded MD5 checksum, and commits the results to this repo.
+Every 12 hours a workflow fetches all non-deprecated filter lists from the AdTidy CDN, verifies each file against its embedded MD5 checksum, and commits the results to this repo. Stores adtidy filters.json with additional fallback paths.
 
 ## File layout
 
@@ -21,19 +21,19 @@ public/extension/chromium/filters/2.txt
 | Resource | URL |
 |---|---|
 | filters.json | `https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters.json` |
-| Filter N | `https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/N.txt` |
+| Filter N mirrorUrl | `https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/N.txt` |
 
 ### jsDelivr CDN
 | Resource | URL |
 |---|---|
 | filters.json | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json` |
-| Filter N | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/N.txt` |
+| Filter N jsDelivrUrl | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/N.txt` |
 
 ### adtidy CDN
 | Resource | URL |
 |---|---|
 | filters.json | `https://filters.adtidy.org/extension/chromium/filters.json` |
-| Filter N | `https://filters.adtidy.org/extension/chromium/filters/N.txt` |
+| Filter N downloadUrl | `https://filters.adtidy.org/extension/chromium/filters/N.txt` |
 
 ## filters.json
 
