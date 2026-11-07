@@ -17,8 +17,6 @@ function ping(url) {
   });
 }
 
-const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-
 async function main() {
   const ids = fs.readdirSync(outputDir)
     .filter(f => f.endsWith('.txt'))
@@ -35,16 +33,16 @@ async function main() {
   ];
 
   console.log(`Purging ${purgeUrls.length} jsDelivr URLs...`);
-  for (const url of purgeUrls) {
-    await ping(url);
-    await sleep(500);
+  const BATCH = 10;
+  for (let i = 0; i < purgeUrls.length; i += BATCH) {
+    await Promise.all(purgeUrls.slice(i, i + BATCH).map(ping));
   }
 
   console.log(`Warming ${cdnUrls.length} jsDelivr URLs...`);
   const results = [];
-  for (const url of cdnUrls) {
-    results.push(await ping(url));
-    await sleep(500);
+  for (let i = 0; i < cdnUrls.length; i += BATCH) {
+    const batch = await Promise.all(cdnUrls.slice(i, i + BATCH).map(ping));
+    results.push(...batch);
   }
 
   const failed = results.filter(r => r.status !== 200);
