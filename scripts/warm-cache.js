@@ -7,12 +7,17 @@ const jsDelivrFiltersJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-f
 const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium';
 const reportPath = 'public/jsdelivr-cache-report.json';
 
-function ping(url) {
+function ping(url, retries = 3) {
   return new Promise((resolve) => {
     const req = https.get(url, (res) => {
       res.resume();
+      if (res.statusCode !== 200 && retries > 0)
+        return resolve(ping(url, retries - 1));
       resolve({ url, status: res.statusCode });
-    }).on('error', (e) => resolve({ url, status: e.message }));
+    }).on('error', (e) => {
+      if (retries > 0) return resolve(ping(url, retries - 1));
+      resolve({ url, status: e.message });
+    });
     req.setTimeout(15000, () => { req.destroy(); resolve({ url, status: 'timeout' }); });
   });
 }
