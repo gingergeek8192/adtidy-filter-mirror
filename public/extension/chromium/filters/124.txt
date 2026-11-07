@@ -1,15 +1,15 @@
-! Checksum: DyFkzjMkuKpIvaXVsHIBkw
-! Diff-Path: ../patches/124/124-s-1794012432-14400.patch
+! Checksum: jfkVIKqoXAAwDcdFWpxmMw
+! Diff-Path: ../patches/124/124-s-1794040744-14400.patch
 ! Title: EasyList Portuguese
 ! Description: Additional filter list for websites in Spanish and Portuguese.
-! Version: 2.0.72.44
-! TimeUpdated: 2026-11-07T00:44:54+00:00
+! Version: 2.0.72.46
+! TimeUpdated: 2026-11-07T08:35:33+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: +D1odL3u4Usgy5kWDENj1w
-! OriginalVersion: 202611070032
+! Checksum: iiBWA6Q+xHqc+S0ZvFTvgQ
+! OriginalVersion: 202611070822
 ! Title: EasyList Portuguese
-! Last modified: 07 Nov 2026 00:32 UTC
+! Last modified: 07 Nov 2026 08:22 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
