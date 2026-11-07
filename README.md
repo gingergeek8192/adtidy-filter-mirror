@@ -43,11 +43,12 @@ public/extension/chromium/filters/2.txt
 
 ## filters.json
 
-Each filter entry includes three URL fields pointing to the same current filter file:
+Each filter entry includes four URL fields pointing to the same current filter file:
 
 - `downloadUrl` — original AdTidy CDN URL (unchanged)
 - `mirrorUrl` — raw.githubusercontent.com
 - `jsDelivrUrl` — cdn.jsdelivr.net
+- `gitlabUrl` — gitlab.com
 - `gitlabUrl` — gitlab.com
 
 ```js
