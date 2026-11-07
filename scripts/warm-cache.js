@@ -17,6 +17,8 @@ function ping(url) {
   });
 }
 
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
 async function main() {
   const ids = fs.readdirSync(outputDir)
     .filter(f => f.endsWith('.txt'))
@@ -33,37 +35,27 @@ async function main() {
   ];
 
   console.log(`Purging ${purgeUrls.length} jsDelivr URLs...`);
-  const BATCH = 10;
-  for (let i = 0; i < purgeUrls.length; i += BATCH) {
-    await Promise.all(purgeUrls.slice(i, i + BATCH).map(ping));
+  for (const url of purgeUrls) {
+    await ping(url);
+    await sleep(500);
   }
 
   console.log(`Warming ${cdnUrls.length} jsDelivr URLs...`);
   const results = [];
-  for (let i = 0; i < cdnUrls.length; i += BATCH) {
-    const batch = await Promise.all(cdnUrls.slice(i, i + BATCH).map(ping));
-    results.push(...batch);
+  for (const url of cdnUrls) {
+    results.push(await ping(url));
+    await sleep(500);
   }
 
   const failed = results.filter(r => r.status !== 200);
-  if (failed.length) {
-    console.log(`Retrying ${failed.length} non-200 URLs after 15s...`);
-    await new Promise(r => setTimeout(r, 15000));
-    for (let i = 0; i < failed.length; i += BATCH) {
-      const retried = await Promise.all(failed.slice(i, i + BATCH).map(r => ping(r.url)));
-      retried.forEach(r => { const idx = results.findIndex(x => x.url === r.url); results[idx] = r; });
-    }
-  }
-
-  const stillFailed = results.filter(r => r.status !== 200);
   results.forEach(r => console.log(`  ${r.status === 200 ? '🟢' : '🔴'} [${r.status}] ${r.url}`));
-  if (stillFailed.length) console.warn(`${stillFailed.length} URLs did not return 200 after retry`);
+  if (failed.length) console.warn(`${failed.length} URLs did not return 200`);
 
   const report = {
     updatedAt: new Date().toISOString(),
     total: results.length,
     ok: results.filter(r => r.status === 200).length,
-    failed: stillFailed.length,
+    failed: failed.length,
     results: results.map(r => ({ url: r.url, status: r.status })),
   };
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'));
