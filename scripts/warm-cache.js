@@ -46,14 +46,24 @@ async function main() {
   }
 
   const failed = results.filter(r => r.status !== 200);
+  if (failed.length) {
+    console.log(`Retrying ${failed.length} non-200 URLs after 15s...`);
+    await new Promise(r => setTimeout(r, 15000));
+    for (let i = 0; i < failed.length; i += BATCH) {
+      const retried = await Promise.all(failed.slice(i, i + BATCH).map(r => ping(r.url)));
+      retried.forEach(r => { const idx = results.findIndex(x => x.url === r.url); results[idx] = r; });
+    }
+  }
+
+  const stillFailed = results.filter(r => r.status !== 200);
   results.forEach(r => console.log(`  ${r.status === 200 ? '🟢' : '🔴'} [${r.status}] ${r.url}`));
-  if (failed.length) console.warn(`${failed.length} URLs did not return 200`);
+  if (stillFailed.length) console.warn(`${stillFailed.length} URLs did not return 200 after retry`);
 
   const report = {
     updatedAt: new Date().toISOString(),
     total: results.length,
     ok: results.filter(r => r.status === 200).length,
-    failed: failed.length,
+    failed: stillFailed.length,
     results: results.map(r => ({ url: r.url, status: r.status })),
   };
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'));
