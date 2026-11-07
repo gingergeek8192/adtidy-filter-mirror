@@ -36,11 +36,7 @@ async function main() {
   await Promise.all(purgeUrls.map(ping));
 
   console.log(`Warming ${cdnUrls.length} jsDelivr URLs...`);
-  const results = [];
-  for (const url of cdnUrls) {
-    results.push(await ping(url));
-    await new Promise(r => setTimeout(r, 500));
-  }
+  const results = await Promise.all(cdnUrls.map(ping));
 
   const failed = results.filter(r => r.status !== 200);
   results.forEach(r => console.log(`  ${r.status === 200 ? '🟢' : r.status === 403 ? '🟡' : '🔴'} [${r.status}] ${r.url}`));
