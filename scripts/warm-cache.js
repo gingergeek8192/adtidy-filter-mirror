@@ -33,20 +33,13 @@ async function main() {
   ];
 
   console.log(`Purging ${purgeUrls.length} jsDelivr URLs...`);
-  const BATCH = 10;
-  for (let i = 0; i < purgeUrls.length; i += BATCH) {
-    await Promise.all(purgeUrls.slice(i, i + BATCH).map(ping));
-  }
+  await Promise.all(purgeUrls.map(ping));
 
   console.log(`Warming ${cdnUrls.length} jsDelivr URLs...`);
-  const results = [];
-  for (let i = 0; i < cdnUrls.length; i += BATCH) {
-    const batch = await Promise.all(cdnUrls.slice(i, i + BATCH).map(ping));
-    results.push(...batch);
-  }
+  const results = await Promise.all(cdnUrls.map(ping));
 
   const failed = results.filter(r => r.status !== 200);
-  results.forEach(r => console.log(`  ${r.status === 200 ? '🟢' : '🔴'} [${r.status}] ${r.url}`));
+  results.forEach(r => console.log(`  ${r.status === 200 ? '🟢' : r.status === 403 ? '🟡' : '🔴'} [${r.status}] ${r.url}`));
   if (failed.length) console.warn(`${failed.length} URLs did not return 200`);
 
   const report = {
