@@ -44,7 +44,7 @@ async function downloadFilter(filterId, sourceUrl) {
 
   // checksum passed — write full original data to .tmp, verify read-back, then rename
   atomicWrite(path.join(outputDir, `${filterId}.txt`), data);
-  console.log(`  ✓ ${filterId}.txt`);
+  console.log(`  🟢 ${filterId}.txt`);
   return filterId;
 }
 
@@ -61,7 +61,7 @@ async function main() {
 
   const failed = results.filter(r => r.status === 'rejected');
   if (failed.length) {
-    failed.forEach(r => console.warn(`  ✗ ${r.reason.message}`));
+    failed.forEach(r => console.warn(`  🟡 ${r.reason.message}`));
     console.warn(`${failed.length} filters failed`);
   }
 
