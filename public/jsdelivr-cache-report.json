@@ -1,8 +1,8 @@
 {
-	"updatedAt": "2026-11-07T13:14:30.694Z",
+	"updatedAt": "2026-11-07T13:23:29.876Z",
 	"total": 88,
-	"ok": 88,
-	"failed": 0,
+	"ok": 85,
+	"failed": 3,
 	"results": [
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json",
@@ -154,7 +154,7 @@
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/207.txt",
-			"status": 200
+			"status": 403
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/208.txt",
@@ -162,7 +162,7 @@
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/21.txt",
-			"status": 200
+			"status": 403
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/212.txt",
@@ -242,7 +242,7 @@
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/237.txt",
-			"status": 200
+			"status": 403
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/239.txt",
