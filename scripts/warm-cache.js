@@ -4,7 +4,9 @@ const path = require('path');
 const { jsDelivrBase, outputDir } = require('./config');
 
 const jsDelivrFiltersJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json';
+const jsDelivrPingJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium';
+const purgePingJson = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const reportPath = 'public/jsdelivr-cache-report.json';
 
 function ping(url, retries = 3) {
@@ -28,11 +30,13 @@ async function main() {
     .map(f => path.basename(f, '.txt'));
 
   const cdnUrls = [
+    jsDelivrPingJson,
     jsDelivrFiltersJson,
     ...ids.map(id => `${jsDelivrBase}/${id}.txt`),
   ];
 
   const purgeUrls = [
+    purgePingJson,
     `${purgeBase}/filters.json`,
     ...ids.map(id => `${purgeBase}/filters/${id}.txt`),
   ];
