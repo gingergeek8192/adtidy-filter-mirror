@@ -53,20 +53,24 @@ async function fetchAndCheck(entry) {
     if (checksum === entry.expectedChecksum && isValid(normalized, checksum)) {
       entry.warmOk = true;
       entry.detail = 'checksum:match';
+      entry.servedChecksum = checksum;
       console.log(`🟢 [warm] ${entry.url} — checksum match ${checksum}`);
     } else {
       entry.warmOk = false;
       entry.detail = 'checksum:mismatch';
+      entry.servedChecksum = checksum;
       console.log(`🔴 [warm] ${entry.url} — checksum mismatch served:${checksum} expected:${entry.expectedChecksum}`);
     }
   } else {
     if (isValid(normalized, checksum)) {
       entry.warmOk = true;
       entry.detail = 'checksum:match';
+      entry.servedChecksum = checksum;
       console.log(`🟢 [warm] ${entry.url} — checksum valid ${checksum}`);
     } else {
       entry.warmOk = false;
       entry.detail = 'checksum:mismatch';
+      entry.servedChecksum = checksum;
       console.log(`🔴 [warm] ${entry.url} — checksum invalid ${checksum}`);
     }
   }
@@ -131,7 +135,7 @@ async function main() {
     }
   }
 
-  report.results = entries.map(({ isFilter, expectedChecksum, ...r }) => r);
+  report.results = entries.map(({ isFilter, ...r }) => r);
   report.updatedAt = new Date().toISOString();
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'), 'utf8');
 
@@ -147,6 +151,8 @@ async function main() {
       url: r.url,
       warmOk: r.warmOk,
       detail: r.detail,
+      expectedChecksum: r.expectedChecksum ?? null,
+      servedChecksum: r.servedChecksum ?? null,
     })),
   };
   fs.writeFileSync('public/jsdelivr-warm-report.json', JSON.stringify(warmReport, null, '\t'), 'utf8');
