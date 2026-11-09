@@ -76,7 +76,7 @@ async function main() {
     const url = isFilter ? entry.url : entry;
     const id = isFilter ? entry.id : null;
 
-    const res = await request(url);
+    let res = await request(url);
 
     let warmOk = false;
     let detail = 'fail';
@@ -84,7 +84,12 @@ async function main() {
     if (res.body) {
       if (isFilter) {
         const storedChecksum = checksumMap.get(id);
-        const bodyChecksum = res.body.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
+        let bodyChecksum = res.body.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
+        if (storedChecksum && bodyChecksum && bodyChecksum !== storedChecksum) {
+          await sleep(2000);
+          res = await request(url);
+          bodyChecksum = res.body?.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
+        }
         if (storedChecksum && bodyChecksum) {
           warmOk = bodyChecksum === storedChecksum;
           detail = warmOk ? 'checksum:match' : `checksum:mismatch(got:${bodyChecksum},want:${storedChecksum})`;
