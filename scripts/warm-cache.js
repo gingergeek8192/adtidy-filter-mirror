@@ -33,9 +33,23 @@ async function fetchAndCheck(entry) {
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
 
   if (!entry.isFilter) {
-    entry.warmOk = true;
-    entry.detail = 'non-filter';
-    console.log(`🟢 [warm] ${entry.url} — non-filter ok`);
+    if (entry.url.endsWith('ping.json')) {
+      const served = await r.json();
+      const expected = entry.expectedPing;
+      if (Date.parse(served.updatedAt) === Date.parse(expected.updatedAt) && Date.parse(served.nextUpdate) === Date.parse(expected.nextUpdate)) {
+        entry.warmOk = true;
+        entry.detail = 'non-filter';
+        console.log(`🟢 [warm] ${entry.url} — ping match`);
+      } else {
+        entry.warmOk = false;
+        entry.detail = 'ping:mismatch';
+        console.log(`🔴 [warm] ${entry.url} — ping mismatch`);
+      }
+    } else {
+      entry.warmOk = true;
+      entry.detail = 'non-filter';
+      console.log(`🟢 [warm] ${entry.url} — non-filter ok`);
+    }
     return;
   }
 
@@ -93,6 +107,7 @@ async function runWave(pending) {
 async function main() {
   const { filters } = JSON.parse(fs.readFileSync(cfg.outputFiltersJson, 'utf8'));
   const checksumMap = Object.fromEntries(filters.map((f) => [f.filterId, f.checksum]));
+  const expectedPing = JSON.parse(fs.readFileSync('public/ping.json', 'utf8'));
 
   const reportPath = 'public/jsdelivr-cache-report.json';
   const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
@@ -104,6 +119,7 @@ async function main() {
       ...r,
       isFilter,
       expectedChecksum: checksumMap[filterId] ?? null,
+      expectedPing: r.url.endsWith('ping.json') ? expectedPing : null,
       warmOk: false,
       detail: null,
     };
@@ -131,7 +147,7 @@ async function main() {
     }
   }
 
-  report.results = entries.map(({ isFilter, expectedChecksum, ...r }) => r);
+  report.results = entries.map(({ isFilter, expectedChecksum, expectedPing, ...r }) => r);
   report.updatedAt = new Date().toISOString();
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'), 'utf8');
 
