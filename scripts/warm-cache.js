@@ -4,7 +4,7 @@ const cfg = require('./config');
 
 const BATCH_SIZE = 3;
 const BATCH_INTERVAL_MS = 6_000;
-const ROUND_WAIT_MS = 120_000;
+const ROUND_WAIT_MS = 240_000;
 const MAX_ROUNDS = 5;
 
 function normalize(text) {
@@ -98,7 +98,7 @@ async function main() {
   const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 
   const entries = report.results.map((r) => {
-    const isFilter = r.url.includes('/filters/') && r.url.endsWith('.txt');
+    const isFilter = !r.url.endsWith('.json');
     const filterId = isFilter ? parseInt(r.url.match(/\/(\d+)\.txt$/)?.[1]) : null;
     return {
       ...r,
