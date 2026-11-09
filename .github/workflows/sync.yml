@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 */12 * * *'
   workflow_dispatch:
+    inputs: {}
 
 permissions:
   contents: write
@@ -31,8 +32,7 @@ jobs:
           git add public/
           git diff --cached --quiet || (git commit -m "chore: sync adtidy filters" && git push)
 
-
-      - name: Purge jsDelivr 
+      - name: Purge jsDelivr
         run: node scripts/purge-cache.js
   
       - name: Mirror to GitLab
