@@ -40,20 +40,18 @@ async function main() {
   ];
 
   // Phase 1: purge all concurrently
-  console.log(`Purging ${purgeUrls.length} URLs...`);
+  console.log(`Purging ${purgeUrls.length} URLs concurrently...`);
   const purgeResponses = await Promise.all(purgeUrls.map(request));
+  console.log(`Purge complete. Waiting ${PURGE_WAIT / 1000}s for CDN propagation...`);
 
   // Phase 2: wait for CDN propagation
   await sleep(PURGE_WAIT);
 
-  // Phase 3: warm all concurrently
-  console.log(`Warming ${cdnUrls.length} URLs...`);
-  const warmResponses = await Promise.all(cdnUrls.map(request));
-
-  const results = cdnUrls.map((cdnUrl, i) => {
-    const purgeUrl = purgeUrls[i];
+  // Phase 3: warm all concurrently, log as each resolves
+  console.log(`Warming ${cdnUrls.length} URLs concurrently...`);
+  const results = await Promise.all(cdnUrls.map(async (cdnUrl, i) => {
     const purgeRes = purgeResponses[i];
-    const warmRes = warmResponses[i];
+    const warmRes = await request(cdnUrl);
 
     let throttled = null;
     let providers = null;
@@ -66,18 +64,14 @@ async function main() {
 
     const purgeOk = throttled === false && providers !== null;
     console.log(`  ${purgeOk && warmRes.status === 200 ? '🟢' : '🔴'} [purge:${purgeOk ? 'ok' : 'fail'}] [warm:${warmRes.status}] ${cdnUrl}`);
-
-    return { url: cdnUrl, purgeUrl, throttled, providers, warm: warmRes.status };
-  });
-
-  const failed = results.filter(r => r.throttled !== false || r.warm !== 200);
-  if (failed.length) console.warn(`${failed.length} URLs did not complete successfully`);
+    return { url: cdnUrl, purgeUrl: purgeUrls[i], throttled, providers, warm: warmRes.status };
+  }));
 
   const report = {
     updatedAt: new Date().toISOString(),
     total: results.length,
     ok: results.filter(r => r.throttled === false && r.warm === 200).length,
-    failed: failed.length,
+    failed: results.filter(r => r.throttled !== false || r.warm !== 200).length,
     results,
   };
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'));
