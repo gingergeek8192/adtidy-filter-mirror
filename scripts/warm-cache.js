@@ -35,6 +35,17 @@ function request(url) {
   });
 }
 
+async function fetchJsonWithRetry(url, expectedUpdatedAt, attempt = 1) {
+  const res = await request(url);
+  let parsed = null;
+  try { parsed = JSON.parse(res.body); } catch (_) {}
+  if (expectedUpdatedAt && parsed?.updatedAt !== expectedUpdatedAt && attempt < RETRY_MAX) {
+    await sleep(RETRY_DELAY);
+    return fetchJsonWithRetry(url, expectedUpdatedAt, attempt + 1);
+  }
+  return { body: res.body, parsed };
+}
+
 async function main() {
   const ids = fs.readdirSync(outputDir)
     .filter(f => f.endsWith('.txt'))
@@ -42,6 +53,8 @@ async function main() {
 
   const { filters } = JSON.parse(fs.readFileSync(outputFiltersJson, 'utf8'));
   const checksumMap = new Map(filters.filter(f => f.checksum).map(f => [String(f.filterId), f.checksum]));
+  const localPing = JSON.parse(fs.readFileSync('public/ping.json', 'utf8'));
+  const expectedPingUpdatedAt = localPing.updatedAt;
 
   const purgeUrls = [
     purgePingJson,
@@ -102,6 +115,12 @@ async function main() {
           warmOk = true;
           detail = storedChecksum ? 'no-checksum-in-response' : 'no-stored-checksum';
         }
+      }
+    } else if (url === jsDelivrPingJson) {
+      const { parsed } = await fetchJsonWithRetry(url, expectedPingUpdatedAt);
+      if (parsed) {
+        warmOk = parsed.updatedAt === expectedPingUpdatedAt;
+        detail = warmOk ? 'timestamp:match' : `timestamp:mismatch(got:${parsed.updatedAt},want:${expectedPingUpdatedAt})`;
       }
     } else {
       const res = await request(url);
