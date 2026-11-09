@@ -1,8 +1,8 @@
 {
-	"updatedAt": "2026-11-09T10:12:00.544Z",
+	"updatedAt": "2026-11-09T11:54:26.858Z",
 	"total": 89,
-	"ok": 23,
-	"failed": 66,
+	"ok": 76,
+	"failed": 13,
 	"results": [
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json",
@@ -12,8 +12,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "timestamp:mismatch(got:2026-11-09T08:13:57Z,want:2026-11-09T10:07:22Z)"
+			"warmOk": true,
+			"detail": "non-filter"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json",
@@ -56,8 +56,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:dNy13rXsz+/EDF+e22PcNA,want:4dTFXe2+TNGkFbxeCBJCRw)"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/102.txt",
@@ -89,8 +89,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:EbnzUbKjqFUE6asOso0Qtw,want:3/8be3+0UUWPRrqjtkCVbA)"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/105.txt",
@@ -111,8 +111,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:X1+iKFu4dClRcFNjTfyltQ,want:JYlu3m/rIFD1lvph4ofIrg)"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/107.txt",
@@ -144,8 +144,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch(got:qx8jYKl7Ba0wbi2Uowz/9Q,want:VepVzavn1lB0ClLuW8bcOA)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/11.txt",
@@ -188,8 +188,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:WPg4oXDLVdtuuhMm5o+xJQ,want:kJQHmlq0fHbCiePyQ5JsLQ)"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/113.txt",
@@ -276,8 +276,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch(got:FdiaQoGXvN8xJfeJ2Jom9w,want:RT9lwfvAtykqDl9nZMMWCg)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/124.txt",
@@ -287,8 +287,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:yhPxgoKcqsFWQs7wln13Rg,want:+nFUq8bdmshzG8sbdi/xFQ)"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/13.txt",
@@ -331,8 +331,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:H+B4S0AuaXSENyXHHbvCYQ,want:zd2SbrxdAYF7iEpVwoYABQ)"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/19.txt",
@@ -342,412 +342,644 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch(got:g+E9h1owfOCLnmpooIzj1w,want:ZNpkIpzieXQ5FGd1MvC02g)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
-			"detail": "checksum:mismatch(got:AeJe+ddfmpHfvtDHokI7Vg,want:qN0j6hjItHX+nZwQqg2nBA)"
+			"detail": "checksum:mismatch(got:AeJe+ddfmpHfvtDHokI7Vg,want:l02on0IgIdYMlIwoq8oQlQ)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/20.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/20.txt",
-			"throttled": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:RkdbBTYZYC5eVMdPOg7dwg,want:VFLcAbVwkjVzttxVJ2CIJw)"
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/201.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/201.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/202.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/202.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/203.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/203.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/204.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/204.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/206.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/206.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/207.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/207.txt",
-			"throttled": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:bqY4mbpNICZMz8ezw/ADbQ,want:K7vFOspckd/esCfeisqq3g)"
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/208.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/208.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/21.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/21.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
-			"detail": "checksum:mismatch(got:vWKvsUkDqg2tE5/OtW/joQ,want:aWHQCaCLd1nt3BKnR/dZdw)"
+			"detail": "checksum:mismatch(got:vWKvsUkDqg2tE5/OtW/joQ,want:BLg+WxjvjCJtIn4Gui2SyQ)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/212.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/212.txt",
-			"throttled": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:KPqi3M5ppmY908Jy86IyhQ,want:nG+tg0tSPgYroWWHSsl+Wg)"
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/214.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/214.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
 			"detail": "checksum:mismatch(got:MMZkRYOzzYhRE8YW2TcbXg,want:2iikJRlZmfFw5TpBlQRUWw)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/216.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/216.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/217.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/217.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/218.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/218.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/22.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/22.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/220.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/220.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/221.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/221.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/224.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/224.txt",
-			"throttled": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
+			"warmOk": false,
+			"detail": "checksum:mismatch(got:JXjIOuwwxBtNHYTq7Sb6+A,want:3CYYwKx+DSO59Obg/e6mhQ)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/225.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/225.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/227.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/227.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
 			"detail": "checksum:mismatch(got:NSrPeXyoSAcJ0dGbCij60A,want:UEmQHcsk8/PTSart8z9n3g)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/228.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/228.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/23.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/23.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/231.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/231.txt",
-			"throttled": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:TNB+l5YAEiVbULfQhfCNIg,want:m7iStqRXiYbWoh0A0UKDsw)"
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/232.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/232.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/233.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/233.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/234.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/234.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/235.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/235.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/236.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/236.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/237.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/237.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/239.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/239.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/241.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/241.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/243.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/243.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
 			"detail": "checksum:mismatch(got:oGCGk+X0IVKSs0Esc2W9NA,want:9y5zK9c9iJpx9eKpK2XCLA)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/244.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/244.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/246.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/246.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
 			"detail": "checksum:mismatch(got:VCinFSzDi5TIQjejMiIqMA,want:Z02aNLBDSa3MKoYew33w5g)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/247.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/247.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/249.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/249.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/25.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/25.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/250.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/250.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/251.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/251.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/252.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/252.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/253.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/253.txt",
-			"throttled": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:DsefzgYS4wLsod2u01dhXQ,want:ehFhsxOQjCmjpFFQtd5R+Q)"
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/254.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/254.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/255.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/255.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/256.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/256.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
 			"detail": "checksum:mismatch(got:CmKxhGXUO+XQJ44/0jushg,want:xOpXkHPEyAiADWOxrh7Xqg)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/257.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/257.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/258.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/258.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/259.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/259.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/26.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/26.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/260.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/260.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/27.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/27.txt",
-			"throttled": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:hxxClR93ykLEKXti0gZfHQ,want:eGMPFxRsSrR5pzO657SEOA)"
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/3.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/3.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": false,
-			"detail": "checksum:mismatch(got:kyIWm0kzn2sbY2bwiHcXRw,want:dfdVq+90zYDytCAJE+lPFA)"
+			"detail": "checksum:mismatch(got:kyIWm0kzn2sbY2bwiHcXRw,want:cMFLiEgxpjJQeIAicSeOQA)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/4.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/4.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/5.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/5.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/6.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/6.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/7.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/7.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/8.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/8.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/9.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/9.txt",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warmOk": true,
 			"detail": "checksum:match"
 		}
