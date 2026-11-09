@@ -34,11 +34,6 @@ jobs:
       - name: Purge and warm jsDelivr cache
         run: node scripts/warm-cache.js
 
-      - name: Re-purge and warm jsDelivr cache
-        run: |
-          sleep 20
-          node scripts/warm-cache.js
-
       - name: Commit cache report
         run: |
           git add public/jsdelivr-cache-report.json
