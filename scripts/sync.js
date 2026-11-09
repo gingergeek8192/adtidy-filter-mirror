@@ -45,7 +45,7 @@ async function downloadFilter(filterId, sourceUrl) {
   // checksum passed — write full original data to .tmp, verify read-back, then rename
   atomicWrite(path.join(outputDir, `${filterId}.txt`), data);
   console.log(`  🟢 ${filterId}.txt`);
-  return filterId;
+  return { filterId, checksum: checksum || null };
 }
 
 async function main() {
@@ -65,12 +65,13 @@ async function main() {
     console.warn(`${failed.length} filters failed`);
   }
 
-  const succeeded = new Set(results.filter(r => r.status === 'fulfilled').map(r => r.value));
+  const succeeded = new Map(results.filter(r => r.status === 'fulfilled').map(r => [r.value.filterId, r.value.checksum]));
 
   const mirroredFilters = eligible
     .filter(f => succeeded.has(f.filterId))
     .map(f => ({
       ...f,
+      checksum: succeeded.get(f.filterId),
       mirrorUrl: `${mirrorBase}/${f.filterId}.txt`,
       jsDelivrUrl: `${jsDelivrBase}/${f.filterId}.txt`,
       gitlabUrl: `${gitlabBase}/${f.filterId}.txt`,
