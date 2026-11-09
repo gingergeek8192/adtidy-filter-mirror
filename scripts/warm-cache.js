@@ -4,7 +4,7 @@ const cfg = require('./config');
 
 const BATCH_SIZE = 3;
 const BATCH_INTERVAL_MS = 6_000;
-const ROUND_WAIT_MS = 240_000;
+const ROUND_WAIT_MS = 120_000;
 const MAX_ROUNDS = 5;
 
 function normalize(text) {
@@ -53,24 +53,20 @@ async function fetchAndCheck(entry) {
     if (checksum === entry.expectedChecksum && isValid(normalized, checksum)) {
       entry.warmOk = true;
       entry.detail = 'checksum:match';
-      entry.servedChecksum = checksum;
       console.log(`🟢 [warm] ${entry.url} — checksum match ${checksum}`);
     } else {
       entry.warmOk = false;
       entry.detail = 'checksum:mismatch';
-      entry.servedChecksum = checksum;
       console.log(`🔴 [warm] ${entry.url} — checksum mismatch served:${checksum} expected:${entry.expectedChecksum}`);
     }
   } else {
     if (isValid(normalized, checksum)) {
       entry.warmOk = true;
       entry.detail = 'checksum:match';
-      entry.servedChecksum = checksum;
       console.log(`🟢 [warm] ${entry.url} — checksum valid ${checksum}`);
     } else {
       entry.warmOk = false;
       entry.detail = 'checksum:mismatch';
-      entry.servedChecksum = checksum;
       console.log(`🔴 [warm] ${entry.url} — checksum invalid ${checksum}`);
     }
   }
@@ -102,7 +98,7 @@ async function main() {
   const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 
   const entries = report.results.map((r) => {
-    const isFilter = !r.url.endsWith('.json');
+    const isFilter = !r.url.endsWith('.json') && r.url.endsWith('.txt');
     const filterId = isFilter ? parseInt(r.url.match(/\/(\d+)\.txt$/)?.[1]) : null;
     return {
       ...r,
@@ -135,33 +131,13 @@ async function main() {
     }
   }
 
-  report.results = entries.map(({ isFilter, ...r }) => r);
+  report.results = entries.map(({ isFilter, expectedChecksum, ...r }) => r);
   report.updatedAt = new Date().toISOString();
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'), 'utf8');
 
   const warmOk = report.results.filter((r) => r.warmOk).length;
   const warmFailed = report.results.length - warmOk;
-
-  const warmReport = {
-    updatedAt: report.updatedAt,
-    total: report.results.length,
-    ok: warmOk,
-    failed: warmFailed,
-    results: report.results.map((r) => ({
-      url: r.url,
-      warmOk: r.warmOk,
-      detail: r.detail,
-      expectedChecksum: r.expectedChecksum ?? null,
-      servedChecksum: r.servedChecksum ?? null,
-    })),
-  };
-  fs.writeFileSync('public/jsdelivr-warm-report.json', JSON.stringify(warmReport, null, '\t'), 'utf8');
-
   console.log(`\n🟢 Warmed ${warmOk}/${report.results.length} — 🔴 ${warmFailed} unconfirmed`);
-  if (warmFailed) {
-    console.log('\n🔴 Unconfirmed URLs:');
-    report.results.filter((r) => !r.warmOk).forEach((r) => console.log(`   🔴 ${r.url} — ${r.detail}`));
-  }
 }
 
 main().catch((e) => { console.error(`🔴 ${e.message}`); process.exit(1); });
