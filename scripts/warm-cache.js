@@ -9,7 +9,7 @@ const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mi
 const purgePingJson = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const reportPath = 'public/jsdelivr-cache-report.json';
 const PURGE_WAIT = 10000;
-const RETRY_DELAY = 1000;
+const RETRY_DELAY = 2000;
 const RETRY_MAX = 6;
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
