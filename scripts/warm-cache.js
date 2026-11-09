@@ -8,7 +8,7 @@ const jsDelivrPingJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filt
 const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium';
 const purgePingJson = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const reportPath = 'public/jsdelivr-cache-report.json';
-const WAIT = 500;
+const PURGE_WAIT = 5000;
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
@@ -28,42 +28,55 @@ async function main() {
     .filter(f => f.endsWith('.txt'))
     .map(f => path.basename(f, '.txt'));
 
-  const pairs = [
-    [purgePingJson, jsDelivrPingJson],
-    [`${purgeBase}/filters.json`, jsDelivrFiltersJson],
-    ...ids.map(id => [`${purgeBase}/filters/${id}.txt`, `${jsDelivrBase}/${id}.txt`]),
+  const purgeUrls = [
+    purgePingJson,
+    `${purgeBase}/filters.json`,
+    ...ids.map(id => `${purgeBase}/filters/${id}.txt`),
+  ];
+  const cdnUrls = [
+    jsDelivrPingJson,
+    jsDelivrFiltersJson,
+    ...ids.map(id => `${jsDelivrBase}/${id}.txt`),
   ];
 
-  const results = [];
+  // Phase 1: purge all concurrently
+  console.log(`Purging ${purgeUrls.length} URLs...`);
+  const purgeResponses = await Promise.all(purgeUrls.map(request));
 
-  for (const [purgeUrl, cdnUrl] of pairs) {
-    const purge = await request(purgeUrl);
-    let purgeOk = false;
+  // Phase 2: wait for CDN propagation
+  await sleep(PURGE_WAIT);
+
+  // Phase 3: warm all concurrently
+  console.log(`Warming ${cdnUrls.length} URLs...`);
+  const warmResponses = await Promise.all(cdnUrls.map(request));
+
+  const results = cdnUrls.map((cdnUrl, i) => {
+    const purgeUrl = purgeUrls[i];
+    const purgeRes = purgeResponses[i];
+    const warmRes = warmResponses[i];
+
+    let throttled = null;
+    let providers = null;
     try {
-      const parsed = JSON.parse(purge.body);
+      const parsed = JSON.parse(purgeRes.body);
       const entry = parsed.paths[Object.keys(parsed.paths)[0]];
-      purgeOk = entry.throttled === false && !!entry.providers;
+      throttled = entry.throttled;
+      providers = entry.providers;
     } catch (_) {}
 
-    if (!purgeOk) {
-      console.log(`  🔴 purge failed: ${purgeUrl}`);
-      results.push({ url: cdnUrl, purge: 'failed', warm: null });
-      continue;
-    }
+    const purgeOk = throttled === false && providers !== null;
+    console.log(`  ${purgeOk && warmRes.status === 200 ? '🟢' : '🔴'} [purge:${purgeOk ? 'ok' : 'fail'}] [warm:${warmRes.status}] ${cdnUrl}`);
 
-    await sleep(WAIT);
-    const warm = await request(cdnUrl);
-    results.push({ url: cdnUrl, purge: 'ok', warm: warm.status });
-    console.log(`  ${warm.status === 200 ? '🟢' : '🔴'} [${warm.status}] ${cdnUrl}`);
-  }
+    return { url: cdnUrl, purgeUrl, throttled, providers, warm: warmRes.status };
+  });
 
-  const failed = results.filter(r => r.purge !== 'ok' || r.warm !== 200);
+  const failed = results.filter(r => r.throttled !== false || r.warm !== 200);
   if (failed.length) console.warn(`${failed.length} URLs did not complete successfully`);
 
   const report = {
     updatedAt: new Date().toISOString(),
     total: results.length,
-    ok: results.filter(r => r.purge === 'ok' && r.warm === 200).length,
+    ok: results.filter(r => r.throttled === false && r.warm === 200).length,
     failed: failed.length,
     results,
   };
