@@ -1,13 +1,17 @@
 {
-	"updatedAt": "2026-11-09T08:14:11.357Z",
+	"updatedAt": "2026-11-09T08:26:08.828Z",
 	"total": 89,
-	"ok": 86,
-	"failed": 3,
+	"ok": 85,
+	"failed": 4,
 	"results": [
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json",
-			"throttled": true,
+			"throttled": false,
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"warm": 200
 		},
 		{
@@ -108,7 +112,7 @@
 				"CF": true,
 				"FY": true
 			},
-			"warm": 200
+			"warm": 403
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/108.txt",
@@ -198,7 +202,7 @@
 				"CF": true,
 				"FY": true
 			},
-			"warm": 200
+			"warm": 403
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/119.txt",
@@ -348,7 +352,7 @@
 				"CF": true,
 				"FY": true
 			},
-			"warm": 200
+			"warm": 403
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/203.txt",
@@ -488,7 +492,7 @@
 				"CF": true,
 				"FY": true
 			},
-			"warm": 403
+			"warm": 200
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/224.txt",
@@ -658,7 +662,7 @@
 				"CF": true,
 				"FY": true
 			},
-			"warm": 403
+			"warm": 200
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/247.txt",
@@ -728,7 +732,7 @@
 				"CF": true,
 				"FY": true
 			},
-			"warm": 200
+			"warm": 403
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/254.txt",
