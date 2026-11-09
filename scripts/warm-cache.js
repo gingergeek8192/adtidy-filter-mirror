@@ -6,6 +6,9 @@ const BATCH_SIZE = 3;
 const BATCH_INTERVAL_MS = 6_000;
 const ROUND_WAIT_MS = 120_000;
 const MAX_ROUNDS = 5;
+const REPURGE_AFTER_ROUND = 3;
+
+const PURGE_BASE = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main';
 
 function normalize(text) {
   return {
@@ -33,7 +36,7 @@ async function fetchAndCheck(entry) {
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
 
   if (!entry.isFilter) {
-    if (entry.url.endsWith('ping.json')) {
+    if (entry.expectedPing) {
       const served = await r.json();
       const expected = entry.expectedPing;
       if (Date.parse(served.updatedAt) === Date.parse(expected.updatedAt) && Date.parse(served.nextUpdate) === Date.parse(expected.nextUpdate)) {
@@ -104,6 +107,24 @@ async function runWave(pending) {
   }
 }
 
+async function repurge(entries) {
+  const pending = entries.filter((e) => !e.warmOk && e.isFilter);
+  if (!pending.length) return;
+  console.log(`\n🟡 Re-purging ${pending.length} straggler URLs...`);
+  await Promise.all(
+    pending.map(async (entry) => {
+      const path = entry.url.replace('https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main', '');
+      try {
+        const r = await fetch(`${PURGE_BASE}${path}`);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        console.log(`🟢 [repurge] ${path}`);
+      } catch (e) {
+        console.log(`🔴 [repurge] ${path} — ${e.message}`);
+      }
+    })
+  );
+}
+
 async function main() {
   const { filters } = JSON.parse(fs.readFileSync(cfg.outputFiltersJson, 'utf8'));
   const checksumMap = Object.fromEntries(filters.map((f) => [f.filterId, f.checksum]));
@@ -129,6 +150,7 @@ async function main() {
     const pending = entries.filter((e) => !e.warmOk);
     if (!pending.length) break;
 
+    if (round === REPURGE_AFTER_ROUND) await repurge(entries);
     console.log(`\n🟡 Round ${round}/${MAX_ROUNDS} — warming ${pending.length} URLs`);
     await runWave(pending);
 
@@ -137,6 +159,7 @@ async function main() {
     console.log(`\n🟢 Round ${round} done — ${confirmed}/${entries.length} confirmed 🔴 ${remaining} remaining`);
 
     if (!remaining) break;
+
     if (round < MAX_ROUNDS) {
       process.stdout.write(`⏳ Waiting ${ROUND_WAIT_MS / 1000}s`);
       for (let s = 0; s < ROUND_WAIT_MS / 1000; s++) {
@@ -154,6 +177,10 @@ async function main() {
   const warmOk = report.results.filter((r) => r.warmOk).length;
   const warmFailed = report.results.length - warmOk;
   console.log(`\n🟢 Warmed ${warmOk}/${report.results.length} — 🔴 ${warmFailed} unconfirmed`);
+  if (warmFailed) {
+    console.log('\n🔴 Unconfirmed URLs:');
+    report.results.filter((r) => !r.warmOk).forEach((r) => console.log(`   🔴 ${r.url} — ${r.detail}`));
+  }
 }
 
 main().catch((e) => { console.error(`🔴 ${e.message}`); process.exit(1); });

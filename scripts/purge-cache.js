@@ -32,7 +32,7 @@ async function main() {
       const purgeUrl = `${PURGE_BASE}${path}`;
       try {
         const data = await purge(path);
-        const pathData = data.paths?.[path] ?? {};
+        const pathData = Object.values(data.paths ?? {})[0] ?? {};
         const throttled = pathData.throttled ?? false;
         const providers = pathData.providers ?? {};
         const providerStr = Object.entries(providers).map(([k, v]) => `${k}:${v ? '✓' : '✗'}`).join(' ');
