@@ -8,18 +8,16 @@ const jsDelivrPingJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filt
 const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium';
 const purgePingJson = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const reportPath = 'public/jsdelivr-cache-report.json';
+const WAIT = 500;
 
-function ping(url, retries = 3) {
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+function get(url) {
   return new Promise((resolve) => {
     const req = https.get(url, (res) => {
       res.resume();
-      if (res.statusCode !== 200 && retries > 0)
-        return resolve(ping(url, retries - 1));
       resolve({ url, status: res.statusCode });
-    }).on('error', (e) => {
-      if (retries > 0) return resolve(ping(url, retries - 1));
-      resolve({ url, status: e.message });
-    });
+    }).on('error', (e) => resolve({ url, status: e.message }));
     req.setTimeout(15000, () => { req.destroy(); resolve({ url, status: 'timeout' }); });
   });
 }
@@ -29,26 +27,24 @@ async function main() {
     .filter(f => f.endsWith('.txt'))
     .map(f => path.basename(f, '.txt'));
 
-  const cdnUrls = [
-    jsDelivrPingJson,
-    jsDelivrFiltersJson,
-    ...ids.map(id => `${jsDelivrBase}/${id}.txt`),
+  const pairs = [
+    [purgePingJson, jsDelivrPingJson],
+    [`${purgeBase}/filters.json`, jsDelivrFiltersJson],
+    ...ids.map(id => [`${purgeBase}/filters/${id}.txt`, `${jsDelivrBase}/${id}.txt`]),
   ];
 
-  const purgeUrls = [
-    purgePingJson,
-    `${purgeBase}/filters.json`,
-    ...ids.map(id => `${purgeBase}/filters/${id}.txt`),
-  ];
+  const results = [];
 
-  console.log(`Purging ${purgeUrls.length} jsDelivr URLs...`);
-  await Promise.all(purgeUrls.map(ping));
-
-  console.log(`Warming ${cdnUrls.length} jsDelivr URLs...`);
-  const results = await Promise.all(cdnUrls.map(ping));
+  for (const [purgeUrl, cdnUrl] of pairs) {
+    await get(purgeUrl);
+    await sleep(WAIT);
+    const result = await get(cdnUrl);
+    await sleep(WAIT);
+    results.push(result);
+    console.log(`  ${result.status === 200 ? '🟢' : '🔴'} [${result.status}] ${cdnUrl}`);
+  }
 
   const failed = results.filter(r => r.status !== 200);
-  results.forEach(r => console.log(`  ${r.status === 200 ? '🟢' : r.status === 403 ? '🟡' : '🔴'} [${r.status}] ${r.url}`));
   if (failed.length) console.warn(`${failed.length} URLs did not return 200`);
 
   const report = {
