@@ -1,8 +1,8 @@
 {
-	"updatedAt": "2026-11-09T09:19:00.243Z",
+	"updatedAt": "2026-11-09T09:30:36.520Z",
 	"total": 89,
-	"ok": 83,
-	"failed": 6,
+	"ok": 84,
+	"failed": 5,
 	"results": [
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json",
@@ -331,8 +331,8 @@
 				"CF": true,
 				"FY": true
 			},
-			"warmOk": false,
-			"detail": "checksum:mismatch(got:G+7PwmAkpNgD9ilv87o89w,want:K8qcShRqiMzXh+ANT0b48A)"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/19.txt",
@@ -343,7 +343,7 @@
 				"FY": true
 			},
 			"warmOk": false,
-			"detail": "checksum:mismatch(got:g+E9h1owfOCLnmpooIzj1w,want:19tXePgH/u69SyDiJrqBRQ)"
+			"detail": "checksum:mismatch(got:dcEFVuMam0XHPhdz0aMKCA,want:19tXePgH/u69SyDiJrqBRQ)"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
