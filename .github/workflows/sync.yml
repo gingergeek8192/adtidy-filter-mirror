@@ -31,23 +31,18 @@ jobs:
           git add public/
           git diff --cached --quiet || (git commit -m "chore: sync adtidy filters" && git push)
 
-      - name: Warm jsDelivr cache
+      - name: Purge and warm jsDelivr cache
         run: node scripts/warm-cache.js
+
+      - name: Re-purge and warm jsDelivr cache
+        run: |
+          sleep 120
+          node scripts/warm-cache.js
 
       - name: Commit cache report
         run: |
           git add public/jsdelivr-cache-report.json
           git diff --cached --quiet || (git commit -m "chore: update jsdelivr cache report" && git push)
-
-      - name: Re-warm jsDelivr cache
-        run: |
-          sleep 120
-          node scripts/warm-cache.js
-
-      - name: Commit re-warm cache report
-        run: |
-          git add public/jsdelivr-cache-report.json
-          git diff --cached --quiet || (git commit -m "chore: update jsdelivr cache report (re-warm)" && git push)
 
       - name: Mirror to GitLab
         run: |
