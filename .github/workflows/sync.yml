@@ -22,7 +22,7 @@ jobs:
         run: node scripts/sync.js
 
       - name: Update ping
-        run: printf '{"ok":true,"updatedAt":"%s"}\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > public/ping.json
+        run: printf '{"ok":true,"updatedAt":"%s","nextUpdate":"%s"}\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$(date -u -d '+13 hours' +%Y-%m-%dT%H:%M:%SZ)" > public/ping.json
 
       - name: Commit changes
         run: |
