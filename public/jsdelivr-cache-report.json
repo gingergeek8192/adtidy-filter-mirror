@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-11-09T17:03:56.995Z",
+	"updatedAt": "2026-11-09T17:22:58.636Z",
 	"total": 89,
 	"ok": 89,
 	"failed": 0,
@@ -19,8 +19,8 @@
 			"throttled": false,
 			"providers": {},
 			"ok": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/10.txt",
@@ -253,8 +253,8 @@
 			"throttled": false,
 			"providers": {},
 			"ok": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/18.txt",
@@ -739,8 +739,8 @@
 			"throttled": false,
 			"providers": {},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/4.txt",
@@ -748,8 +748,8 @@
 			"throttled": false,
 			"providers": {},
 			"ok": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/5.txt",
