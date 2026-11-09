@@ -9,8 +9,20 @@ const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mi
 const purgePingJson = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const reportPath = 'public/jsdelivr-cache-report.json';
 const PURGE_WAIT = 10000;
+const RETRY_DELAY = 1000;
+const RETRY_MAX = 6;
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+async function fetchWithRetry(url, storedChecksum, attempt = 1) {
+  const res = await request(url);
+  const bodyChecksum = res.body?.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
+  if (storedChecksum && bodyChecksum && bodyChecksum !== storedChecksum && attempt < RETRY_MAX) {
+    await sleep(RETRY_DELAY);
+    return fetchWithRetry(url, storedChecksum, attempt + 1);
+  }
+  return { body: res.body, bodyChecksum };
+}
 
 function request(url) {
   return new Promise((resolve) => {
@@ -76,20 +88,13 @@ async function main() {
     const url = isFilter ? entry.url : entry;
     const id = isFilter ? entry.id : null;
 
-    let res = await request(url);
-
     let warmOk = false;
     let detail = 'fail';
 
-    if (res.body) {
-      if (isFilter) {
-        const storedChecksum = checksumMap.get(id);
-        let bodyChecksum = res.body.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
-        if (storedChecksum && bodyChecksum && bodyChecksum !== storedChecksum) {
-          await sleep(2000);
-          res = await request(url);
-          bodyChecksum = res.body?.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
-        }
+    if (isFilter) {
+      const storedChecksum = checksumMap.get(id);
+      const { body, bodyChecksum } = await fetchWithRetry(url, storedChecksum);
+      if (body) {
         if (storedChecksum && bodyChecksum) {
           warmOk = bodyChecksum === storedChecksum;
           detail = warmOk ? 'checksum:match' : `checksum:mismatch(got:${bodyChecksum},want:${storedChecksum})`;
@@ -97,10 +102,10 @@ async function main() {
           warmOk = true;
           detail = storedChecksum ? 'no-checksum-in-response' : 'no-stored-checksum';
         }
-      } else {
-        warmOk = true;
-        detail = 'non-filter';
       }
+    } else {
+      const res = await request(url);
+      if (res.body) { warmOk = true; detail = 'non-filter'; }
     }
 
     const ok = purgeOk && warmOk;
