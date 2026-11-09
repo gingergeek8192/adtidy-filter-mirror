@@ -23,10 +23,12 @@ async function main() {
   const res = await fetch(cfg.sourceFiltersJson);
   if (!res.ok) throw new Error(`Failed to fetch filters.json: ${res.status}`);
   const { filters } = await res.json();
+  console.log(`🟢 Fetched filters.json — ${filters.filter(f => !f.deprecated).length} non-deprecated filters`);
 
   fs.mkdirSync(cfg.outputDir, { recursive: true });
 
   const results = [];
+  let skipped = 0;
 
   await Promise.all(
     filters
@@ -40,17 +42,22 @@ async function main() {
           const r = await fetch(url);
           if (!r.ok) throw new Error(`HTTP ${r.status}`);
           text = await r.text();
+          console.log(`🟢 [${f.filterId}] fetched`);
         } catch (e) {
-          console.warn(`[skip] ${f.filterId}: fetch error — ${e.message}`);
+          console.log(`🔴 [${f.filterId}] fetch failed — ${e.message}`);
+          skipped++;
           return;
         }
 
         const { checksum, normalized } = normalize(text);
 
         if (checksum && !isValid(normalized, checksum)) {
-          console.warn(`[skip] ${f.filterId}: checksum mismatch`);
+          console.log(`🔴 [${f.filterId}] checksum mismatch — expected ${checksum}`);
+          skipped++;
           return;
         }
+
+        console.log(`🟢 [${f.filterId}] checksum valid — ${checksum ?? 'no checksum in file'}`);
 
         fs.writeFileSync(dest, text, 'utf8');
 
@@ -68,9 +75,8 @@ async function main() {
 
   results.sort((a, b) => a.filterId - b.filterId);
 
-  const out = { filters: results };
-  fs.writeFileSync(cfg.outputFiltersJson, JSON.stringify(out, null, '\t'), 'utf8');
-  console.log(`Synced ${results.length} filters`);
+  fs.writeFileSync(cfg.outputFiltersJson, JSON.stringify({ filters: results }, null, '\t'), 'utf8');
+  console.log(`\n🟢 Synced ${results.length} filters — 🔴 ${skipped} skipped`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => { console.error(`🔴 ${e.message}`); process.exit(1); });

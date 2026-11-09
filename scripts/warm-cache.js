@@ -35,6 +35,7 @@ async function fetchAndCheck(entry) {
   if (!entry.isFilter) {
     entry.warmOk = true;
     entry.detail = 'non-filter';
+    console.log(`🟢 [warm] ${entry.url} — non-filter ok`);
     return;
   }
 
@@ -44,6 +45,7 @@ async function fetchAndCheck(entry) {
   if (!checksum) {
     entry.warmOk = false;
     entry.detail = 'no-checksum-in-response';
+    console.log(`🟡 [warm] ${entry.url} — no checksum in response (jsDelivr not ready)`);
     return;
   }
 
@@ -51,15 +53,21 @@ async function fetchAndCheck(entry) {
     if (checksum === entry.expectedChecksum && isValid(normalized, checksum)) {
       entry.warmOk = true;
       entry.detail = 'checksum:match';
+      console.log(`🟢 [warm] ${entry.url} — checksum match ${checksum}`);
     } else {
+      entry.warmOk = false;
       entry.detail = 'checksum:mismatch';
+      console.log(`🔴 [warm] ${entry.url} — checksum mismatch served:${checksum} expected:${entry.expectedChecksum}`);
     }
   } else {
     if (isValid(normalized, checksum)) {
       entry.warmOk = true;
       entry.detail = 'checksum:match';
+      console.log(`🟢 [warm] ${entry.url} — checksum valid ${checksum}`);
     } else {
+      entry.warmOk = false;
       entry.detail = 'checksum:mismatch';
+      console.log(`🔴 [warm] ${entry.url} — checksum invalid ${checksum}`);
     }
   }
 }
@@ -72,7 +80,9 @@ async function runWave(pending) {
         try {
           await fetchAndCheck(entry);
         } catch (e) {
+          entry.warmOk = false;
           entry.detail = `error: ${e.message}`;
+          console.log(`🔴 [warm] ${entry.url} — ${e.message}`);
         }
       })
     );
@@ -82,9 +92,7 @@ async function runWave(pending) {
 
 async function main() {
   const { filters } = JSON.parse(fs.readFileSync(cfg.outputFiltersJson, 'utf8'));
-  const checksumMap = Object.fromEntries(
-    filters.map((f) => [f.filterId, f.checksum])
-  );
+  const checksumMap = Object.fromEntries(filters.map((f) => [f.filterId, f.checksum]));
 
   const reportPath = 'public/jsdelivr-cache-report.json';
   const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
@@ -105,16 +113,21 @@ async function main() {
     const pending = entries.filter((e) => !e.warmOk);
     if (!pending.length) break;
 
-    console.log(`Round ${round}: warming ${pending.length} URLs`);
+    console.log(`\n🟡 Round ${round}/${MAX_ROUNDS} — warming ${pending.length} URLs`);
     await runWave(pending);
 
     const confirmed = entries.filter((e) => e.warmOk).length;
-    console.log(`Round ${round} done: ${confirmed}/${entries.length} confirmed`);
+    const remaining = entries.length - confirmed;
+    console.log(`\n🟢 Round ${round} done — ${confirmed}/${entries.length} confirmed 🔴 ${remaining} remaining`);
 
-    if (entries.every((e) => e.warmOk)) break;
+    if (!remaining) break;
     if (round < MAX_ROUNDS) {
-      console.log(`Waiting ${ROUND_WAIT_MS / 1000}s before next round...`);
-      await sleep(ROUND_WAIT_MS);
+      process.stdout.write(`⏳ Waiting ${ROUND_WAIT_MS / 1000}s`);
+      for (let s = 0; s < ROUND_WAIT_MS / 1000; s++) {
+        await sleep(1000);
+        process.stdout.write('.');
+      }
+      process.stdout.write('\n');
     }
   }
 
@@ -123,7 +136,26 @@ async function main() {
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'), 'utf8');
 
   const warmOk = report.results.filter((r) => r.warmOk).length;
-  console.log(`Warmed ${warmOk}/${report.results.length} URLs`);
+  const warmFailed = report.results.length - warmOk;
+
+  const warmReport = {
+    updatedAt: report.updatedAt,
+    total: report.results.length,
+    ok: warmOk,
+    failed: warmFailed,
+    results: report.results.map((r) => ({
+      url: r.url,
+      warmOk: r.warmOk,
+      detail: r.detail,
+    })),
+  };
+  fs.writeFileSync('public/jsdelivr-warm-report.json', JSON.stringify(warmReport, null, '\t'), 'utf8');
+
+  console.log(`\n🟢 Warmed ${warmOk}/${report.results.length} — 🔴 ${warmFailed} unconfirmed`);
+  if (warmFailed) {
+    console.log('\n🔴 Unconfirmed URLs:');
+    report.results.filter((r) => !r.warmOk).forEach((r) => console.log(`   🔴 ${r.url} — ${r.detail}`));
+  }
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => { console.error(`🔴 ${e.message}`); process.exit(1); });

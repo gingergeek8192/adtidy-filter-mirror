@@ -52,5 +52,5 @@ jobs:
 
       - name: Commit cache report
         run: |
-          git add public/jsdelivr-cache-report.json
+          git add public/jsdelivr-cache-report.json public/jsdelivr-warm-report.json
           git diff --cached --quiet || (git commit -m "chore: update jsdelivr cache report" && git push)

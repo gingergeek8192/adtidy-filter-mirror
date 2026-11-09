@@ -7,7 +7,7 @@ const CDN_BASE = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirro
 async function purge(path) {
   const purgeUrl = `${PURGE_BASE}${path}`;
   const r = await fetch(purgeUrl);
-  if (!r.ok) throw new Error(`Purge HTTP ${r.status} for ${purgeUrl}`);
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return r.json();
 }
 
@@ -20,6 +20,8 @@ async function main() {
     ...filters.map((f) => `/public/extension/chromium/filters/${f.filterId}.txt`),
   ];
 
+  console.log(`🟡 Purging ${paths.length} jsDelivr URLs...`);
+
   const results = [];
   let ok = 0;
   let failed = 0;
@@ -31,16 +33,15 @@ async function main() {
       try {
         const data = await purge(path);
         const pathData = data.paths?.[path] ?? {};
-        results.push({
-          url: cdnUrl,
-          purgeUrl,
-          throttled: pathData.throttled ?? false,
-          providers: pathData.providers ?? {},
-          ok: true,
-        });
+        const throttled = pathData.throttled ?? false;
+        const providers = pathData.providers ?? {};
+        const providerStr = Object.entries(providers).map(([k, v]) => `${k}:${v ? '✓' : '✗'}`).join(' ');
+        const icon = throttled ? '🟡' : '🟢';
+        console.log(`${icon} [purge] ${path} — throttled:${throttled} providers:[${providerStr}]`);
+        results.push({ url: cdnUrl, purgeUrl, throttled, providers, ok: true });
         ok++;
       } catch (e) {
-        console.warn(`[purge fail] ${path}: ${e.message}`);
+        console.log(`🔴 [purge] ${path} — ${e.message}`);
         results.push({ url: cdnUrl, purgeUrl, ok: false, error: e.message });
         failed++;
       }
@@ -58,7 +59,7 @@ async function main() {
   };
 
   fs.writeFileSync('public/jsdelivr-cache-report.json', JSON.stringify(report, null, '\t'), 'utf8');
-  console.log(`Purged ${ok}/${results.length} URLs`);
+  console.log(`\n🟢 Purged ${ok}/${results.length} — 🔴 ${failed} failed`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => { console.error(`🔴 ${e.message}`); process.exit(1); });
