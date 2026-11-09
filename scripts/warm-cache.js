@@ -4,124 +4,107 @@ const path = require('path');
 const { jsDelivrBase, outputDir, outputFiltersJson } = require('./config');
 
 const jsDelivrFiltersJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json';
-const jsDelivrPingJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium';
-const purgePingJson = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json';
 const reportPath = 'public/jsdelivr-cache-report.json';
-const PURGE_WAIT = 10000;
-const RETRY_DELAY = 2000;
-const RETRY_MAX = 6;
 
-const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const AFTER_PURGE_WAIT  = 60_000;   // 1 minute after purge before first check
+const BETWEEN_ROUNDS    = 5 * 60_000; // 5 minutes between retry rounds
+const GIVE_UP_AFTER     = 5 * 60_000; // give up 5 minutes after first check starts
+const ROUND_REQUESTS    = 3;          // hit each URL 3 times per round, 10s apart
 
-async function fetchWithRetry(url, storedChecksum, attempt = 1) {
-  const res = await request(url);
-  const bodyChecksum = res.body?.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
-  if (storedChecksum && bodyChecksum && bodyChecksum !== storedChecksum && attempt < RETRY_MAX) {
-    await sleep(RETRY_DELAY);
-    return fetchWithRetry(url, storedChecksum, attempt + 1);
-  }
-  return { body: res.body, bodyChecksum };
-}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-function request(url) {
-  return new Promise((resolve) => {
-    const req = https.get(url, (res) => {
+function get(url) {
+  return new Promise(resolve => {
+    const req = https.get(url, res => {
       const chunks = [];
       res.on('data', c => chunks.push(c));
-      res.on('end', () => resolve({ url, body: Buffer.concat(chunks).toString() }));
-    }).on('error', (e) => resolve({ url, body: null }));
-    req.setTimeout(15000, () => { req.destroy(); resolve({ url, body: null }); });
+      res.on('end', () => resolve(Buffer.concat(chunks).toString()));
+    }).on('error', () => resolve(null));
+    req.setTimeout(20000, () => { req.destroy(); resolve(null); });
   });
 }
 
-async function main() {
-  const ids = fs.readdirSync(outputDir)
-    .filter(f => f.endsWith('.txt'))
-    .map(f => path.basename(f, '.txt'));
+function extractChecksum(body) {
+  return body?.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
+}
 
+async function purgeAll(purgeUrls) {
+  console.log(`\nPurging ${purgeUrls.length} URLs (once)...`);
+  const responses = await Promise.all(purgeUrls.map(url => get(url)));
+  let ok = 0, throttled = 0, failed = 0;
+  responses.forEach((body, i) => {
+    try {
+      const parsed = JSON.parse(body);
+      const entry = parsed.paths[Object.keys(parsed.paths)[0]];
+      if (entry.throttled === false && entry.providers) { ok++; }
+      else { throttled++; console.warn(`  🟡 throttled: ${purgeUrls[i]}`); }
+    } catch (_) { failed++; console.warn(`  🔴 failed: ${purgeUrls[i]}`); }
+  });
+  console.log(`  purge: ${ok} ok, ${throttled} throttled, ${failed} failed`);
+}
+
+// Hit each URL 3 times, 10s apart, return last checksum seen
+async function probeUrl(url) {
+  let last = null;
+  for (let i = 0; i < ROUND_REQUESTS; i++) {
+    if (i > 0) await sleep(10_000);
+    const body = await get(url);
+    const cs = extractChecksum(body);
+    if (cs) last = cs;
+  }
+  return last;
+}
+
+async function checkRound(filters) {
+  console.log(`\n  Probing ${filters.length} filter URLs (${ROUND_REQUESTS}x each, 10s apart)...`);
+  const probes = await Promise.all(filters.map(f => probeUrl(`${jsDelivrBase}/${f.filterId}.txt`)));
+  let matched = 0, mismatched = 0;
+  probes.forEach((got, i) => {
+    const want = filters[i].checksum;
+    if (got === want) { matched++; }
+    else { mismatched++; console.warn(`  🔴 filter ${filters[i].filterId}: want ${want} got ${got}`); }
+  });
+  console.log(`  round result: ${matched} match, ${mismatched} mismatch`);
+  return mismatched === 0;
+}
+
+async function main() {
   const { filters } = JSON.parse(fs.readFileSync(outputFiltersJson, 'utf8'));
-  const checksumMap = new Map(filters.filter(f => f.checksum).map(f => [String(f.filterId), f.checksum]));
+  const ids = fs.readdirSync(outputDir).filter(f => f.endsWith('.txt')).map(f => path.basename(f, '.txt'));
 
   const purgeUrls = [
-    purgePingJson,
     `${purgeBase}/filters.json`,
     ...ids.map(id => `${purgeBase}/filters/${id}.txt`),
   ];
 
-  const cdnUrls = [
-    jsDelivrPingJson,
-    jsDelivrFiltersJson,
-    ...ids.map(id => ({ id, url: `${jsDelivrBase}/${id}.txt` })),
-  ];
+  await purgeAll(purgeUrls);
 
-  // Step 1: fire all purge requests concurrently
-  console.log(`Purging ${purgeUrls.length} URLs concurrently...`);
-  const purgeResponses = await Promise.allSettled(purgeUrls.map(url => request(url)));
+  console.log(`\nWaiting ${AFTER_PURGE_WAIT / 1000}s after purge...`);
+  await sleep(AFTER_PURGE_WAIT);
 
-  // Step 2: parse each purge response object
-  const purgeResults = purgeResponses.map((r, i) => {
-    let throttled = null, providers = null;
-    try {
-      const parsed = JSON.parse(r.value.body);
-      const entry = parsed.paths[Object.keys(parsed.paths)[0]];
-      throttled = entry.throttled;
-      providers = entry.providers;
-    } catch (_) {}
-    const purgeOk = throttled === false && providers !== null;
-    console.log(`  ${purgeOk ? '🟢' : '🔴'} [purge:${purgeOk ? 'ok' : 'fail'}] ${purgeUrls[i]}`);
-    return { throttled, providers, purgeOk };
-  });
+  const deadline = Date.now() + GIVE_UP_AFTER;
+  let round = 1;
+  let allMatch = false;
 
-  // Step 3: sleep
-  console.log(`\nWaiting ${PURGE_WAIT / 1000}s for CDN propagation...`);
-  await sleep(PURGE_WAIT);
-
-  // Step 4: request each file sequentially, validate checksum
-  console.log(`\nWarming ${cdnUrls.length} URLs sequentially...`);
-  const results = [];
-
-  for (let i = 0; i < cdnUrls.length; i++) {
-    const entry = cdnUrls[i];
-    const { throttled, providers, purgeOk } = purgeResults[i];
-    const isFilter = typeof entry === 'object';
-    const url = isFilter ? entry.url : entry;
-    const id = isFilter ? entry.id : null;
-
-    let warmOk = false;
-    let detail = 'fail';
-
-    if (isFilter) {
-      const storedChecksum = checksumMap.get(id);
-      const { body, bodyChecksum } = await fetchWithRetry(url, storedChecksum);
-      if (body) {
-        if (storedChecksum && bodyChecksum) {
-          warmOk = bodyChecksum === storedChecksum;
-          detail = warmOk ? 'checksum:match' : `checksum:mismatch(got:${bodyChecksum},want:${storedChecksum})`;
-        } else {
-          warmOk = true;
-          detail = storedChecksum ? 'no-checksum-in-response' : 'no-stored-checksum';
-        }
-      }
-    } else {
-      const res = await request(url);
-      if (res.body) { warmOk = true; detail = 'non-filter'; }
-    }
-
-    const ok = purgeOk && warmOk;
-    console.log(`  ${ok ? '🟢' : '🔴'} [warm:${detail}] ${url}`);
-    results.push({ url, purgeUrl: purgeUrls[i], throttled, providers, warmOk, detail });
+  while (true) {
+    console.log(`\n=== Warm check round ${round} ===`);
+    allMatch = await checkRound(filters);
+    if (allMatch) { console.log('✅ All jsDelivr checksums match AdTidy checksums.'); break; }
+    if (Date.now() >= deadline) { console.warn('⚠️  Give-up deadline reached — continuing anyway.'); break; }
+    console.log(`Waiting ${BETWEEN_ROUNDS / 1000}s before next round...`);
+    await sleep(BETWEEN_ROUNDS);
+    round++;
   }
 
   const report = {
     updatedAt: new Date().toISOString(),
-    total: results.length,
-    ok: results.filter(r => r.throttled === false && r.warmOk).length,
-    failed: results.filter(r => r.throttled !== false || !r.warmOk).length,
-    results,
+    allMatch,
+    rounds: round,
+    total: filters.length,
   };
   fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'));
   console.log(`\nReport written to ${reportPath}`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch(e => { console.error(e); process.exit(1); });
