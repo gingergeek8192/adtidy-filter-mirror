@@ -1,110 +1,129 @@
-const https = require('https');
 const fs = require('fs');
-const path = require('path');
-const { jsDelivrBase, outputDir, outputFiltersJson } = require('./config');
+const crypto = require('crypto');
+const cfg = require('./config');
 
-const jsDelivrFiltersJson = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json';
-const purgeBase = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium';
-const reportPath = 'public/jsdelivr-cache-report.json';
+const BATCH_SIZE = 3;
+const BATCH_INTERVAL_MS = 6_000;
+const ROUND_WAIT_MS = 120_000;
+const MAX_ROUNDS = 5;
 
-const AFTER_PURGE_WAIT  = 60_000;   // 1 minute after purge before first check
-const BETWEEN_ROUNDS    = 5 * 60_000; // 5 minutes between retry rounds
-const GIVE_UP_AFTER     = 5 * 60_000; // give up 5 minutes after first check starts
-const ROUND_REQUESTS    = 3;          // hit each URL 3 times per round, 10s apart
-
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-function get(url) {
-  return new Promise(resolve => {
-    const req = https.get(url, res => {
-      const chunks = [];
-      res.on('data', c => chunks.push(c));
-      res.on('end', () => resolve(Buffer.concat(chunks).toString()));
-    }).on('error', () => resolve(null));
-    req.setTimeout(20000, () => { req.destroy(); resolve(null); });
-  });
+function normalize(text) {
+  return {
+    checksum: text.match(/^!\s*Checksum:\s*(\S+)/m)?.[1],
+    normalized: text
+      .replace(/^!\s*Checksum:.*(?:\r?\n|$)/m, '')
+      .replace(/\r/g, '\n')
+      .replace(/\n+/g, '\n'),
+  };
 }
 
-function extractChecksum(body) {
-  return body?.match(/^!\s*Checksum:\s*(\S+)/m)?.[1] ?? null;
+function isValid(normalized, checksum) {
+  return (
+    crypto.createHash('md5').update(normalized, 'utf8').digest('base64').replace(/=+$/, '') ===
+    checksum
+  );
 }
 
-async function purgeAll(purgeUrls) {
-  console.log(`\nPurging ${purgeUrls.length} URLs (once)...`);
-  const responses = await Promise.all(purgeUrls.map(url => get(url)));
-  let ok = 0, throttled = 0, failed = 0;
-  responses.forEach((body, i) => {
-    try {
-      const parsed = JSON.parse(body);
-      const entry = parsed.paths[Object.keys(parsed.paths)[0]];
-      if (entry.throttled === false && entry.providers) { ok++; }
-      else { throttled++; console.warn(`  🟡 throttled: ${purgeUrls[i]}`); }
-    } catch (_) { failed++; console.warn(`  🔴 failed: ${purgeUrls[i]}`); }
-  });
-  console.log(`  purge: ${ok} ok, ${throttled} throttled, ${failed} failed`);
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
 }
 
-// Hit each URL 3 times, 10s apart, return last checksum seen
-async function probeUrl(url) {
-  let last = null;
-  for (let i = 0; i < ROUND_REQUESTS; i++) {
-    if (i > 0) await sleep(10_000);
-    const body = await get(url);
-    const cs = extractChecksum(body);
-    if (cs) last = cs;
+async function fetchAndCheck(entry) {
+  const r = await fetch(entry.url);
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+
+  if (!entry.isFilter) {
+    entry.warmOk = true;
+    entry.detail = 'non-filter';
+    return;
   }
-  return last;
+
+  const text = await r.text();
+  const { checksum, normalized } = normalize(text);
+
+  if (!checksum) {
+    entry.warmOk = false;
+    entry.detail = 'no-checksum-in-response';
+    return;
+  }
+
+  if (entry.expectedChecksum) {
+    if (checksum === entry.expectedChecksum && isValid(normalized, checksum)) {
+      entry.warmOk = true;
+      entry.detail = 'checksum:match';
+    } else {
+      entry.detail = 'checksum:mismatch';
+    }
+  } else {
+    if (isValid(normalized, checksum)) {
+      entry.warmOk = true;
+      entry.detail = 'checksum:match';
+    } else {
+      entry.detail = 'checksum:mismatch';
+    }
+  }
 }
 
-async function checkRound(filters) {
-  console.log(`\n  Probing ${filters.length} filter URLs (${ROUND_REQUESTS}x each, 10s apart)...`);
-  const probes = await Promise.all(filters.map(f => probeUrl(`${jsDelivrBase}/${f.filterId}.txt`)));
-  let matched = 0, mismatched = 0;
-  probes.forEach((got, i) => {
-    const want = filters[i].checksum;
-    if (got === want) { matched++; }
-    else { mismatched++; console.warn(`  🔴 filter ${filters[i].filterId}: want ${want} got ${got}`); }
-  });
-  console.log(`  round result: ${matched} match, ${mismatched} mismatch`);
-  return mismatched === 0;
+async function runWave(pending) {
+  for (let i = 0; i < pending.length; i += BATCH_SIZE) {
+    const batch = pending.slice(i, i + BATCH_SIZE);
+    await Promise.all(
+      batch.map(async (entry) => {
+        try {
+          await fetchAndCheck(entry);
+        } catch (e) {
+          entry.detail = `error: ${e.message}`;
+        }
+      })
+    );
+    if (i + BATCH_SIZE < pending.length) await sleep(BATCH_INTERVAL_MS);
+  }
 }
 
 async function main() {
-  const { filters } = JSON.parse(fs.readFileSync(outputFiltersJson, 'utf8'));
-  const ids = fs.readdirSync(outputDir).filter(f => f.endsWith('.txt')).map(f => path.basename(f, '.txt'));
+  const { filters } = JSON.parse(fs.readFileSync(cfg.outputFiltersJson, 'utf8'));
+  const checksumMap = Object.fromEntries(
+    filters.map((f) => [f.filterId, f.checksum])
+  );
 
-  const purgeUrls = [
-    `${purgeBase}/filters.json`,
-    ...ids.map(id => `${purgeBase}/filters/${id}.txt`),
-  ];
+  const reportPath = 'public/jsdelivr-cache-report.json';
+  const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 
-  await purgeAll(purgeUrls);
+  const entries = report.results.map((r) => {
+    const isFilter = r.url.includes('/filters/') && r.url.endsWith('.txt');
+    const filterId = isFilter ? parseInt(r.url.match(/\/(\d+)\.txt$/)?.[1]) : null;
+    return {
+      ...r,
+      isFilter,
+      expectedChecksum: checksumMap[filterId] ?? null,
+      warmOk: false,
+      detail: null,
+    };
+  });
 
-  console.log(`\nWaiting ${AFTER_PURGE_WAIT / 1000}s after purge...`);
-  await sleep(AFTER_PURGE_WAIT);
+  for (let round = 1; round <= MAX_ROUNDS; round++) {
+    const pending = entries.filter((e) => !e.warmOk);
+    if (!pending.length) break;
 
-  const deadline = Date.now() + GIVE_UP_AFTER;
-  let round = 1;
-  let allMatch = false;
+    console.log(`Round ${round}: warming ${pending.length} URLs`);
+    await runWave(pending);
 
-  while (true) {
-    console.log(`\n=== Warm check round ${round} ===`);
-    allMatch = await checkRound(filters);
-    if (allMatch) { console.log('✅ All jsDelivr checksums match AdTidy checksums.'); break; }
-    if (Date.now() >= deadline) { console.warn('⚠️  Give-up deadline reached — continuing anyway.'); break; }
-    console.log(`Waiting ${BETWEEN_ROUNDS / 1000}s before next round...`);
-    await sleep(BETWEEN_ROUNDS);
-    round++;
+    const confirmed = entries.filter((e) => e.warmOk).length;
+    console.log(`Round ${round} done: ${confirmed}/${entries.length} confirmed`);
+
+    if (entries.every((e) => e.warmOk)) break;
+    if (round < MAX_ROUNDS) {
+      console.log(`Waiting ${ROUND_WAIT_MS / 1000}s before next round...`);
+      await sleep(ROUND_WAIT_MS);
+    }
   }
 
-  const report = {
-    updatedAt: new Date().toISOString(),
-    allMatch,
-    rounds: round,
-    total: filters.length,
-  };
-  fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'));
-  console.log(`\nReport written to ${reportPath}`);
+  report.results = entries.map(({ isFilter, expectedChecksum, ...r }) => r);
+  report.updatedAt = new Date().toISOString();
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, '\t'), 'utf8');
+
+  const warmOk = report.results.filter((r) => r.warmOk).length;
+  console.log(`Warmed ${warmOk}/${report.results.length} URLs`);
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+main().catch((e) => { console.error(e); process.exit(1); });
