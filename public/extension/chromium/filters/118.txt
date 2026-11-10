@@ -1,16 +1,16 @@
-! Checksum: IUngjNRJCj4Zrat/dLnzQg
-! Diff-Path: ../patches/118/118-s-1794271733-14400.patch
+! Checksum: nFpKbTEYGStaABzqaIRlPg
+! Diff-Path: ../patches/118/118-s-1794314405-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.55
-! TimeUpdated: 2026-11-10T00:45:26+00:00
+! Version: 2.1.74.58
+! TimeUpdated: 2026-11-10T12:36:26+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202611100037
+! OriginalVersion: 202611101224
 ! Title: EasyPrivacy
-! Last modified: 10 Nov 2026 00:37 UTC
+! Last modified: 10 Nov 2026 12:24 UTC
 ! Expires: 4 days (update frequency)
-! Commit: 1efdc397f90f83f8914344c5431da40063047dd1
+! Commit: c15835a588ab1a64d2112172fb9f7836d375fa61
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -8647,6 +8647,7 @@ omni.soundestlink.com$image
 ||redbricksoap.com^
 ||redexecs.com^
 ||redmillgroup.com^
+||reelcombat.com^
 ||reflectpaint.com^
 ||refundradar.com^
 ||regenergize.com^

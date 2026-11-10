@@ -1,9 +1,9 @@
-! Checksum: rgxHF39lzxcjtcGffaITBg
-! Diff-Path: ../patches/11/11-s-1794229978-3600.patch
+! Checksum: EsFxHd6A4bFI3w11zT1e7A
+! Diff-Path: ../patches/11/11-s-1794327219-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.73.32
-! TimeUpdated: 2026-11-09T13:09:09+00:00
+! Version: 2.0.73.36
+! TimeUpdated: 2026-11-10T16:09:39+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1091,6 +1091,8 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! filmymeet.cc antiadblock
+filmymeet.cc###mobileAdblockModal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233611
 pornhex.com#%#//scriptlet('prevent-setTimeout', '/AdBlock/i')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231354
@@ -2509,6 +2511,12 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+biz.nv.ua##.main-wrapper > .container:has(> div.row > a[target="_blank"] picture)
+biz.nv.ua##section[data-type="advertising"]
+linkvertise.com##lv-ad-sense
+jprime.jp#$#body > .l-main { margin-top: -160px !important; }
+jprime.jp#$#body > .l-header { margin-top: -160px !important; }
+jprime.jp#$#body { padding-bottom: 0px !important; }
 remontka.pro##article > div[id^="rem_"]
 allsoft.ru##.main-mobile-banner
 winfuture.de###ab_google_336x280_35_35
@@ -8845,6 +8853,8 @@ livejournal.com##div[id^="billboard_mobile_"]
 ! END: Livejournal.com
 !
 !
+!+ NOT_OPTIMIZED
+dot.asahi.com##.article-inarticle-guide
 !+ NOT_OPTIMIZED
 heise.de##.ad-mobile-group-3
 !+ NOT_OPTIMIZED
