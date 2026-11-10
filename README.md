@@ -58,7 +58,6 @@ Each filter entry includes four URL fields pointing to the same current filter f
 - `mirrorUrl` — raw.githubusercontent.com
 - `jsDelivrUrl` — cdn.jsdelivr.net
 - `gitlabUrl` — gitlab.com
-- `gitlabUrl` — gitlab.com
 
 ```js
 	"filters": [
