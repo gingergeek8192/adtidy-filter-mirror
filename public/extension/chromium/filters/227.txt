@@ -1,9 +1,9 @@
-! Checksum: f40uq3OkKVSOREfeFyY1NA
-! Diff-Path: ../patches/227/227-s-1794242349-14400.patch
+! Checksum: oeJZpLbhB1NaF3xNYX75Kg
+! Diff-Path: ../patches/227/227-s-1794271735-14400.patch
 ! Title: filterslist-KO Classic filter list
 ! Description: The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.26.8
-! TimeUpdated: 2026-11-09T16:35:59+00:00
+! Version: 2.0.26.10
+! TimeUpdated: 2026-11-10T00:45:54+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: filterslists-KO classic (AdGuard)
