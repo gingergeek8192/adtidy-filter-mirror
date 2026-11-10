@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-11-09T20:07:53.898Z",
+	"updatedAt": "2026-11-10T05:50:28.819Z",
 	"total": 89,
 	"ok": 89,
 	"failed": 0,
@@ -8,7 +8,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "non-filter"
@@ -17,7 +20,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -26,7 +32,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/10.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/10.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -35,7 +44,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/101.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/101.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -44,7 +56,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/102.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/102.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -53,7 +68,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/103.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/103.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -62,7 +80,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/104.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/104.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -71,7 +92,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/105.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/105.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -80,7 +104,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/106.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/106.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -89,7 +116,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/107.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/107.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -98,7 +128,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/108.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/108.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -107,7 +140,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/109.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/109.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -116,7 +152,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/11.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/11.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -125,7 +164,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/110.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/110.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -134,7 +176,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/111.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/111.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -143,7 +188,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/112.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/112.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -152,7 +200,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/113.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/113.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -161,7 +212,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/114.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/114.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -170,7 +224,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/118.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/118.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -179,7 +236,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/119.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/119.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -188,7 +248,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/120.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/120.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -197,7 +260,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/121.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/121.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -206,7 +272,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/122.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/122.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -215,7 +284,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/123.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/123.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -224,7 +296,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/124.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/124.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -233,7 +308,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/13.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/13.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -242,7 +320,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/16.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/16.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -251,7 +332,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/17.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/17.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -260,7 +344,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/18.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/18.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -269,7 +356,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/19.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/19.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -278,7 +368,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -287,7 +380,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/20.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/20.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -296,7 +392,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/201.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/201.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -305,7 +404,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/202.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/202.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -314,7 +416,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/203.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/203.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -323,7 +428,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/204.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/204.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -332,7 +440,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/206.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/206.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -341,7 +452,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/207.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/207.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -350,7 +464,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/208.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/208.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -359,7 +476,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/21.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/21.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -368,7 +488,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/212.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/212.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -377,7 +500,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/214.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/214.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -386,7 +512,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/216.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/216.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -395,7 +524,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/217.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/217.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -404,7 +536,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/218.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/218.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -413,7 +548,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/22.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/22.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -422,7 +560,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/220.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/220.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -431,7 +572,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/221.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/221.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -440,7 +584,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/224.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/224.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -449,7 +596,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/225.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/225.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -458,7 +608,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/227.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/227.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -467,7 +620,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/228.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/228.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -476,7 +632,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/23.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/23.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -485,7 +644,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/231.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/231.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -494,7 +656,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/232.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/232.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -503,7 +668,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/233.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/233.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -512,7 +680,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/234.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/234.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -521,7 +692,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/235.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/235.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -530,7 +704,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/236.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/236.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -539,7 +716,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/237.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/237.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -548,7 +728,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/239.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/239.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -557,7 +740,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/241.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/241.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -566,7 +752,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/243.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/243.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -575,7 +764,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/244.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/244.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -584,16 +776,22 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/246.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/246.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/247.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/247.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -602,7 +800,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/249.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/249.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -611,7 +812,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/25.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/25.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -620,7 +824,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/250.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/250.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -629,7 +836,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/251.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/251.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -638,7 +848,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/252.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/252.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -647,7 +860,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/253.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/253.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -656,7 +872,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/254.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/254.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -665,7 +884,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/255.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/255.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -674,7 +896,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/256.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/256.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -683,7 +908,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/257.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/257.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -692,7 +920,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/258.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/258.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -701,7 +932,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/259.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/259.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -710,7 +944,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/26.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/26.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -719,7 +956,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/260.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/260.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -728,7 +968,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/27.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/27.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -737,7 +980,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/3.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/3.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -746,7 +992,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/4.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/4.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -755,7 +1004,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/5.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/5.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -764,7 +1016,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/6.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/6.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -773,16 +1028,22 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/7.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/7.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/8.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/8.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -791,7 +1052,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/9.txt",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/9.txt",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "checksum:match"
@@ -800,7 +1064,10 @@
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json",
 			"purgeUrl": "https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/ping.json",
 			"throttled": false,
-			"providers": {},
+			"providers": {
+				"CF": true,
+				"FY": true
+			},
 			"ok": true,
 			"warmOk": true,
 			"detail": "non-filter"
