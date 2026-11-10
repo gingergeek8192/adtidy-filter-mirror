@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-11-10T05:50:28.819Z",
+	"updatedAt": "2026-11-10T19:26:07.832Z",
 	"total": 89,
 	"ok": 89,
 	"failed": 0,
@@ -1069,8 +1069,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": true,
-			"detail": "non-filter"
+			"warmOk": false,
+			"detail": "ping:mismatch"
 		}
 	]
 }
