@@ -6,6 +6,15 @@ A GitHub-hosted mirror of AdTidy filter lists, synced every 12 hours, providing 
 
 Every 12 hours a workflow fetches all non-deprecated filter lists from the AdTidy CDN, verifies each file against its embedded MD5 checksum, and commits the results to this repo. Stores adtidy filters.json with additional fallback paths.
 
+1. Fetch all non-deprecated filters from AdTidy CDN and verify MD5 checksums
+2. Write `.txt` filter files and `filters.json` with mirror URLs
+3. Write `public/ping.json` with `updatedAt` and `nextUpdate` timestamps
+4. Commit and push `public/` if anything changed
+5. Purge stale jsDelivr CDN cache
+6. Mirror `filters.json`, `.txt` files, and `ping.json` to GitLab
+7. Pre-warm jsDelivr cache for all filter URLs
+8. Commit `public/jsdelivr-cache-report.json` if updated
+
 ## File layout
 
 ```
@@ -97,3 +106,17 @@ Each `.txt` filter file is verified before being stored using the MD5 `! Checksu
 ## jsDelivr cache warming
 
 After each sync and commit, the workflow hits every jsDelivr CDN URL (including `filters.json`) to pre-warm jsDelivr's cache before the next 12-hour cycle.
+
+## Workflow steps
+
+Runs on schedule (`0 */12 * * *`) and on manual dispatch:
+
+1. Checkout repo
+2. Setup Node.js 24
+3. Download filters — `node scripts/sync.js` fetches all non-deprecated filters from AdTidy CDN, verifies MD5 checksums, writes `.txt` files and `filters.json`
+4. Update ping — writes `public/ping.json` with `updatedAt` and `nextUpdate` timestamps
+5. Commit changes — commits and pushes `public/` if anything changed
+6. Purge jsDelivr — `node scripts/purge-cache.js` invalidates stale CDN cache
+7. Mirror to GitLab — clones `redundancy-layers`, copies `filters.json`, all `.txt` files, and `ping.json`, then commits and pushes
+8. Warm jsDelivr cache — `node scripts/warm-cache.js` pre-fetches all jsDelivr URLs to prime the cache
+9. Commit cache report — commits `public/jsdelivr-cache-report.json` if updated
