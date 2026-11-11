@@ -1,9 +1,9 @@
-! Checksum: RpQtJ52W3YM4ie14g1Qu4A
-! Diff-Path: ../patches/20/20-s-1794327222-3600.patch
+! Checksum: 2mI4PMTsmqnzoVw5t6UiDA
+! Diff-Path: ../patches/20/20-s-1794420744-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.34.6
-! TimeUpdated: 2026-11-10T16:10:03+00:00
+! Version: 2.0.34.13
+! TimeUpdated: 2026-11-11T18:09:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -60,6 +60,16 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+speedtest.ru##.container > div.mb-1:has(> div.store-wrapper)
+speedtest.ru##.app-console
+vevor.com###appDrainageWrap
+vevor.com##.footerAppDownload
+489.fm##.aid-plugin
+489.fm###top_sakura2
+489.fm##.tax5cp > a[href="https://www.489.fm/apphtml/"]
+kcci.com##div[data-button="/apps"]
+bibliatodo.com###bt-app-install-banner
+nap-camp.com##.hide-in-app
 emlakkatilimparaf.com.tr##section[id^="dynamic-zone.app-downloader"]
 polis.ua##section[class^="AppsModule_apps"]
 chat.qwen.ai##.qwen-auth-share-logo
@@ -359,8 +369,8 @@ gorod.mos.ru#%#//scriptlet('set-local-storage-item', 'downloadAppComplete', '1')
 imgur.com#%#(()=>{window.addEventListener("click",(function(t){const e=t?.target?.closest?.(".BottomRecirc a[href].Post-item");e&&(t.preventDefault(),location.assign(e.href))}),!0);})();
 orbitz.com#$#.has-uitk-sheet { overflow: auto !important; }
 orbitz.com#$#.CustomerNotificationsWrapper { display: none !important; }
-wlwt.com##div.two-cols > div[class^="css-"]:has(> a[href="/apps"])
-wlwt.com,wisn.com,wjcl.com##div[aria-label=" App Promo"] > div[class^="css-"] > div[class^="css-"]:has(a[href="/apps"])
+kcra.com,wlwt.com##div.two-cols > div[class^="css-"]:has(> a[href="/apps"])
+kcra.com,wlwt.com,wisn.com,wjcl.com##div[aria-label=" App Promo"] > div[class^="css-"] > div[class^="css-"]:has(a[href="/apps"])
 meduza.io##.GeneralMaterial-module-article > p:has(> a[href^="https://onelink.to/appication"])
 trf1.net##.kan-banner
 xprimehub.bond,rogmovies.cv,vegamovies.lease,xprimehub.*,rogmovies.*,vegamovies.*##a[class="btn-pill"]
@@ -445,7 +455,6 @@ lookup.robokiller.com#%#//scriptlet('set-session-storage-item', 'dontShowMobileB
 truecaller.com#%#//scriptlet('set-cookie', 'tc:dismissexitintentpopup', 'true')
 kleiner-kalender.de###AppMsg
 gdh.digital##body > div.overflow-hidden.fixed
-memorial.com.tr##.smart-banner-block
 bitrefill.com##div[class^="_wrapper_"] > section[class]:has(> div[class^="_inner_11mgk"] a[href="https://apps.apple.com/in/app/bitrefill/id1378102623"])
 uatv.ua##.first-rotation-banner
 asics.com.hk##.layout-header > div[class^="sc-"]:has(> div > div > [alt^="ASICS HK banner"])
@@ -4268,6 +4277,8 @@ wear.jp#%#//scriptlet('trusted-set-session-storage-item', 'status_of_app_redirec
 ! Misc rules, removed during optimization. If some rules are in groups, no need to move them here
 !
 !
+!+ NOT_OPTIMIZED
+memorial.com.tr##.smart-banner-block
 !+ NOT_OPTIMIZED
 singlecare.com##.stickyAppPromoBanner
 !+ NOT_OPTIMIZED
