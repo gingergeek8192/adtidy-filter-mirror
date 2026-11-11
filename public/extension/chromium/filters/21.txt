@@ -1,9 +1,9 @@
-! Checksum: 1yLQpcV+SzC6mh33wiz2Bw
-! Diff-Path: ../patches/21/21-s-1794327222-3600.patch
+! Checksum: ywD37NaJ1OhXMt9YB4kaVw
+! Diff-Path: ../patches/21/21-s-1794417094-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
-! Version: 2.0.50.14
-! TimeUpdated: 2026-11-10T16:10:04+00:00
+! Version: 2.0.50.19
+! TimeUpdated: 2026-11-11T17:08:22+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -43,6 +43,8 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246608
+489.fm###rightContents > ul.sakuraBnr[style="margin-top: 15px;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246750
 tgrthaber.com##div[data-stick-after-seen]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245801
@@ -3796,6 +3798,11 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+vevor.com##.co-subscribe-entry
+vevor.com##.openAppBox
+vevor.com##.topBanner_link
+overtake.gg##div.otRv > div.otRv-inner > div.otRv-row3:has(> .otRv-partner)
+irishtimes.com##div[data-promotion-name]
 sgtas.ua##.site-promo-banner
 polis.ua##section[class^="Modal_modalSection"]:has(> dialog img[src*="/popups/promocode/"])
 xakep.ru##.x-shelf
@@ -10757,8 +10764,6 @@ ufacw.com#%#//scriptlet("adjust-setInterval", "wpsafe-", "*", "0.02")
 ! https://github.com/uBlockOrigin/uAssets/issues/14660#issuecomment-1243031757
 hashhackers.com,katdrive.net#%#//scriptlet("adjust-setInterval", "/verify_text|isCompleted/", "*", "0.02")
 hashhackers.com,katdrive.net#%#//scriptlet("adjust-setTimeout", "document[_0x", "*", "0.02")
-! https://github.com/AdguardTeam/AdguardFilters/issues/128080
-course-downloader.com#%#//scriptlet("adjust-setTimeout", "countDown", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128026
 modshost.net#%#//scriptlet("adjust-setInterval", "timeleft", "*", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128036

@@ -1,9 +1,9 @@
-! Checksum: d/nOjBuq0M8ifrisp6+ciw
-! Diff-Path: ../patches/4/4-s-1794327227-3600.patch
+! Checksum: pgNCScp4+m2qAW3QoLfCvg
+! Diff-Path: ../patches/4/4-s-1794409977-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.35.6
-! TimeUpdated: 2026-11-10T16:09:23+00:00
+! Version: 2.1.35.10
+! TimeUpdated: 2026-11-11T15:08:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -644,6 +644,10 @@ cogconnected.com,echofm.online,antirez.com,comicbook.com,alexp.pl,2ality.com,sma
 !
 ! NOTE: Specific rules
 !
+keepandroidopen.org##.spread-masto
+rosbalt.ru##button[title^="Поделиться в"]
+bibliatodo.com##.row > fieldset:has(> div.red_social)
+autoc-one.jp##.c-sns-icon
 xakep.ru###custom_html-9
 ilfoglio.it##button[aria-label="Apri il condividi articolo"]
 figshare.com###a11y-1-tab-tab-share
@@ -2824,7 +2828,7 @@ xronos.gr##.addtoany-node
 elsiglodedurango.com.mx##aside > .comparte
 canal26.com##.flex-shrink-0:has(path[d*=".603 1.628l-6.718 3.12a2.499"])
 liverpoolfc.com,buywholefoodsonline.co.uk,sovsport.ru,drive.com.au,portafolio.co##div[class^="share-"]
-leedsunited.com,brentfordfc.com##div[class*="_share"]
+iranintl.com,leedsunited.com,brentfordfc.com##div[class*="_share"]
 camhub.cc##.col > div.btn-holder:has(> a.btn > i > svg.icon-share)
 oantagonista.com.br##.post-interna__content__compartilhamento
 androidauthority.com##main button[type="button"]:has(+ div[class] > .viafoura > div[data-widget="sharebar"])
@@ -11112,7 +11116,7 @@ gofeminin.de##div[class^="af-social-share"]
 emarat-news.ae,psdly.com,forumusa.com,kriptofoni.com,digitalreport.com.tr,ozguneshaber.com,uzmanposta.com,techgistafrica.com,burdurgazetesi.com,listelist.com,turunculevye.com,theleaflet.in,ekonomist.com.tr,oyunceviri.net,gazeteyolculuk.net,nasiloluyo.com##.jeg_share_button
 hurriyet.com.tr##.bs-sticky-item > .bs-social-box-wrapper
 jeckes.net###entry-content > .shariff
-hb-nippon.com,jsports.co.jp,jod.jsports.co.jp,uverworld.jp,gorilla.clinic,jujutsukaisen.jp,donnaglamour.it,newsmondo.it##.shareBox
+bcnretail.com,hb-nippon.com,jsports.co.jp,jod.jsports.co.jp,uverworld.jp,gorilla.clinic,jujutsukaisen.jp,donnaglamour.it,newsmondo.it##.shareBox
 sankei.com##.amp-social-links
 sankei.com##.post_container > .module > .sns
 shin-kamen-rider.jp,recordchina.co.jp##.sns_links
@@ -12024,7 +12028,7 @@ kiyimuzik.com##i[data-tooltip="Paylaş"]
 filmcuss.cc,confido.ee,raiffeisen-life.ru,mydiv.net,job.dmkt-sp.jp,soft.mydiv.net,dipfilmizle.com,hdfilmizle.pro,filmizlesene.*,sinemadelisi.com,hdfilmizle.info,erosfilmizle.*,hazirfilm.*,askbe.net,vipfilmsitesi.com,teppenthegame.com,bnews.com.br,postnauka.ru,steptohealth.com,amelioretasante.com,sagligabiradim.com##.share-content
 watchfaces.be###secondary > aside#text-5
 latimes.com##.trb_em_pq_sh_item[data-role="sc_share"]
-getmoneytree.com,famitsu.com,howtogeek.com##.share-heading
+keepandroidopen.org,getmoneytree.com,famitsu.com,howtogeek.com##.share-heading
 emaze.com###pp-share-menu
 paratic.com##.desktopShareBar
 paratic.com##.yaziMobileShareButtonsWrapper
