@@ -1,16 +1,16 @@
-! Checksum: KtOtzd9bLSCDdIBeoyNqsw
-! Diff-Path: ../patches/118/118-s-1794415106-14400.patch
+! Checksum: SdMKR1HCUgxM4F3N7BAFLQ
+! Diff-Path: ../patches/118/118-s-1794444639-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.65
-! TimeUpdated: 2026-11-11T16:35:17+00:00
+! Version: 2.1.74.67
+! TimeUpdated: 2026-11-12T00:47:37+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202611111622
+! OriginalVersion: 202611120040
 ! Title: EasyPrivacy
-! Last modified: 11 Nov 2026 16:22 UTC
+! Last modified: 12 Nov 2026 00:40 UTC
 ! Expires: 4 days (update frequency)
-! Commit: 3d472876223657483189413549c657b1849fc4ec
+! Commit: 193af4a3eb111b21e0d3f537d3bcc024c3001442
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -7228,7 +7228,6 @@ omni.soundestlink.com$image
 ||clumsycar.com^
 ||clutchcourses.com^
 ||coalkitchen.com^
-||coalmerchants.com^
 ||coastersim.com^
 ||coatfood.com^
 ||cobaltoverture.com^
@@ -8169,6 +8168,7 @@ omni.soundestlink.com$image
 ||marriedmailbox.com^
 ||marriedvalue.com^
 ||marsnextdoor.com^
+||maskedadmin.com^
 ||masseurexpress.com^
 ||massivemark.com^
 ||masterenter.com^
