@@ -76,7 +76,7 @@
 				10
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/3.txt",
-			"checksum": "DDHc2M8goZhYIq5ctyo66Q",
+			"checksum": "vXaNkr56aNx5N0KAQ6BfZQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/3.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/3.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/redundancy-layers/-/raw/main/public/extension/chromium/filters/3.txt"
