@@ -1,194 +1,176 @@
 # AdTidy Filter Mirror
 
-**Automated, checksum-verified mirrors of AdTidy filter lists, providing redundant filter delivery for [Adblock-Electron](https://github.com/gingergeek8192/adblock-electron).**
+A synchronised, checksum-verified mirror of AdTidy's Chromium filter lists. It provides Adblock-Electron with multiple delivery sources and allows consumers to run the mirror under their own GitHub and GitLab accounts.
 
-This repository maintains an independently hosted mirror of AdTidy's Chromium filter lists, automatically synchronised every 12 hours.
+The mirror publishes the non-deprecated Chromium filter lists to GitHub and GitLab, with jsDelivr serving the GitHub copy through its CDN. The original AdTidy download URLs are retained as another source.
 
-Its purpose is to provide additional, independently hosted download sources for Adblock-Electron, helping ensure filter lists remain accessible during first-run initialisation and subsequent updates, even when an individual delivery endpoint is unavailable or serving inconsistent content.
+Each synchronisation verifies downloaded filters, publishes valid changes, manages the jsDelivr cache and records the cache-warming results.
 
-Rather than relying exclusively on the original AdTidy CDN, each filter is made available through **GitHub, jsDelivr and GitLab**, alongside its original AdTidy download URL.
+## What the mirror provides
 
-Every synchronisation includes checksum verification, automated publishing, CDN cache invalidation and cache warming.
+- **Multiple delivery sources** — the original AdTidy CDN, GitHub raw content, jsDelivr and GitLab.
+- **Checksum verification** — downloaded filters are checked against the MD5 checksum embedded in their `! Checksum:` header.
+- **Last-known-good protection** — a filter that fails verification is rejected; its previously verified mirror copy is left intact.
+- **Automated synchronisation** — all non-deprecated Chromium filters are checked on a six-hour schedule.
+- **CDN cache management** — stale jsDelivr entries are purged after publishing.
+- **Cache warming** — published jsDelivr URLs are requested after synchronisation, including `filters.json`.
+- **Cache health reporting** — `jsdelivr-cache-report.json` records the results of the cache-warming operation.
 
-## What it provides
+These are alternative delivery paths for the same filter catalogue. Adblock-Electron can try the available sources rather than depending on one mirror endpoint.
 
-- **Multiple delivery sources** — four download paths for each filter, spanning the original AdTidy CDN and three independently hosted mirror endpoints.
-- **Checksum verification** — every downloaded filter is validated against its embedded MD5 checksum before being accepted.
-- **Automated synchronisation** — all non-deprecated Chromium filters are checked and synchronised every 12 hours.
-- **Last-known-good protection** — files failing checksum verification are discarded, leaving the previously verified version intact.
-- **CDN cache management** — stale jsDelivr cache entries are purged following synchronisation.
-- **Proactive cache warming** — filter URLs are fetched to prime jsDelivr's cache ahead of subsequent requests.
-- **Cache health reporting** — a generated report records the results of jsDelivr cache warming.
+## How synchronisation works
 
-The result is a maintained distribution layer that gives Adblock-Electron additional options when retrieving filter data, rather than depending on a single source.
+The GitHub Actions workflow runs every six hours. It can also be started manually using workflow dispatch.
 
-## How it works
+Each run:
 
-The GitHub Actions workflow runs every 12 hours, with manual dispatch also supported.
+1. Fetches the non-deprecated Chromium filter lists from AdTidy.
+2. Checks each downloaded filter against its embedded MD5 checksum.
+3. Publishes verified filter files and updates `filters.json` with the available download URLs.
+4. Updates `public/ping.json`, including the `updatedAt` and `nextUpdate` timestamps.
+5. Commits changed files to GitHub.
+6. Purges all jsDelivr cached entries.
+7. Synchronises `filters.json`, the filter files and `ping.json` to GitLab.
+8. Warms the jsDelivr cache over up to 6 rounds (60 s apart), re-purging any still-unconfirmed filters at round 3, verifying each response against the committed checksums.
+9. Publishes `public/jsdelivr-cache-report.json` when the report changes.
 
-Each run performs the following operations:
+A failed checksum does not replace a previously verified filter. A failed or unconfirmed cache-warming request is recorded in the report rather than being treated as a successful refresh.
 
-1. **Fetch filters** — retrieves all non-deprecated filter lists from the AdTidy CDN.
-2. **Verify integrity** — checks each downloaded file against its embedded MD5 checksum.
-3. **Publish mirror files** — writes verified `.txt` files and an updated `filters.json` containing the available download URLs.
-4. **Update availability metadata** — generates `public/ping.json` with `updatedAt` and `nextUpdate` timestamps.
-5. **Commit changes** — publishes updated files to GitHub when changes are detected.
-6. **Purge CDN cache** — invalidates stale jsDelivr cache entries.
-7. **Synchronise GitLab** — mirrors `filters.json`, filter files and `ping.json` to the GitLab repository.
-8. **Warm CDN cache** — requests every jsDelivr filter URL, including `filters.json`, to pre-populate the CDN cache.
-9. **Publish cache report** — commits `public/jsdelivr-cache-report.json` when the report changes.
+On the consumer side, Adblock-Electron tolerates a lagging or unavailable `ping.json` by selecting the furthest `nextUpdate` value across all sources. If every source is unavailable it retries on a two-hour buffer until the next successful six-hour sync restores a valid `ping.json`.
 
-The workflow uses Node.js 24 and is designed to keep the mirror synchronised without requiring manual maintenance.
+The workflow uses Node.js 24.
 
 ## Repository layout
 
 ```text
 public/
-└── extension/
-    └── chromium/
-        ├── filters.json
-        └── filters/
-            ├── 1.txt
-            ├── 2.txt
-            ├── 3.txt
-            └── ...
-└── ping.json
+├── extension/
+│   └── chromium/
+│       ├── filters.json
+│       └── filters/
+│           ├── 1.txt
+│           ├── 2.txt
+│           ├── 3.txt
+│           └── ...
+├── ping.json
 └── jsdelivr-cache-report.json
 ```
 
-- `filters.json` — filter metadata, including original and mirror download URLs.
-- `filters/*.txt` — individually mirrored filter lists.
-- `ping.json` — synchronisation timestamps and next scheduled update.
-- `jsdelivr-cache-report.json` — results of the latest CDN cache-warming operation.
-
-## Mirror endpoints
-
-Each filter is exposed through four delivery URLs. The original AdTidy URL remains unchanged, while the additional endpoints provide alternative download paths.
-
-### GitHub — raw content
-
-Direct access to the repository's published files.
-
-| Resource | URL |
+| File | Contents |
 |---|---|
-| Filter metadata | `https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters.json` |
-| Individual filters | `https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/N.txt` |
+| `extension/chromium/filters.json` | Filter metadata, including the original and mirror download URLs. |
+| `extension/chromium/filters/*.txt` | Individually mirrored filter lists. |
+| `ping.json` | Synchronisation timestamps and the next scheduled update. |
+| `jsdelivr-cache-report.json` | Results from the latest jsDelivr cache-warming operation. |
 
-### jsDelivr — CDN delivery
+## Delivery endpoints
 
-CDN-backed access to the GitHub mirror, with proactive cache warming following each synchronisation.
+Each filter has four available download paths. The URLs below use this repository's owner, `gingergeek8192`. When self-hosting, replace that owner with the account that owns your copies.
 
-| Resource | URL |
-|---|---|
-| Filter metadata | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json` |
-| Individual filters | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/N.txt` |
+| Source | `filters.json` | Individual filter |
+|---|---|---|
+| AdTidy | `https://filters.adtidy.org/extension/chromium/filters.json` | `https://filters.adtidy.org/extension/chromium/filters/N.txt` |
+| GitHub | `https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters.json` | `https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/N.txt` |
+| jsDelivr | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters.json` | `https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/N.txt` |
+| GitLab | `https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters.json` | `https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/N.txt` |
 
-### GitLab — independent mirror
-
-A separately maintained copy of the published filter files, providing another hosting location.
-
-| Resource | URL |
-|---|---|
-| Filter metadata | `https://gitlab.com/gingergeek8192/redundancy-layers/-/raw/main/public/extension/chromium/filters.json` |
-| Individual filters | `https://gitlab.com/gingergeek8192/redundancy-layers/-/raw/main/public/extension/chromium/filters/N.txt` |
-
-### AdTidy — original source
-
-The original filter delivery endpoints are retained as the primary source.
-
-| Resource | URL |
-|---|---|
-| Filter metadata | `https://filters.adtidy.org/extension/chromium/filters.json` |
-| Individual filters | `https://filters.adtidy.org/extension/chromium/filters/N.txt` |
+`N` represents the filter ID.
 
 ## Filter metadata
 
-The mirrored `filters.json` retains the original AdTidy filter metadata and adds three mirror URL fields to each filter entry.
+The mirror retains AdTidy's filter metadata and adds three URL fields to each filter entry.
 
 | Field | Description |
 |---|---|
-| `downloadUrl` | Original AdTidy CDN download URL. |
-| `mirrorUrl` | GitHub raw content URL. |
+| `downloadUrl` | Original AdTidy CDN URL. |
+| `mirrorUrl` | GitHub raw-content URL. |
 | `jsDelivrUrl` | jsDelivr CDN URL. |
 | `gitlabUrl` | GitLab mirror URL. |
 
-Existing filter metadata is preserved, including filter IDs, names, descriptions, versions, timestamps, language information, tags and subscription details.
+The original metadata is retained, including filter IDs, names, descriptions, versions, timestamps, language information, tags and subscription details. The original `downloadUrl` is not replaced.
 
 For example:
 
 ```json
 {
-    "filterId": 1,
-    "name": "AdGuard Russian filter",
-    "version": "2.1.9.50",
-    "deprecated": false,
-    "downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
-    "mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/1.txt",
-    "jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt",
-    "gitlabUrl": "https://gitlab.com/gingergeek8192/redundancy-layers/-/raw/main/public/extension/chromium/filters/1.txt"
+  "filterId": 1,
+  "name": "AdGuard Russian filter",
+  "version": "2.1.9.50",
+  "deprecated": false,
+  "downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
+  "mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/1.txt",
+  "jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt",
+  "gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/1.txt"
 }
 ```
 
-The original `downloadUrl` is retained, so the mirror supplements the existing metadata rather than replacing AdTidy's source information.
+## Checksum verification
 
-## Checksum verification and file integrity
+Every downloaded filter is checked against the MD5 checksum embedded in its `! Checksum:` header.
 
-Every filter download is checked against the MD5 checksum embedded in its `! Checksum:` header.
-
-A file is only accepted for publication when its checksum matches the expected value.
-
-If verification fails:
+A filter is published only when its checksum matches the expected value. If verification fails:
 
 - The downloaded file is rejected.
 - The existing mirrored file is left untouched.
-- The previous verified version remains available.
+- The last verified version remains available.
 
-This prevents an unsuccessful download or inconsistent CDN response from silently replacing a previously verified filter.
-
-Only non-deprecated filters are included in the synchronisation.
-
-## jsDelivr cache management
-
-Publishing updated files to GitHub does not, by itself, guarantee that a CDN will immediately serve the latest content.
-
-To account for this, the workflow actively manages the jsDelivr cache.
-
-Following each synchronisation:
-
-1. Existing cached content is purged.
-2. Updated mirror files are made available.
-3. Every jsDelivr filter URL is requested to warm the CDN cache.
-4. Responses are checked against expected checksums.
-5. A cache report records the outcome.
-
-Cache warming is performed across all published filter URLs, including `filters.json`.
-
-The generated `jsdelivr-cache-report.json` provides visibility into which URLs were successfully confirmed and which remain unconfirmed. Failed or inconsistent responses are reported rather than being silently treated as successful cache warming.
+Only non-deprecated filters are included in synchronisation.
 
 ## Synchronisation schedule
 
 | Setting | Value |
 |---|---|
-| Schedule | Every 12 hours |
-| Cron | `0 */12 * * *` |
+| Schedule | Every 6 hours |
+| Cron | `0 0,6,12,18 * * *` (UTC) |
 | Runtime | Node.js 24 |
 | Manual execution | GitHub Actions workflow dispatch |
 | Filter source | AdTidy Chromium CDN |
 | Checksum algorithm | MD5 |
-| Hosting | GitHub, jsDelivr and GitLab |
+| Published hosts | GitHub, jsDelivr and GitLab |
 
-## Relationship with Adblock-Electron
+Adblock-Electron checks for filter updates on a 13-hour interval. Running the mirror workflow every six hours is intended to provide at least one successful mirror refresh between those checks. The `nextUpdate` value in `ping.json` is set 13 hours ahead.
 
-This repository is maintained as supporting infrastructure for **Adblock-Electron**, an upcoming npm package currently in active development and built on AdGuard's `tsurlfilters` library.
+## Self-hosting
 
-Filter availability is an important part of the first-run experience. A filter engine is only useful if it can obtain the filter data it needs.
+You can run the mirror under your own GitHub and GitLab accounts. Adblock-Electron can then retrieve filter data from repositories you control, rather than relying on the maintainer's mirror.
 
-By providing additional download endpoints, independently hosted copies and automated integrity checks, this mirror gives Adblock-Electron more options for obtaining its filter lists.
+The GitHub and GitLab repositories must use the same name:
 
-The original AdTidy CDN remains available as the primary source, with GitHub, jsDelivr and GitLab providing additional delivery paths.
+```text
+adtidy-filter-mirror
+```
 
-**One filter catalogue. Multiple hosting locations. Automated synchronisation. Verified content.**
+### Setup
 
----
+1. Create a public GitHub repository named `adtidy-filter-mirror` under your GitHub account.
+2. Create a public GitLab project also named `adtidy-filter-mirror` under the corresponding GitLab account.
+3. Push the contents of this repository to your GitHub repository. If you use a GitHub fork, enable GitHub Actions; scheduled workflows are disabled in forks by default.
+4. Create a GitLab project access token with the Developer role and `write_repository` scope.
+5. Add that token to the GitHub repository's Actions secrets as `GITLAB_COMMIT`.
+6. Run **Actions → Sync AdTidy Filters** to populate the mirror endpoints.
 
-*This repository mirrors AdTidy filter data. Filter contents and filtering rules remain the property of their respective authors and maintainers.*
+The workflow then publishes to your GitHub repository, synchronises the GitLab copy and warms the jsDelivr cache. Keep the repository name `adtidy-filter-mirror` on both hosts so the generated endpoint paths remain consistent.
+
+### Self-hosted endpoint paths
+
+Replace `<owner>` with the account name that owns your repositories.
+
+| Host | Base URL |
+|---|---|
+| GitHub | `https://raw.githubusercontent.com/<owner>/adtidy-filter-mirror/main/public/extension/chromium/` |
+| jsDelivr | `https://cdn.jsdelivr.net/gh/<owner>/adtidy-filter-mirror@main/public/extension/chromium/` |
+| GitLab | `https://gitlab.com/<owner>/adtidy-filter-mirror/-/raw/main/public/extension/chromium/` |
+
+Each base path serves `filters.json` and `filters/N.txt`.
+
+Configure Adblock-Electron to use the corresponding URLs for your mirror. The repository owner is the only account-specific part of these paths; the repository name and published directory structure remain the same.
+
+## Adblock-Electron
+
+This repository provides filter-list distribution infrastructure for [Adblock-Electron](https://github.com/gingergeek8192/Adblock-Electron), which uses AdGuard's `tsurlfilter` engine.
+
+The mirror is separate from the Adblock-Electron package. Its purpose is to make filter data available through multiple independently hosted paths, while allowing consumers to operate their own copies of the mirror.
+
+## Attribution
+
+This repository mirrors AdTidy filter data. Filter contents and filtering rules remain the property of their respective authors and maintainers.
