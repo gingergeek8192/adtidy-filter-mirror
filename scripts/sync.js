@@ -21,8 +21,9 @@ function isValid(normalized, checksum) {
 
 async function main() {
   const res = await fetch(cfg.sourceFiltersJson);
+  const body = await res.text();
   if (!res.ok) throw new Error(`Failed to fetch filters.json: ${res.status}`);
-  const { filters } = await res.json();
+  const { filters } = JSON.parse(body);
   console.log(`🟢 Fetched filters.json — ${filters.filter(f => !f.deprecated).length} non-deprecated filters`);
 
   fs.mkdirSync(cfg.outputDir, { recursive: true });
@@ -40,9 +41,8 @@ async function main() {
         let text;
         try {
           const r = await fetch(url);
-          if (!r.ok) throw new Error(`HTTP ${r.status}`);
           text = await r.text();
-          console.log(`🟢 [${f.filterId}] fetched`);
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
         } catch (e) {
           console.log(`🔴 [${f.filterId}] fetch failed — ${e.message}`);
           skipped++;
