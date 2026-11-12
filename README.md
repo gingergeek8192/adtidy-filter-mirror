@@ -47,7 +47,7 @@ Supply your account name and the hosts you want to use:
 
 ```javascript
 
-Adblock.setResources(
+Adblock.setResources({
     withOwnMirror: {
         account: 'your-account',
         optIns: [
@@ -57,7 +57,7 @@ Adblock.setResources(
         ]
     },
     ...
-)
+})
 
 ```
 
