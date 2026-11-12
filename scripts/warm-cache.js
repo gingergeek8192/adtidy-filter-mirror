@@ -2,11 +2,11 @@ const fs = require('fs');
 const crypto = require('crypto');
 const cfg = require('./config');
 
-const BATCH_SIZE = 3;
-const BATCH_INTERVAL_MS = 6_000;
-const ROUND_WAIT_MS = 120_000;
-const MAX_ROUNDS = 5;
-const REPURGE_AFTER_ROUND = 3;
+const BATCH_SIZE = 5;
+const BATCH_INTERVAL_MS = 2_000;
+const ROUND_WAIT_MS = 60_000;
+const MAX_ROUNDS = 6;
+const SECOND_PURGE_ROUND = 3;
 
 const PURGE_BASE = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main';
 
@@ -150,7 +150,7 @@ async function main() {
     const pending = entries.filter((e) => !e.warmOk);
     if (!pending.length) break;
 
-    if (round === REPURGE_AFTER_ROUND) await repurge(entries);
+    if (round === SECOND_PURGE_ROUND) await repurge(entries);
     console.log(`\n🟡 Round ${round}/${MAX_ROUNDS} — warming ${pending.length} URLs`);
     await runWave(pending);
 
