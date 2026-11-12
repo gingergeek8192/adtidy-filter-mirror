@@ -44,14 +44,19 @@ Adblock-Electron supports independently hosted mirrors through the `withOwnMirro
 Supply your account name and the hosts you want to use:
 
 ```javascript
-withOwnMirror = {
-    account: 'your-account',
-    optIns: [
-        'JSDELIVR',
-        'GITLAB',
-        'GITHUB'
-    ]
-},
+
+Adblock.setResources(
+    withOwnMirror: {
+        account: 'your-account',
+        optIns: [
+            'JSDELIVR',
+            'GITLAB',
+            'GITHUB'
+        ]
+    },
+    ...
+)
+
 ```
 
 **Configuration:**
