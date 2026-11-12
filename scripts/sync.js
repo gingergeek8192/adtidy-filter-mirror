@@ -31,47 +31,37 @@ async function main() {
   const results = [];
   let skipped = 0;
 
-  await Promise.all(
-    filters
-      .filter((f) => !f.deprecated)
-      .map(async (f) => {
-        const url = `https://filters.adtidy.org/extension/chromium/filters/${f.filterId}.txt`;
-        const dest = `${cfg.outputDir}/${f.filterId}.txt`;
+  for (const f of filters.filter((f) => !f.deprecated)) {
+    const url = `https://filters.adtidy.org/extension/chromium/filters/${f.filterId}.txt`;
+    const dest = `${cfg.outputDir}/${f.filterId}.txt`;
 
-        let text;
-        try {
-          const r = await fetch(url);
-          text = await r.text();
-          if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        } catch (e) {
-          console.log(`🔴 [${f.filterId}] fetch failed — ${e.message}`);
-          skipped++;
-          return;
-        }
+    const r = await fetch(url).catch((e) => { console.log(`🔴 [${f.filterId}] fetch failed — ${e.message}`); });
+    if (!r) { skipped++; continue; }
+    if (!r.ok) { console.log(`🔴 [${f.filterId}] fetch failed — HTTP ${r.status}`); skipped++; continue; }
+    const text = await r.text();
 
-        const { checksum, normalized } = normalize(text);
+    const { checksum, normalized } = normalize(text);
 
-        if (checksum && !isValid(normalized, checksum)) {
-          console.log(`🔴 [${f.filterId}] checksum mismatch — expected ${checksum}`);
-          skipped++;
-          return;
-        }
+    if (checksum && !isValid(normalized, checksum)) {
+      console.log(`🔴 [${f.filterId}] checksum mismatch — expected ${checksum}`);
+      skipped++;
+      continue;
+    }
 
-        console.log(`🟢 [${f.filterId}] checksum valid — ${checksum ?? 'no checksum in file'}`);
+    console.log(`🟢 [${f.filterId}] checksum valid — ${checksum ?? 'no checksum in file'}`);
 
-        fs.writeFileSync(dest, text, 'utf8');
+    fs.writeFileSync(dest, text, 'utf8');
 
-        const { downloadUrl: _drop, ...rest } = f;
-        results.push({
-          ...rest,
-          downloadUrl: `https://filters.adtidy.org/extension/chromium/filters/${f.filterId}.txt`,
-          checksum,
-          mirrorUrl: `${cfg.mirrorBase}/${f.filterId}.txt`,
-          jsDelivrUrl: `${cfg.jsDelivrBase}/${f.filterId}.txt`,
-          gitlabUrl: `${cfg.gitlabBase}/${f.filterId}.txt`,
-        });
-      })
-  );
+    const { downloadUrl: _drop, ...rest } = f;
+    results.push({
+      ...rest,
+      downloadUrl: `https://filters.adtidy.org/extension/chromium/filters/${f.filterId}.txt`,
+      checksum,
+      mirrorUrl: `${cfg.mirrorBase}/${f.filterId}.txt`,
+      jsDelivrUrl: `${cfg.jsDelivrBase}/${f.filterId}.txt`,
+      gitlabUrl: `${cfg.gitlabBase}/${f.filterId}.txt`,
+    });
+  }
 
   results.sort((a, b) => a.filterId - b.filterId);
 
