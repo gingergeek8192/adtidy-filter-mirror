@@ -36,9 +36,9 @@ jobs:
   
       - name: Mirror to GitLab
         env:
-          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          GITLAB_COMMIT: ${{ secrets.GITLAB_COMMIT }}
         run: |
-          git clone "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${{ github.repository_owner }}/adtidy-filter-mirror.git" /tmp/adtidy-filter-mirror
+          git clone "https://oauth2:${GITLAB_COMMIT}@gitlab.com/${{ github.repository_owner }}/adtidy-filter-mirror.git" /tmp/adtidy-filter-mirror
           cp public/ping.json /tmp/adtidy-filter-mirror/public/ping.json
           cp public/extension/chromium/filters.json /tmp/adtidy-filter-mirror/public/extension/chromium/filters.json
           cp public/extension/chromium/filters/*.txt /tmp/adtidy-filter-mirror/public/extension/chromium/filters/
