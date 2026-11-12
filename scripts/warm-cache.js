@@ -1,6 +1,18 @@
 const fs = require('fs');
 const crypto = require('crypto');
+const https = require('https');
 const cfg = require('./config');
+
+const get = (url) => new Promise((resolve, reject) => {
+  https.get(url, (res) => {
+    if (res.statusCode !== 200) { res.resume(); return reject(new Error(`HTTP ${res.statusCode}`)); }
+    let data = '';
+    res.setEncoding('utf8');
+    res.on('data', (c) => data += c);
+    res.on('end', () => resolve(data));
+    res.on('error', reject);
+  }).on('error', reject);
+});
 
 const BATCH_SIZE = 5;
 const BATCH_INTERVAL_MS = 2_000;
@@ -32,12 +44,11 @@ function sleep(ms) {
 }
 
 async function fetchAndCheck(entry) {
-  const r = await fetch(entry.url);
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const text = await get(entry.url);
 
   if (!entry.isFilter) {
     if (entry.expectedPing) {
-      const served = await r.json();
+      const served = JSON.parse(text);
       const expected = entry.expectedPing;
       if (Date.parse(served.updatedAt) === Date.parse(expected.updatedAt) && Date.parse(served.nextUpdate) === Date.parse(expected.nextUpdate)) {
         entry.warmOk = true;
@@ -56,7 +67,6 @@ async function fetchAndCheck(entry) {
     return;
   }
 
-  const text = await r.text();
   const { checksum, normalized } = normalize(text);
 
   if (!checksum) {
@@ -115,8 +125,7 @@ async function repurge(entries) {
     pending.map(async (entry) => {
       const path = entry.url.replace('https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main', '');
       try {
-        const r = await fetch(`${PURGE_BASE}${path}`);
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const r = await get(`${PURGE_BASE}${path}`);
         console.log(`🟢 [repurge] ${path}`);
       } catch (e) {
         console.log(`🔴 [repurge] ${path} — ${e.message}`);

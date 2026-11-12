@@ -1,6 +1,18 @@
 const fs = require('fs');
 const crypto = require('crypto');
+const https = require('https');
 const cfg = require('./config');
+
+const get = (url) => new Promise((resolve, reject) => {
+  https.get(url, (res) => {
+    if (res.statusCode !== 200) { res.resume(); return reject(new Error(`HTTP ${res.statusCode}`)); }
+    let data = '';
+    res.setEncoding('utf8');
+    res.on('data', (c) => data += c);
+    res.on('end', () => resolve(data));
+    res.on('error', reject);
+  }).on('error', reject);
+});
 
 function normalize(text) {
   return {
@@ -20,9 +32,7 @@ function isValid(normalized, checksum) {
 }
 
 async function main() {
-  const res = await fetch(cfg.sourceFiltersJson);
-  const body = await res.text();
-  if (!res.ok) throw new Error(`Failed to fetch filters.json: ${res.status}`);
+  const body = await get(cfg.sourceFiltersJson).catch((e) => { throw new Error(`Failed to fetch filters.json: ${e.message}`); });
   const { filters } = JSON.parse(body);
   console.log(`🟢 Fetched filters.json — ${filters.filter(f => !f.deprecated).length} non-deprecated filters`);
 
@@ -31,15 +41,18 @@ async function main() {
   const results = [];
   let skipped = 0;
 
-  for (const f of filters.filter((f) => !f.deprecated)) {
-    const url = `https://filters.adtidy.org/extension/chromium/filters/${f.filterId}.txt`;
+  const settled = await Promise.allSettled(
+    filters.filter((f) => !f.deprecated).map((f) => get(`https://filters.adtidy.org/extension/chromium/filters/${f.filterId}.txt`).then((text) => ({ f, text })))
+  );
+
+  for (const result of settled) {
+    if (result.status === 'rejected') {
+      console.log(`🔴 fetch failed — ${result.reason.message}`);
+      skipped++;
+      continue;
+    }
+    const { f, text } = result.value;
     const dest = `${cfg.outputDir}/${f.filterId}.txt`;
-
-    const r = await fetch(url).catch((e) => { console.log(`🔴 [${f.filterId}] fetch failed — ${e.message}`); });
-    if (!r) { skipped++; continue; }
-    if (!r.ok) { console.log(`🔴 [${f.filterId}] fetch failed — HTTP ${r.status}`); skipped++; continue; }
-    const text = await r.text();
-
     const { checksum, normalized } = normalize(text);
 
     if (checksum && !isValid(normalized, checksum)) {
@@ -49,7 +62,6 @@ async function main() {
     }
 
     console.log(`🟢 [${f.filterId}] checksum valid — ${checksum ?? 'no checksum in file'}`);
-
     fs.writeFileSync(dest, text, 'utf8');
 
     const { downloadUrl: _drop, ...rest } = f;

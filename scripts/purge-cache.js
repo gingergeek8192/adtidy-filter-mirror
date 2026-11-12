@@ -1,14 +1,24 @@
 const fs = require('fs');
+const https = require('https');
 const cfg = require('./config');
+
+const get = (url) => new Promise((resolve, reject) => {
+  https.get(url, (res) => {
+    if (res.statusCode !== 200) { res.resume(); return reject(new Error(`HTTP ${res.statusCode}`)); }
+    let data = '';
+    res.setEncoding('utf8');
+    res.on('data', (c) => data += c);
+    res.on('end', () => resolve(data));
+    res.on('error', reject);
+  }).on('error', reject);
+});
 
 const PURGE_BASE = 'https://purge.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main';
 const CDN_BASE = 'https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main';
 
 async function purge(path) {
-  const purgeUrl = `${PURGE_BASE}${path}`;
-  const r = await fetch(purgeUrl);
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  return r.json();
+  const data = await get(`${PURGE_BASE}${path}`);
+  return JSON.parse(data);
 }
 
 async function main() {
