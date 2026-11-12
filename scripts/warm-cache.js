@@ -31,20 +31,9 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function fetchWithRetry(url, retries = 3) {
-  for (let i = 0; i < retries; i++) {
-    try {
-      const r = await fetch(url);
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r;
-    } catch (e) {
-      if (i === retries - 1) throw e;
-    }
-  }
-}
-
 async function fetchAndCheck(entry) {
-  const r = await fetchWithRetry(entry.url);
+  const r = await fetch(entry.url);
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
 
   if (!entry.isFilter) {
     if (entry.expectedPing) {
