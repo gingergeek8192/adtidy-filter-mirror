@@ -153,26 +153,6 @@ adtidy-filter-mirror
 
 The workflow then publishes to your GitHub repository, synchronises the GitLab copy and warms the jsDelivr cache. Keep the repository name `adtidy-filter-mirror` on both hosts so the generated endpoint paths remain consistent.
 
-### Self-hosted endpoint paths
-
-Replace `<owner>` with the account name that owns your repositories.
-
-| Host | Base URL |
-|---|---|
-| GitHub | `https://raw.githubusercontent.com/<owner>/adtidy-filter-mirror/main/public/extension/chromium/` |
-| jsDelivr | `https://cdn.jsdelivr.net/gh/<owner>/adtidy-filter-mirror@main/public/extension/chromium/` |
-| GitLab | `https://gitlab.com/<owner>/adtidy-filter-mirror/-/raw/main/public/extension/chromium/` |
-
-Each base path serves `filters.json` and `filters/N.txt`.
-
-Configure Adblock-Electron to use the corresponding URLs for your mirror. The repository owner is the only account-specific part of these paths; the repository name and published directory structure remain the same.
-
-## Adblock-Electron
-
-This repository provides filter-list distribution infrastructure for [Adblock-Electron](https://github.com/gingergeek8192/Adblock-Electron), which uses AdGuard's `tsurlfilter` engine.
-
-The mirror is separate from the Adblock-Electron package. Its purpose is to make filter data available through multiple independently hosted paths, while allowing consumers to operate their own copies of the mirror.
-
 ## Attribution
 
 This repository mirrors AdTidy filter data. Filter contents and filtering rules remain the property of their respective authors and maintainers.
