@@ -2,7 +2,9 @@
 
 A synchronised, checksum-verified mirror of AdTidy's Chromium filter lists.
 
-It provides [Adblock-Electron](https://github.com/gingergeek8192/Adblock-Electron) with multiple delivery sources and allows consumers to run the mirror under their own GitHub and GitLab accounts. This repo is maintained and provides filters for production applications.
+It provides [Adblock-Electron](https://github.com/gingergeek8192/Adblock-Electron) with multiple delivery sources and allows consumers to run the mirror under their own GitHub and GitLab accounts. 
+
+This repo is maintained and provides filters for production open source applications.
 
 The mirror publishes the non-deprecated Chromium filter lists to GitHub and GitLab, with jsDelivr serving the GitHub copy through its CDN. The original AdTidy download URLs are retained making four total sources across three CDN networks `Fastly` | `Cloudflare` | `Qrator`.
 
