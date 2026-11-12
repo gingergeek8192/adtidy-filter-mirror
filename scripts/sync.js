@@ -19,8 +19,20 @@ function isValid(normalized, checksum) {
   );
 }
 
+async function fetchWithRetry(url, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r;
+    } catch (e) {
+      if (i === retries - 1) throw e;
+    }
+  }
+}
+
 async function main() {
-  const res = await fetch(cfg.sourceFiltersJson);
+  const res = await fetchWithRetry(cfg.sourceFiltersJson);
   if (!res.ok) throw new Error(`Failed to fetch filters.json: ${res.status}`);
   const { filters } = await res.json();
   console.log(`🟢 Fetched filters.json — ${filters.filter(f => !f.deprecated).length} non-deprecated filters`);
@@ -39,8 +51,7 @@ async function main() {
 
         let text;
         try {
-          const r = await fetch(url);
-          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          const r = await fetchWithRetry(url);
           text = await r.text();
           console.log(`🟢 [${f.filterId}] fetched`);
         } catch (e) {
