@@ -1,16 +1,16 @@
-! Checksum: bo+l8cZIuO04zJcY1PY52g
-! Diff-Path: ../patches/118/118-s-1794688726-14400.patch
+! Checksum: iy45xxoNvJtaEPYK8VaxkA
+! Diff-Path: ../patches/118/118-s-1794717522-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.84
-! TimeUpdated: 2026-11-14T20:35:01+00:00
+! Version: 2.1.74.86
+! TimeUpdated: 2026-11-15T04:35:11+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202611142021
+! OriginalVersion: 202611150427
 ! Title: EasyPrivacy
-! Last modified: 14 Nov 2026 20:21 UTC
+! Last modified: 15 Nov 2026 04:27 UTC
 ! Expires: 4 days (update frequency)
-! Commit: 7538fc8833556050a1d798dcc0190d68237aa133
+! Commit: d7cf653c5c37d21b3daab2cf161095f6124ab09f
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -9285,6 +9285,7 @@ omni.soundestlink.com$image
 ||topratedwaterfilter.com^
 ||topsecretapp.net^
 ||topthrowbacks.com^
+||torhosting.net^
 ||tortoisepage.com^
 ||toweringanswer.com^
 ||toysbasics.com^
