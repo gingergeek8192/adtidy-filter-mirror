@@ -1,16 +1,16 @@
-! Checksum: iy45xxoNvJtaEPYK8VaxkA
-! Diff-Path: ../patches/118/118-s-1794717522-14400.patch
+! Checksum: LeO/EPlHknR8580zNFyHhw
+! Diff-Path: ../patches/118/118-s-1794760728-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.86
-! TimeUpdated: 2026-11-15T04:35:11+00:00
+! Version: 2.1.74.89
+! TimeUpdated: 2026-11-15T16:35:04+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202611150427
+! OriginalVersion: 202611151626
 ! Title: EasyPrivacy
-! Last modified: 15 Nov 2026 04:27 UTC
+! Last modified: 15 Nov 2026 16:26 UTC
 ! Expires: 4 days (update frequency)
-! Commit: d7cf653c5c37d21b3daab2cf161095f6124ab09f
+! Commit: f8f6b5b9bd0133324374b6bbab04937829f06f21
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -9287,6 +9287,7 @@ omni.soundestlink.com$image
 ||topthrowbacks.com^
 ||torhosting.net^
 ||tortoisepage.com^
+||tourspicker.com^
 ||toweringanswer.com^
 ||toysbasics.com^
 ||toytakeover.com^
@@ -9406,6 +9407,7 @@ omni.soundestlink.com$image
 ||victoryideas.com^
 ||viewresource.com^
 ||vilenexus.com^
+||vinylanswer.net^
 ||violetdemise.com^
 ||viowrel.com^
 ||viralfoodie.net^

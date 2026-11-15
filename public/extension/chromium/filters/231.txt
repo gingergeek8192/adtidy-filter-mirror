@@ -1,15 +1,15 @@
-! Checksum: XyWIwH/K/uv5PXCyj42OTw
-! Diff-Path: ../patches/231/231-s-1794717523-14400.patch
+! Checksum: WkQhxkPHpcrwmWZb/vyv3A
+! Diff-Path: ../patches/231/231-s-1794760729-14400.patch
 ! Title: EasyList Spanish
 ! Description: Additional filter list for websites in Spanish.
-! Version: 2.2.1.15
-! TimeUpdated: 2026-11-15T04:35:46+00:00
+! Version: 2.2.1.18
+! TimeUpdated: 2026-11-15T16:35:35+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: rCXK9aaDa6tkejn4fvzNIA
-! OriginalVersion: 202611150422
+! Checksum: pFKNzT9ps7mgnsxwSMQsJA
+! OriginalVersion: 202611151622
 ! Title: EasyList Spanish
-! Last modified: 15 Nov 2026 04:22 UTC
+! Last modified: 15 Nov 2026 16:22 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
