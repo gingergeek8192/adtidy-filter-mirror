@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-11-16T07:04:53.574Z",
+	"updatedAt": "2026-11-16T21:19:28.859Z",
 	"total": 89,
 	"ok": 89,
 	"failed": 0,
@@ -121,8 +121,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/108.txt",
@@ -361,8 +361,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
