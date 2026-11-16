@@ -1,9 +1,9 @@
-! Checksum: qkFWIdbxSWQkzYtr6OMlLA
-! Diff-Path: ../patches/3/3-s-1794759058-3600.patch
+! Checksum: SlFzou1nr1lkjpu5s5oFEQ
+! Diff-Path: ../patches/3/3-s-1794805948-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.15.58
-! TimeUpdated: 2026-11-15T16:07:56+00:00
+! Version: 2.1.15.63
+! TimeUpdated: 2026-11-16T05:09:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -111661,6 +111661,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !
 ! NOTE: Regular rules
 !
+||beacon.viafoura.io^
 ||events.plus.yandex.net^
 ||20251117mix.zgstongji.vip^
 ||2702.anglicanledger.org^
@@ -427495,6 +427496,10 @@ naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.br_sr', '38
 !
 ! NOTE: Specific rules
 !
+||welect.de/api/*/mtrcs
+||91cg1.com/view-stat.php^
+||ubt-sgp.travix.com/bee/collect
+||das-cdn.idealo.com/pixel/
 ||api.plus.kinopoisk.ru/graphql?operationName=registerSimpleActionWithPixel
 ||yandex.ru/static-mon/event
 ||zkrainynba.com/wp-content/themes/zkrainynba/assets/js/events-ga*.min.js
@@ -429157,6 +429162,17 @@ wired.com,self.com,allure.com,pitchfork.com,gq.com#%#//scriptlet('set-local-stor
 ||check24.*/misc/tracking_gif.php
 ||check24.*/gif/*/info.gif
 ||check24.*/files/give_png.php
+||check24.*/api/client-logs
+||check24.*/api/web-vitals-metrics
+||check24.*/*/traffic-event
+||check24.*/files/give_gif.php
+||check24.*/syncLocalStorage.html
+||check24.*/jsonp/statsd/
+||check24.*/*/json/dynamic/set-sem-tracking
+||check24.*/rpc/desktop/log/
+||urlaub.check24.*/*/json/hotel/featuredHotelReport
+||cella.*.check24.*/tracking/
+||pub-api.*.check24.*/*/shared-identifier
 ||kma.go.kr/kma/resources/js/UserScriptConf.js
 ||kabu-sokuhou.com/js/cpv/
 4pda.to#%#//scriptlet('remove-attr', 'data-dotrack', 'a[data-dotrack]')
@@ -443592,6 +443608,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||soresidewalk.com^
 ||soretrain.com^
 ||soulclicking.com^
+||soulfreedom.net^
 ||soundmachine.net^
 ||soundmuseums.com^
 ||soundstocking.com^
@@ -443930,6 +443947,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||tuplebar.com^
 ||turtleface.net^
 ||tutorshelf.com^
+||tuxedocard.com^
 ||twelvedawn.com^
 ||twentyerr.com^
 ||twistloss.com^
