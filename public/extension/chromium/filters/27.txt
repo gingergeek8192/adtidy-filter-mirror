@@ -1,9 +1,9 @@
-! Checksum: Oanal3JBLeetf9R8miswCA
-! Diff-Path: ../patches/27/27-s-1794776991-3600.patch
+! Checksum: RNnYGq7LwtAzHKOXFEn98w
+! Diff-Path: ../patches/27/27-s-1794841870-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.89
-! TimeUpdated: 2026-11-15T21:07:32+00:00
+! Version: 2.0.0.94
+! TimeUpdated: 2026-11-16T15:08:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -88,6 +88,12 @@ tygodnikziemiopolskiej.info#%#//scriptlet('google-ima3')
 !
 ! NOTE: Specific rules
 !
+radio.pl##div[data-ad-reserve]
+dlahandlu.pl##taboola-widget
+dlahandlu.pl##.header-partners
+dlahandlu.pl##ptwp-ad-more-info
+dlahandlu.pl##.frsih_2026-banner
+moja-ostroleka.pl##article > .a-container-center-header
 zkrainynba.com##.home__bookie-media
 zkrainynba.com##.rotating-banner-sidebar
 zkrainynba.com##.b-bookie-coupon
@@ -548,6 +554,8 @@ motopass.pl###zox-lead-top-wrap
 ||poscigi.pl/wp-content/uploads/*/Baner_
 tvrepublika.pl##.block--type-advertisement
 interia.pl##div[data-component^="ad-"]
+||lca.pl/scripts/banners/
+lca.pl##.anchor:has(> ins[class^="staticpubads"])
 lca.pl##body.toplayer-visible .new-toplayer
 polskieradio24.pl##div[class^="Screening_"]
 bialystokonline.pl##.firma.premium
@@ -1496,8 +1504,6 @@ naszemma.pl##img[style^="width: 100%; max-width: 970px;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148740
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178468
 gsmservice.pl###tdi_79
-! https://github.com/AdguardTeam/AdguardFilters/issues/148742
-dlahandlu.pl##.page-top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148758
 zlotowskie.pl##.adv
 zlotowskie.pl##.grid__ad
@@ -4831,6 +4837,7 @@ naszemiasto.pl#%#window.adBlockTest = true;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20613
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15353
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11323
+shinden.pl##.hp-rot
 shinden.pl###sh-promo
 shinden.pl##.takie-tam
 shinden.pl###spolSticky
@@ -4841,7 +4848,10 @@ shinden.pl#%#//scriptlet('abort-current-inline-script', 'atob', 'getElementsByTa
 shinden.pl#%#//scriptlet("abort-on-property-read", "popjs.init")
 shinden.pl#%#//scriptlet("set-constant", "_pop", "noopFunc")
 shinden.pl#%#//scriptlet("abort-on-property-write", "AdservingModule")
+shinden.pl#%#//scriptlet('abort-current-inline-script', 'Document.prototype.querySelectorAll', '/"spolecznosci-"|\.parentNode\.getBoundingClientRect\(\);/')
+shinden.pl#%#//scriptlet('json-prune', 'bramka', 'bramkaLinki')
 @@/^https:\/\/www\.[a-z]{7,14}\.com\/[a-z]{1,4}\.js/$script,third-party,domain=shinden.pl,badfilter
+||shinden.pl/kafelek?
 ||spolecznosci.net^$domain=shinden.pl,important
 ||smartadserver.com/ac$script,redirect=noopjs,domain=shinden.pl,important
 ||ced-ns.sascdn.com/diff/templates/js/sas/sas-browser.js$script,redirect=noopjs,domain=shinden.pl,important

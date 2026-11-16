@@ -1,16 +1,16 @@
-! Checksum: B/R/u5QyTHgC3R3r+PaK8A
-! Diff-Path: ../patches/123/123-s-1794804278-14400.patch
+! Checksum: oAz+/V1RoqeNq1rWnsOZpw
+! Diff-Path: ../patches/123/123-s-1794847045-14400.patch
 ! Title: Fanboy's Social Blocking List
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.72.26
-! TimeUpdated: 2026-11-16T04:42:05+00:00
+! Version: 2.1.72.29
+! TimeUpdated: 2026-11-16T16:35:22+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202611160434
+! OriginalVersion: 202611161631
 ! Title: Fanboy's Social Blocking List
-! Last modified: 16 Nov 2026 04:34 UTC
+! Last modified: 16 Nov 2026 16:31 UTC
 ! Expires: 4 days (update frequency)
-! Commit: c556dc751a8d06489fad137d7cc0b84d1d855709
+! Commit: 8cd9801462e2ca99098a77d2b76f00654c7c2eb0
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -10144,6 +10144,7 @@ _social_footer_
 ##a[href^="https://www.pinterest.com/pin/create/link/"]
 ##a[href^="https://www.reddit.com/submit?"]
 ##a[href^="https://x.com/intent/follow?screen_name="]
+##a[href^="https://x.com/intent/tweet?"]
 ##a[href^="https://x.com/share?"]
 ##a[href^="whatsapp://send?text="]
 ##a[rel="share-on-facebook"]

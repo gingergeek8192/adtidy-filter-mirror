@@ -1,9 +1,9 @@
-! Checksum: ENAs5ob+0N4MYLWG0hTtrw
-! Diff-Path: ../patches/19/19-s-1794802446-3600.patch
+! Checksum: eq6vxLfz3795CEhwkLjyRQ
+! Diff-Path: ../patches/19/19-s-1794841869-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.87.82
-! TimeUpdated: 2026-11-16T04:10:43+00:00
+! Version: 2.0.87.91
+! TimeUpdated: 2026-11-16T15:08:29+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3486,6 +3486,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+justthegays.tv##.hp-tip
+justthegays.tv##.notification[aria-label="Make it ad-free."]
 planyourtrip.travel##button[aria-label="AI Rundreise Planer"]
 planyourtrip.travel##button[aria-label="Feedback"]
 elektrofahrrad24.de###ratingbadge
@@ -13145,6 +13147,28 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+sportcal.com##.gdm-newsletter-banner__container
+sportcal.com##.catfish-banner
+tricitiesdispatch.com##.email-capture
+tricitiesdispatch.com##a[href="/newsletter/"]
+tricitiesdispatch.com###cp_popup_id_3123
+tricitiesdispatch.com##.indietech-support-widget
+clipboardai.app##section > div.container > div[style]:has(> form[action="/api/subscribe"])
+foxsports.com##.story-add-to-google-sources
+foxsports.com##.article-content-body > div.article-content:has(> div.freeform-content a[href="https://www.foxsports.com/newsletter"])
+||milx.app/build/assets/ModalFormSubscribe-
+||groupdiy.com/js/forum_systems/register_prompt/prompt.js
+audacy.com##.newsletter_component_deafult
+audacy.com##p:has(> a[href="https://www.audacy.com/newsletter/subscribe"])
+dlahandlu.pl##ptwp-google-preferred-source-button
+the-independent.com##div[data-mos-experience="homePageModal"]
+searchengineland.com##.tdm-hero-tool
+searchengineland.com##div[id^="newsletter-"]
+searchengineland.com##.sel-post-newsletter
+wifigid.ru##.telegram-channel
+spartak.com##main > article:has(> div > form input[placeholder="Введите ваш e-mail"])
+moja-ostroleka.pl##.google-banner
+electricbikes.com#%#//scriptlet('set-local-storage-item', 'ebikes-email-signed-v1', '1')
 netzpolitik.org##.interstitial--article
 netzpolitik.org##.is-style-section-corporate--15
 skyrc.com#%#//scriptlet('set-cookie', 'click-newsletter-close', '1')
@@ -13198,6 +13222,7 @@ games.gg##nav.sticky > .flex > .block > button[data-reader-action="google"]
 games.gg##div[class*="--reader-column-"] > .relative:has(> .flex > div[google-add-preferred-source-btn])
 tz.de##.id-StoryElement-factBox:has(> p > a[href*="/newsletter"])
 zeelool.com#%#//scriptlet('trusted-click-element', 'body > .MuiDialog-root button[aria-label="Close dialog"]:has(+ div form input[id^="email-"])')
+news.jtbc.co.kr##div[data-sentry-component="GooglePreferredSource"]
 ilgiorno.it,ilrestodelcarlino.it,lanazione.it##div[class^="ArticleV3_google_"]
 thepostmillennial.com##section[aria-label="Subscribe to Libby’s Desk"]
 thepostmillennial.com##section[aria-label="Subscribe to TPM Newsletter"]
@@ -17096,7 +17121,7 @@ bestmovie.it##.col_whatsapp
 e-tec.at###newsletter-subscription
 retailer.ru##p:has(> a[href="https://t.me/retailer_news"])
 unitis.jp##.l-sidebar > section.p-sideRegister
-out.com,comicsands.com##.newsletter-aside
+audacy.com,out.com,comicsands.com##.newsletter-aside
 moemax.de##main > div[class] > div[data-testid="fullWidthComponent"] ~ div[class]:has(> div[class] > form[novalidate] button[data-purpose="newsletter.submit"])
 friendly2.me##.site-bottombar
 techcrunch.com,governing.com##.hbspt-form
@@ -22577,7 +22602,7 @@ pinknews.co.uk##.pn-single-post-wrapper__newsletter-signup
 romance.io###deals-signup
 herder.de##div[id$="upanNewsletter"]
 monstersandcritics.com##.newsletter-surround
-encancha.cl,inquirer.com##.newsletter-card
+audacy.com,encancha.cl,inquirer.com##.newsletter-card
 intermedia.ru###subscribeForm
 intermedia.ru##.personaldata_notice
 qmaths.in#?#.sidebar > div.widget:has(> div.widget-content > form input[name="email"])

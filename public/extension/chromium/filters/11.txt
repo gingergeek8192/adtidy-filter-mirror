@@ -1,9 +1,9 @@
-! Checksum: FX0BlRb3P5oX1CDQpN71nw
-! Diff-Path: ../patches/11/11-s-1794798826-3600.patch
+! Checksum: fTzuViY+QHu2bMcTLbxkNA
+! Diff-Path: ../patches/11/11-s-1794845482-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.73.47
-! TimeUpdated: 2026-11-16T03:10:41+00:00
+! Version: 2.0.73.49
+! TimeUpdated: 2026-11-16T14:19:00+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2512,6 +2512,7 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+rtl.de##div[class^="combi-ad_"]
 iamgujarat.com,indiatimes.com,samayam.com,vijaykarnataka.com##div[class^="mrec"]
 iamgujarat.com,indiatimes.com,vijaykarnataka.com,maharashtratimes.com##.carousalad
 iamgujarat.com,indiatimes.com,samayam.com,maharashtratimes.com##.mid-taboola
@@ -6005,7 +6006,6 @@ portal.auone.jp##.news__items--rect-ad
 portal.auone.jp##.news__items--recommend-rect-ad-at
 portal.auone.jp##.rich-ad
 m.yeniakit.com.tr##.sticky-mobil-new
-smt.docomo.ne.jp###WrpAd
 m.augsburger-allgemeine.de##.swiper-container-ads
 javbangers.com##div[style="text-align: center; padding: 10px 0 0px;"]
 trinixy.ru##div.mdl-card[style^="text-align: center;"]
@@ -9242,7 +9242,6 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21078
 ||mangaapi.manhuaren.com/*/public/getRecommendedGame^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10315
-||ads.adfox.ru/*/getCode?p1=$domain=auth.wi-fi.ru,replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://forum.adguard.com/index.php?threads/23599/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5676
 !
