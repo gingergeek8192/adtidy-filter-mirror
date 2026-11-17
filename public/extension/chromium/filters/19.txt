@@ -1,9 +1,9 @@
-! Checksum: oSM40V4MRUHM7v0sggNZlA
-! Diff-Path: ../patches/19/19-s-1794906750-3600.patch
+! Checksum: vGEFTM/Zw9FQOwUU+3dtCw
+! Diff-Path: ../patches/19/19-s-1794924733-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.87.93
-! TimeUpdated: 2026-11-17T09:09:56+00:00
+! Version: 2.0.87.98
+! TimeUpdated: 2026-11-17T14:09:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2333,6 +2333,7 @@ goduke.com,uwaterloo.ca##div[aria-label="Ad Blocker Detected"]
 ! SECTION[id=general]: Anti-adblock - Common '!#safari_cb_affinity(general)' directive
 !#safari_cb_affinity(general)
 !
+@@||apkcube.com^$generichide
 play.mercadolivre.com.br#@#.google-ad
 jetpunk.com#@#.ad-unit-2
 @@||ss.sport-express.ru/ads/system/context.js
@@ -12058,6 +12059,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+||epiotrkow.pl/build/theme/epiotrkow/js/push-prompt.js
 indiatimes.com,maharashtratimes.com##.topNotification
 footyheadlines.com##.push-badge
 viciados.net##.vp-fim
@@ -13148,6 +13150,16 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+korben.info##a[href="/o/google-source-header"]
+korben.info##.gsource-cta
+nplus1.ru##.body-subscription-button-container
+||nplus1.ru/image-new/header/subscription-autumn-alien.gif
+newsru.co.il##.main--single--article--content--cover
+pn.ru###complex-page-subscribe-card
+liveball.sx###tg_header_link
+liveball.sx##.home-cta
+80.lv##.Article__widget_size_full:has(#subscribe-form)
+worldsoccertalk.com##article .flex > .w-full:has(> .flex > a[href^="https://profile.google.com/"])
 euobserver.com##.eo-container--signup
 turkiyegazetesi.com.tr###aboneBanner
 kayseriolay.com##.items-center > div.justify-end:has(> div.flex > a[title^="Google News"])
@@ -13513,6 +13525,7 @@ noticer.news##.elementor-element-49328748
 hdmotori.it,hdblog.it##.discover_button
 hdblog.it##.telegram_button
 ittefaq.com.bd##.googleNewsLink
+pravda.com.ua##.section_news_wrapper > article.post_news > section[id^="ranok_subscribe_"]
 pravda.com.ua###articles-container > div.article_news_list:has(> section[id^="ranok_subscribe_"])
 meduza.io##.GeneralMaterial-module-article > p[class^="SimpleBlock-module_"]:has(> a[href="https://www.instagram.com/meduzapro/"])
 def-shop.com##.asf-app-newsletter
@@ -15628,8 +15641,8 @@ getstronganimals.com#%#//scriptlet('set-session-storage-item', 'freeshippingShow
 publicapis.io##.bottom-newsletter-form
 potensic.com#%#//scriptlet('set-cookie', 'cookie_time', '1')
 ||email.2ndswing.com/resources/sharing/popoverv2.js
-turbogruen.de,denimfy.de,myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#body.klaviyo-prevent-body-scrolling { overflow: auto !important; }
-turbogruen.de,denimfy.de,myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#div[aria-label="POPUP Form"] { display: none !important; }
+kangol.com,turbogruen.de,denimfy.de,myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#body.klaviyo-prevent-body-scrolling { overflow: auto !important; }
+kangol.com,turbogruen.de,denimfy.de,myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#div[aria-label="POPUP Form"] { display: none !important; }
 thepage.ua##.subscription-section
 express.co.uk##.whatsapp-group
 axios.com#%#//scriptlet('set-cookie', '_pc_bypass_subwall', 'true')
@@ -22587,7 +22600,7 @@ mrbigandtall.ca###joinTheClubPopupContainer
 fosspost.org#?#.widget-area > section.widget:has(> h3.widget-title > span:contains(Newsletter))
 journaldesfemmes.fr,linternaute.com##.nl-box--right-col
 zapravdu.org###newsform
-tengrinews.kz,economictimes.indiatimes.com,revistamercado.do,catalog-az.ro,offidocs.com,bestforandroid.com,australiangeographic.com.au,vogueadria.com,bookdepository.com,crystalgemstoneshop.com,allthatsinteresting.com,gestion.pe,edureka.co,tubularinsights.com,rollei.de,hashicorp.com##.newsletter-section
+scanwp.net,tengrinews.kz,economictimes.indiatimes.com,revistamercado.do,catalog-az.ro,offidocs.com,bestforandroid.com,australiangeographic.com.au,vogueadria.com,bookdepository.com,crystalgemstoneshop.com,allthatsinteresting.com,gestion.pe,edureka.co,tubularinsights.com,rollei.de,hashicorp.com##.newsletter-section
 richads.com,eroskosmos.org##.subscribe-main
 towardsdatascience.com#?##root div:has(> h2:contains(Sign up for The Daily Pick))
 hashicorp.com##div[class^="BlogNewsletterSignup_blogNewsletterSignup"]
