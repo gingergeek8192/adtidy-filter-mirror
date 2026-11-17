@@ -24,8 +24,23 @@ jobs:
       - name: Update ping
         run: |
           NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          NEXT=$(date -u -d '+13 hours' +%Y-%m-%dT%H:%M:%SZ)
-          printf '{"ok":true,"updatedAt":"%s","nextUpdate":"%s","jobRanAt":"%s","jobNextRunAt":"%s"}\n' "$NOW" "$NEXT" "$NOW" "$NEXT" > public/ping.json
+          node -e "
+            const fs = require('fs');
+            const p = fs.existsSync('public/ping.json') ? JSON.parse(fs.readFileSync('public/ping.json', 'utf8')) : {};
+            const now = '$NOW';
+            const lastUpdated = p.updatedAt ? new Date(p.updatedAt) : null;
+            if (!lastUpdated || (Date.now() - lastUpdated.getTime()) >= 12 * 60 * 60 * 1000) {
+              p.updatedAt = now;
+              p.nextUpdate = new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString().replace(/\\.\\d+Z$/, 'Z');
+            }
+            p.ok = true;
+            p.jobRanAt = now;
+            const d = new Date(now);
+            const nextHour = [0,6,12,18].find(h => h > d.getUTCHours()) ?? 24;
+            const next = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + (nextHour === 24 ? 1 : 0), nextHour % 24, 27));
+            p.jobNextRunAt = next.toISOString().replace(/\.\d+Z$/, 'Z');
+            fs.writeFileSync('public/ping.json', JSON.stringify(p));
+          "
 
       - name: Commit changes
         run: |
