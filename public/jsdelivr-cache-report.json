@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-11-17T10:54:00.712Z",
+	"updatedAt": "2026-11-17T15:34:51.646Z",
 	"total": 89,
 	"ok": 89,
 	"failed": 0,
@@ -205,8 +205,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/114.txt",
@@ -229,8 +229,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/119.txt",
@@ -289,8 +289,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/124.txt",
@@ -301,8 +301,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": true,
-			"detail": "checksum:match"
+			"warmOk": false,
+			"detail": "checksum:mismatch"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/13.txt",
@@ -493,8 +493,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/214.txt",
@@ -589,8 +589,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/225.txt",
@@ -865,8 +865,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/254.txt",
@@ -949,8 +949,8 @@
 				"FY": true
 			},
 			"ok": true,
-			"warmOk": false,
-			"detail": "checksum:mismatch"
+			"warmOk": true,
+			"detail": "checksum:match"
 		},
 		{
 			"url": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/260.txt",
