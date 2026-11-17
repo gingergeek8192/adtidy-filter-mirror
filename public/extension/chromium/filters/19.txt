@@ -1,9 +1,9 @@
-! Checksum: vGEFTM/Zw9FQOwUU+3dtCw
-! Diff-Path: ../patches/19/19-s-1794924733-3600.patch
+! Checksum: 0ObWp7OMc/js3+RThAFM6g
+! Diff-Path: ../patches/19/19-s-1794939212-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.87.98
-! TimeUpdated: 2026-11-17T14:09:54+00:00
+! Version: 2.0.88.1
+! TimeUpdated: 2026-11-17T18:10:44+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -597,6 +597,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+stadt-bremerhaven.de###ab-hinweis
 shinden.pl##.ep-ads-note
 shinden.pl##.player-online > #ep-komunikat:has(> .message_list > .warning > a[href="/shop"])
 ecosia.org##div[data-test-id^="ad-block-notice"]
@@ -13150,6 +13151,11 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+wallstreet-online.de##a[href="https://www.wallstreet-online.de/newsletter"]
+extraetf.com##.container-footer-newsletter
+oggi.it##a[aria-label*="Google Discover"]
+newscientist.com##.wp-block-newscientist-call-to-action
+newscientist.com##.sidebar-newsletter-wrapper
 korben.info##a[href="/o/google-source-header"]
 korben.info##.gsource-cta
 nplus1.ru##.body-subscription-button-container
@@ -20526,7 +20532,7 @@ timeturk.com#?#.sidebar > div.sidebar-widget:has(> form.mail-form)
 marianne.net###modal-newsletter
 marianne.net##.overlay--cover-all
 teknoblog.com#?#a[href^="https://news.google.com/publications/"] > img
-artforum.com,iflscience.com,jagran.com##.tp-container-inner
+newscientist.com,artforum.com,iflscience.com,jagran.com##.tp-container-inner
 coop-land.ru##.wr-area
 coop-land.ru##article > div.text-center[style="margin-bottom: 20px;"]
 coop-land.ru##article > div[class="center m10"]
@@ -22372,7 +22378,7 @@ businessinsider.com##a[href*="&itm_campaign=chart-of-the-day-newsletter"]
 cooking.nytimes.com###inline-recipe-newsletter-signup
 seattletimes.com###amp-usermessaging
 radiokp.ru##.fx-ai-center
-sklep.precio.pl,propaganda24h.pl,altoonamirror.com,kamieniolomy.pl,roboexpert.pl,granitnaturalny.pl,przeciwpozarowy.com,lpbros.pl,rowerowelove.shop,straganzdrowia.pl###box_newsletter
+houseofpostcards.pl,sklep.precio.pl,propaganda24h.pl,altoonamirror.com,kamieniolomy.pl,roboexpert.pl,granitnaturalny.pl,przeciwpozarowy.com,lpbros.pl,rowerowelove.shop,straganzdrowia.pl###box_newsletter
 swarajyamag.com##div[class^="email-subscribe-"]
 revolt.tv##div[id="toaster"][data-cdata*="Subscribe"]
 flos.com###link-newsletter
