@@ -2,29 +2,32 @@
 
 A synchronised, checksum-verified mirror of AdTidy's Chromium filter lists.
 
-It provides [Adblock-Electron](https://github.com/gingergeek8192/Adblock-Electron) with multiple delivery sources and allows consumers to run the mirror under their own GitHub and GitLab accounts. 
+It provides [Adblock-Electron](https://github.com/gingergeek8192/Adblock-Electron) with multiple independent delivery sources, while allowing consumers to operate their own mirrors under their GitHub and GitLab accounts.
 
-This repo is maintained and provides filters for production open source applications.
+This repository is actively maintained and provides filter data for production open-source applications.
 
-The mirror publishes the non-deprecated Chromium filter lists to GitHub and GitLab, with jsDelivr serving the GitHub copy through its CDN. The original AdTidy download URLs are retained making four total sources across three CDN networks `Fastly` | `Cloudflare` | `Qrator`.
+The mirror publishes the non-deprecated Chromium filter lists to GitHub and GitLab, with jsDelivr serving the GitHub copy through its CDN. The original AdTidy download URLs are retained, providing four delivery sources distributed across three CDN networks: Fastly, Cloudflare and Qrator.
 
-Each synchronisation verifies downloaded filters, publishes valid changes, manages the jsDelivr cache and records the cache-warming results.
+Each synchronisation verifies downloaded filters, publishes valid changes, manages the jsDelivr cache and records cache-warming results.
 
 ## Features
 
 - **Multiple delivery sources** — AdTidy, GitHub, jsDelivr and GitLab.
-- **Checksum verification** — downloaded filters are verified against their embedded MD5 checksums.
-- **Last-known-good protection** — invalid downloads never replace previously verified filters.
-- **Automated synchronisation** — runs every six hours.
+- **Checksum verification** — Downloaded filters are verified against their embedded MD5 checksums.
+- **Last-known-good protection** — Invalid downloads never replace previously verified filters.
+- **Automated synchronisation** — Scheduled approximately every 6 hours, providing multiple opportunities to synchronise filters against a 12-hour consumer update cycle.
 - **CDN management** — jsDelivr cache purging, warming and cache health reporting.
+- **External monitoring** — A local watchdog is recommended to monitor scheduled synchronisation and detect missed or unsuccessful runs.
 
 ## Self-hosting
 
-You can run your own mirror using your GitHub and GitLab accounts.
+You can operate your own mirror using your GitHub and GitLab accounts.
 
 Both repositories must have the same name:
 
 `adtidy-filter-mirror`
+
+Both accounts must also use the same username.
 
 ### Setup
 
@@ -33,11 +36,11 @@ Both repositories must have the same name:
 3. Push this repository's contents to your GitHub repository.
 4. Create a GitLab project access token with the Developer role and `write_repository` scope.
 5. Add the token to your GitHub repository's Actions secrets as `GITLAB_COMMIT`.
-6. Run **Actions → Sync AdTidy Filters** to initialise synchronisation.
+6. Enable GitHub Actions and run **Actions → Sync AdTidy Filters** to initialise synchronisation.
 
 The workflow handles filter synchronisation, GitLab publishing and jsDelivr cache management automatically.
 
-GitHub Actions scheduled workflows are disabled by default in forks. Enable Actions and run the workflow manually to initialise your mirror.
+GitHub Actions scheduled workflows are disabled by default in forks. Enable Actions and run the workflow manually to initialise your mirror. Scheduled synchronisation will then operate according to the workflow configuration.
 
 ## Using with Adblock-Electron
 
@@ -46,7 +49,6 @@ Adblock-Electron supports independently hosted mirrors through the `withOwnMirro
 Supply your account name and the hosts you want to use:
 
 ```javascript
-
 Adblock.setResources({
     withOwnMirror: {
         account: 'your-account',
@@ -58,7 +60,6 @@ Adblock.setResources({
     },
     ...
 })
-
 ```
 
 **Configuration:**
