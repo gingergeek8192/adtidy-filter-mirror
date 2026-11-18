@@ -1,9 +1,9 @@
-! Checksum: 8JVuA2pgbu05Ma/KsHsc7Q
-! Diff-Path: ../patches/19/19-s-1794993117-3600.patch
+! Checksum: A3YUh9LdnqGZlew5/kCTfQ
+! Diff-Path: ../patches/19/19-s-1795028973-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.88.4
-! TimeUpdated: 2026-11-18T09:09:46+00:00
+! Version: 2.0.88.10
+! TimeUpdated: 2026-11-18T19:07:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -726,7 +726,6 @@ smartzone.de##.toast-ad-block-wrapper
 ||a.pemsrv.com/ad-provider.js$domain=xvideos.es,redirect=nooptext
 cloudfam.io##.cf-warning-section
 myradioonline.pl##.js-appAdv
-myradioonline.pl##.popup_layer
 myradioonline.pl#%#//scriptlet('prevent-element-src-loading', 'script', 'cfusion-internet.com')
 replacedbyrobot.info#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'window.getComputedStyle')
 manoramamax.com#$#body { overflow: auto !important; }
@@ -3488,6 +3487,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+cyderes.com###hs-web-interactives-bottom-anchor
+bigo.tv##.room-recommend-live ~ div.login-popup:not(:has(.btn-close))
 ||ncez.pzh.gov.pl/*/plugins/ncez-ebook-popup/
 ruangguru.com###bantuan-divs-container
 justthegays.tv##.hp-tip
@@ -12061,6 +12062,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+fan.books.rakuten.co.jp#%#//scriptlet('set-local-storage-item', 'firstBannerClosed', 'true')
 ||epiotrkow.pl/build/theme/epiotrkow/js/push-prompt.js
 indiatimes.com,maharashtratimes.com##.topNotification
 footyheadlines.com##.push-badge
@@ -13126,7 +13128,7 @@ energymag.gr,smnovella.com,ici.radio-canada.ca,corrierenazionale.it,trustedrevie
 ! ##.subscribe-widget
 cairoreport.org,arx.com.ua,julieseatsandtreats.com,lentepubblica.it,thegamebusiness.com,blog.bytebytego.com,sources.news,www-ntv-com-tr.cdn.ampproject.org,dwarkesh.com,secondthoughts.ai,ciw.news,pillarcatholic.com,noahpinion.blog,newcomer.co,blog.corkmac.app,blog.sshh.io,hardcoresoftware.learningbyshipping.com,newsletter.techworld-with-milan.com,newsletter.pragmaticengineer.com,read.engineerscodex.com,ntv.com.tr,newsguardrealitycheck.com,thecoder.cafe,gamefile.news,admissionnotice.com,forbesindia.com,materializedview.io,computerenhance.com,clubstrannik.ru,noktabursa.com.tr,girlonthenet.com,substack.com,santiye.com.tr,rb.ru,investors.com##.subscribe-widget
 ! ##.subscribe-block
-bastion.tv,baikalsr.ru,rivne1.tv,hispanidad.com,flb.ru,4freerussia.org,carnegieendowment.org,rozetked.me,pozirk.online,zagorodna.com,markformelle.by,mc.today,dobrotsen.ru,65ymas.com,techtimes.com,elplural.com,kinometro.ru,sport24.ua,newsweek.com,positronica.ru,eurasia.expert,hockey.by,kleo.ru,focusme.com,charbelnemnom.com,iphonegeek.me,afanasy.biz,media.nenaprasno.ru,vogue.ru,hyperhost.ua,pravda.ru,reverso.net,vokrug.tv##.subscribe-block
+bobswatches.com,nknews.org,bastion.tv,baikalsr.ru,rivne1.tv,hispanidad.com,flb.ru,4freerussia.org,carnegieendowment.org,rozetked.me,pozirk.online,zagorodna.com,markformelle.by,mc.today,dobrotsen.ru,65ymas.com,techtimes.com,elplural.com,kinometro.ru,sport24.ua,newsweek.com,positronica.ru,eurasia.expert,hockey.by,kleo.ru,focusme.com,charbelnemnom.com,iphonegeek.me,afanasy.biz,media.nenaprasno.ru,vogue.ru,hyperhost.ua,pravda.ru,reverso.net,vokrug.tv##.subscribe-block
 ! ##.mc4wp-form
 secretmelbourne.com,kdnuggets.com,eleftherostypos.gr,presse-citron.net,teknoloji.org,slantmagazine.com,newsmaker.md,seance.ru,photorecept.ru,helpnetsecurity.com,forbes.com.br,javacodegeeks.com,turizmgunlugu.com##.mc4wp-form
 ! ##.subscribe-footer
@@ -13152,6 +13154,11 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+kompas.com##.buttonOnGoogle
+giga.de##.alice-button-container--google
+giga.de##.alice-layout-article-meta-google
+cyderes.com##.right_column > div.hs_cos_wrapper:has(> div.howler-card)
+lenta.ru##.trusted-sources-notification
 freiepresse.de##.article__google-preferred
 teamgb.com#%#//scriptlet('set-cookie', 'newsletter_popup_seen', 'true')
 pornsack.com##.footer-community-button--telegram
@@ -14027,7 +14034,7 @@ chillflix.lol#%#//scriptlet('set-session-storage-item', 'chillflix:community-pro
 edmunds.com##.news-subscription-button
 eltern.de##.x-embed--newsletter-subscription
 ozbargain.com.au###main > div.node:not([id]):has(> div.n-right > form#newsletter_form)
-cosmopolitan.com,delish.com,goodhousekeeping.com,menshealth.com,roadandtrack.com##[data-vars-block-type="Newsletter"]
+esquire.com,cosmopolitan.com,delish.com,goodhousekeeping.com,menshealth.com,roadandtrack.com##[data-vars-block-type="Newsletter"]
 oprahdaily.com,runnersworld.com##div[data-theme-key="newsletter-feedpage-wrapper"]
 secrets.tbank.ru##div[data-testid="promo_banner-background"]
 gogov.ru##.gg-post-meta__subscribe
@@ -16657,7 +16664,6 @@ nknews.org#$##subscribeModal { display: none !important; }
 nknews.org#$#.modal-backdrop { display: none !important; }
 nknews.org#$#.modal-open { overflow: auto !important; }
 nknews.org#$#body.modal-open .container { filter: none !important; }
-nknews.org##.subscribe-block
 nknews.org###fwidget-text-70
 gloria-jeans.ru##div[class*="-page__subscription"]
 ysia.ru##.theme-post-read-us
