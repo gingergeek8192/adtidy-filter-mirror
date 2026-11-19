@@ -1,9 +1,9 @@
-! Checksum: PoK1uUd4rNFe2R4IbItGhQ
-! Diff-Path: ../patches/260/260-s-1794963116-14400.patch
+! Checksum: eob+zxdYu9IxRSEkIgO3XA
+! Diff-Path: ../patches/260/260-s-1795063074-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.20
-! TimeUpdated: 2026-11-18T00:49:57+00:00
+! Version: 2.0.3.23
+! TimeUpdated: 2026-11-19T04:35:55+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -284,7 +284,7 @@ docs.aws.amazon.com##button[aria-label="Search with Docs AI"]
 docs.aws.amazon.com#$#div:has(> [data-testid="agentic-search-trigger"]) { background: #bbb !important }
 ! Remove sparkle from search icon
 docs.aws.amazon.com#$#[data-testid="agentic-search-trigger"] [d^="m11 11.005 4 4M11.9 8a5.002 5.002"] { d: path("m11 11 4 4M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10Z") !important }
-docs.aws.amazon.com#$#[data-testid="agentic-search-trigger"] .awsui-icon-sparkle[d^="M12.332 6.888c.028.07.098.112.168"] { d: path("") !important }
+docs.aws.amazon.com#$#[data-testid="agentic-search-trigger"] .awsui-icon-sparkle { d: path("") !important }
 ! -- https://docs.aws.amazon.com/search/doc-search.html?searchQuery=test
 ! "Docs AI" tab on search results page
 docs.aws.amazon.com##[class^="awsui_tabs-tab_14rmt_"]:has([data-testid="ai"])
@@ -363,6 +363,8 @@ www.bing.com###codex
 www.bing.com##.gbfo_c_bsic_variant:has(> [href^="https://www.bing.com/images/create"])
 ! Header - ... → Microsoft 365 → M365 Copilot
 www.bing.com###m365copilot_overflow
+! Search bar - Plus button + for AI tools
+www.bing.com#$##hpsbtools-drawer { pointer-events: none !important }
 ! "M365" button to the right of search bar
 www.bing.com##.cdxCopilotIconBg
 ! "Image creator" and "Video creator" buttons below search bar
@@ -372,6 +374,8 @@ www.bing.com###sa_ai_block
 ! Autocomplete suggestion for "Image Creator"
 www.bing.com#%#//scriptlet('ubo-json-edit-xhr-response', '$.s[?@.t=="AI"]', 'propsToMatch', '/AS/Suggestions')
 ! -- https://www.bing.com/search?q=test (generic search page)
+! Search bar - Plus button for AI tools
+www.bing.com#$##sb_tool_drawer { pointer-events: none !important }
 ! Navbar tabs for "Search" and "Copilot"
 www.bing.com###b-scopeListItem-copilotsearch
 www.bing.com###b-scopeListItem-conv
@@ -1658,7 +1662,7 @@ console.cloud.google.com###pcc-duet-chat-container
 console.cloud.google.com##.pcc-zero-state-products > .ng-star-inserted:has(search-gemini-prompt-list)
 ! === Google Developer Documentation ===
 ! Remove AI sparkle from search icon
-developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com,web.dev#$#.devsite-search-ai-image [d^="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925"] { d: path("M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z") !important }
+developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com,web.dev#$#.devsite-search-ai-image path { d: path("M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z") !important }
 ! -- https://developer.chrome.com/docs/devtools
 ! Navbar categories
 developer.chrome.com##tab:has(> [track-name="ai assistance"])
@@ -3203,6 +3207,10 @@ account.proton.me##.lumo-troubleshoot-launcher
 ! -- https://account.proton.me/apps
 ! Lumo app
 account.proton.me##.explore-apps-list-item:has(> [data-testid="explore-lumo"])
+! === Puck ===
+! -- https://puck.news/hollywood/2026/11/the-wachowskis-are-reclaiming-the-matrix
+! AI powered article narration
+puck.news##.puck-article-audio:has(.puck-article-audio__disclaimer)
 ! === Pydantic ===
 ! -- https://pydantic.dev/docs/
 ! Header navbar items
@@ -3735,6 +3743,14 @@ www.testmuai.com##ai-seller-widget
 www.testmuai.com##.w-\[265px\].flex-shrink-0.desktop\:hidden > div > [title^="Open in "]
 ! Sidebar ad
 www.testmuai.com##.w-\[265px\].flex-shrink-0.desktop\:hidden .mt-20.flex-shrink-0
+! === Testsigma ===
+! -- https://testsigma.com/blog/emulate-safari/
+! Sidebar promo for No-Code AI testing
+testsigma.com##section .p-8.sticky:has(img[title="AI-Powered Testing"])
+! Modal popup for AI Agent product demo
+testsigma.com##.popup-backdrop:has([src^="https://website-static.testsigma.com/blog/nextjs/d4bf76/images/v2/common/exit-intent-home.avif"])
+! Footer - Summarize with AI
+testsigma.com##footer div.space-y-4:has([href^="//chat.openai.com/?q="])
 ! === The Atlantic ===
 ! -- https://www.theatlantic.com/games/
 ! Lemony Snicket LLM game
@@ -3801,9 +3817,11 @@ tms-outsource.com##.menu-item:has(> [href="https://tms-outsource.com/blog/catego
 ! -- https://www.todoist.com/
 ! Ramble promo banner
 www.todoist.com##message-banner[data-banner-name="ramble-1vv4lt6"]
-! -- https://app.todoist.com/app/upcoming
-! Ramble button
+! -- https://app.todoist.com/app
+! Sidebar - Ramble button
 app.todoist.com##button[aria-label="Dictate tasks with Ramble"]
+! Sidebar - Todoist Automations
+app.todoist.com###apps-automations
 ! === TrialX ===
 ! -- https://www.trialx.com/clinical-trials/listings/273100/early-detection-of-endometrialovarian/
 ! AI simplified article
@@ -4103,6 +4121,9 @@ www.wigs.com##.oke-w-reviewsSummaryModule
 ! -- https://onlinelibrary.wiley.com/doi/10.1002/agr.70142
 ! Floating AI Companion
 ||onlinelibrary.wiley.com/products/acropolis/pericles/releasedAssets/js/ContentAssistant.js$script,domain=onlinelibrary.wiley.com
+! -- https://onlinelibrary.wiley.com/doi/epdf/10.1002/zoo.70100
+! Floating AI Companion
+||onlinelibrary.wiley.com/products/pericles/releasedAssets/js/ContentAssistant-$script,domain=onlinelibrary.wiley.com
 ! === Wix ===
 ! -- https://manage.wix.com/ai-assistant?flow=main-partner-studio
 ! "Chat with AI" button.
