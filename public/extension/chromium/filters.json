@@ -11,8 +11,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.76",
-			"timeUpdated": "2026-11-20T06:11:55+0000",
+			"version": "2.1.9.79",
+			"timeUpdated": "2026-11-20T15:07:40+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -24,7 +24,7 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
-			"checksum": "yZrnKE8s4xhDE2qKXvjj0w",
+			"checksum": "Mu9n2sFkaDokV3OPVCC6GA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/1.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/1.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/1.txt"
@@ -40,8 +40,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.5.5.79",
-			"timeUpdated": "2026-11-20T06:12:07+0000",
+			"version": "2.5.5.92",
+			"timeUpdated": "2026-11-20T19:07:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -51,7 +51,7 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
-			"checksum": "d7wuqQuQToJkrDqkOkVGYQ",
+			"checksum": "Y1E2GobHMXEkfvObscKOcA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/2.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/2.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/2.txt"
@@ -67,8 +67,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.15.97",
-			"timeUpdated": "2026-11-20T05:08:28+0000",
+			"version": "2.1.16.2",
+			"timeUpdated": "2026-11-20T19:07:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -76,7 +76,7 @@
 				10
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/3.txt",
-			"checksum": "GZ7qlfvHJ2F7XVXWYx+6uQ",
+			"checksum": "tr9CAyytiSn2KCHMf/Y/qA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/3.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/3.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/3.txt"
@@ -92,8 +92,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.35.48",
-			"timeUpdated": "2026-11-20T06:12:27+0000",
+			"version": "2.1.35.50",
+			"timeUpdated": "2026-11-20T10:08:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -101,7 +101,7 @@
 				10
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/4.txt",
-			"checksum": "PAi4m8GDY1c9uNaFPUPfmw",
+			"checksum": "pEV9ymn96vJRhmjrsU0dsQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/4.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/4.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/4.txt"
@@ -141,8 +141,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.87",
-			"timeUpdated": "2026-11-19T18:10:10+0000",
+			"version": "2.0.54.89",
+			"timeUpdated": "2026-11-20T18:10:14+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -154,7 +154,7 @@
 				13
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/6.txt",
-			"checksum": "ACCF/sVThFhoJFR2CkSdMw",
+			"checksum": "P+mo/U5QnhGWRJj6+LPAxQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/6.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/6.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/6.txt"
@@ -170,8 +170,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.78.58",
-			"timeUpdated": "2026-11-20T06:12:34+0000",
+			"version": "2.0.78.63",
+			"timeUpdated": "2026-11-20T15:08:31+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -182,7 +182,7 @@
 				14
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/7.txt",
-			"checksum": "ez+m8vZ5mXIBz635+K5J0Q",
+			"checksum": "Xcc5nDMHsodpdmJU4n0uHQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/7.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/7.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/7.txt"
@@ -280,8 +280,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.73.56",
-			"timeUpdated": "2026-11-18T19:07:26+0000",
+			"version": "2.0.73.57",
+			"timeUpdated": "2026-11-20T17:07:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -292,7 +292,7 @@
 				19
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/11.txt",
-			"checksum": "JdlT7j436ZbRaWQd3TBoxA",
+			"checksum": "YHsEwsrclbmDA0cYQXPvDQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/11.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/11.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/11.txt"
@@ -308,8 +308,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.70.5",
-			"timeUpdated": "2026-11-20T06:12:43+0000",
+			"version": "2.0.70.7",
+			"timeUpdated": "2026-11-20T18:10:26+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -321,7 +321,7 @@
 				24
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
-			"checksum": "NgraU0RcAOvAcgcBm3lBog",
+			"checksum": "pazogD0BmP+xIFZ09eXlmQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/13.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/13.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/13.txt"
@@ -397,8 +397,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.1.0.5",
-			"timeUpdated": "2026-11-20T06:12:56+0000",
+			"version": "2.1.0.12",
+			"timeUpdated": "2026-11-20T18:10:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -407,7 +407,7 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
-			"checksum": "3RgReNxl2I4qyowqcfKHkQ",
+			"checksum": "3X4ZMj26RBwgjA/YBMunkw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/18.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/18.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/18.txt"
@@ -423,8 +423,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.88.20",
-			"timeUpdated": "2026-11-20T06:12:58+0000",
+			"version": "2.0.88.26",
+			"timeUpdated": "2026-11-20T19:08:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -433,7 +433,7 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
-			"checksum": "e5SGWThmzOZ+DnbdZsAfoQ",
+			"checksum": "VZ1tzUYOCJN2XTiXXEc7kw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/19.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/19.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/19.txt"
@@ -449,8 +449,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.34.42",
-			"timeUpdated": "2026-11-20T05:08:52+0000",
+			"version": "2.0.34.43",
+			"timeUpdated": "2026-11-20T07:09:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -459,7 +459,7 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/20.txt",
-			"checksum": "5US4ux/9NfrA5k89ui9ESA",
+			"checksum": "rGBNIIzHVD/9by4skvPFdg",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/20.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/20.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/20.txt"
@@ -475,8 +475,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.46",
-			"timeUpdated": "2026-11-20T06:12:58+0000",
+			"version": "2.0.50.49",
+			"timeUpdated": "2026-11-20T19:08:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -485,7 +485,7 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/21.txt",
-			"checksum": "6EsYXS+W9gDPWxxrnNaYrw",
+			"checksum": "Hrk4GqRNue1DQ+IAYsLKaQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/21.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/21.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/21.txt"
@@ -501,8 +501,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.15.62",
-			"timeUpdated": "2026-11-19T18:10:35+0000",
+			"version": "2.0.15.64",
+			"timeUpdated": "2026-11-20T15:09:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -511,7 +511,7 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/22.txt",
-			"checksum": "85sq8ISREC8uNwoLX1V3hw",
+			"checksum": "9bzKYp/86Z/3l+e90I194A",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/22.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/22.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/22.txt"
@@ -610,8 +610,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/27.txt",
 			"trustLevel": "full",
-			"version": "2.0.0.99",
-			"timeUpdated": "2026-11-18T16:09:29+0000",
+			"version": "2.0.1.1",
+			"timeUpdated": "2026-11-20T09:09:13+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
@@ -623,7 +623,7 @@
 				41
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/27.txt",
-			"checksum": "eCVuKo/e6arMOxasbcrHow",
+			"checksum": "MaQVRXvgCzURrX4cCCDrwQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/27.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/27.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/27.txt"
@@ -644,15 +644,15 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.78.47",
-			"timeUpdated": "2026-11-20T04:34:47+0000",
+			"version": "2.1.78.50",
+			"timeUpdated": "2026-11-20T16:35:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				1
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/101.txt",
-			"checksum": "5f7YGGc7ZNXQhKDdxC+kPQ",
+			"checksum": "hvM2WDIEX8HQEwdopdKJsg",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/101.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/101.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/101.txt"
@@ -733,8 +733,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.70.52",
-			"timeUpdated": "2026-11-20T04:34:49+0000",
+			"version": "2.1.70.53",
+			"timeUpdated": "2026-11-20T12:37:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,7 +743,7 @@
 				31
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/104.txt",
-			"checksum": "FCrlUkWkdsgS4CT6Tkg4aA",
+			"checksum": "bBMksGR1AU03bIV4Yg66wA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/104.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/104.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/104.txt"
@@ -795,8 +795,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.1.43",
-			"timeUpdated": "2026-11-20T04:34:52+0000",
+			"version": "2.2.1.46",
+			"timeUpdated": "2026-11-20T16:35:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -805,7 +805,7 @@
 				15
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/106.txt",
-			"checksum": "E3HKOaeHgje+uE7mdjCEcw",
+			"checksum": "jOtsf57lb4TTaOlWJymQ+g",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/106.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/106.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/106.txt"
@@ -881,8 +881,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.2.1.45",
-			"timeUpdated": "2026-11-20T04:34:55+0000",
+			"version": "2.2.1.48",
+			"timeUpdated": "2026-11-20T16:35:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -891,7 +891,7 @@
 				35
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/109.txt",
-			"checksum": "oIbEZNQa/796ha7kSNJoxQ",
+			"checksum": "Pnh4IbhyB1FbPBkC0KYPGw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/109.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/109.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/109.txt"
@@ -965,8 +965,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.2.1.45",
-			"timeUpdated": "2026-11-20T04:34:57+0000",
+			"version": "2.2.1.48",
+			"timeUpdated": "2026-11-20T16:35:23+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -978,7 +978,7 @@
 				38
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/112.txt",
-			"checksum": "N6XwMCdNIHifmhkjUCTZdw",
+			"checksum": "3yd6dZMWm+s7vFI9DAgcrw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/112.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/112.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/112.txt"
@@ -999,8 +999,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.1.44",
-			"timeUpdated": "2026-11-20T04:34:59+0000",
+			"version": "2.2.1.47",
+			"timeUpdated": "2026-11-20T16:35:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1009,7 +1009,7 @@
 				27
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/113.txt",
-			"checksum": "PkKKHiQYNpmn8KfmCZXnaA",
+			"checksum": "9vgOngkODqBBbi4vBe7ECw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/113.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/113.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/113.txt"
@@ -1056,15 +1056,15 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.75.16",
-			"timeUpdated": "2026-11-20T04:35:02+0000",
+			"version": "2.1.75.19",
+			"timeUpdated": "2026-11-20T16:35:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				2
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/118.txt",
-			"checksum": "XbHnp8pnGour1pZcSWZNjw",
+			"checksum": "FNqg88tDrDiWDYWCrFqhuA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/118.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/118.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/118.txt"
@@ -1175,8 +1175,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.68.81",
-			"timeUpdated": "2026-11-20T04:35:08+0000",
+			"version": "2.1.68.83",
+			"timeUpdated": "2026-11-20T12:38:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1184,7 +1184,7 @@
 				9
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/122.txt",
-			"checksum": "UjWJFZwd17ooTbQdpM4/Vg",
+			"checksum": "k4iJMgdxwFoU7GXNlIUO7w",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/122.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/122.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/122.txt"
@@ -1205,8 +1205,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.72.50",
-			"timeUpdated": "2026-11-20T04:35:08+0000",
+			"version": "2.1.72.53",
+			"timeUpdated": "2026-11-20T16:35:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1214,7 +1214,7 @@
 				9
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/123.txt",
-			"checksum": "nVbNleUnx5HiBFDr6NS1Ow",
+			"checksum": "JiNZ6gJxA87YlV+XlhRNfg",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/123.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/123.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/123.txt"
@@ -1235,8 +1235,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.73.19",
-			"timeUpdated": "2026-11-20T04:35:10+0000",
+			"version": "2.0.73.22",
+			"timeUpdated": "2026-11-20T16:35:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1246,7 +1246,7 @@
 				18
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/124.txt",
-			"checksum": "/eAvPR9GqbMPAZ9wkmi/gA",
+			"checksum": "TjEOsFUsW+8GDb5UAo0khw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/124.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/124.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/124.txt"
@@ -1354,15 +1354,15 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.20.46",
-			"timeUpdated": "2026-11-18T12:37:36+0000",
+			"version": "2.0.20.47",
+			"timeUpdated": "2026-11-20T12:38:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				2
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/204.txt",
-			"checksum": "lRrv2/aYrJBK50tZLB0KXQ",
+			"checksum": "AHajGMs8VTy5IuMHnxfkhw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/204.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/204.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/204.txt"
@@ -1413,15 +1413,15 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.1.45",
-			"timeUpdated": "2026-11-20T04:35:16+0000",
+			"version": "2.2.1.48",
+			"timeUpdated": "2026-11-20T16:35:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				50
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/207.txt",
-			"checksum": "xTiB1LCYvFYTozMQQwaL/A",
+			"checksum": "/998Kg8IGX6cth9ExywZrQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/207.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/207.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/207.txt"
@@ -1467,8 +1467,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.0.71",
-			"timeUpdated": "2026-11-20T04:35:19+0000",
+			"version": "2.2.0.74",
+			"timeUpdated": "2026-11-20T16:35:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1476,7 +1476,7 @@
 				8
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/212.txt",
-			"checksum": "VkPo1NKnh3aB01wiGufvaA",
+			"checksum": "BWW9SuF4C+6/V90Dufq42A",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/212.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/212.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/212.txt"
@@ -1492,8 +1492,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.46.95",
-			"timeUpdated": "2026-11-20T04:35:19+0000",
+			"version": "2.0.46.96",
+			"timeUpdated": "2026-11-20T12:38:25+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1504,7 +1504,7 @@
 				10
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/214.txt",
-			"checksum": "G/ON7iMPWDOwShYMUgepGQ",
+			"checksum": "HcN8MNFxkMz7Mvu/hkIjzA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/214.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/214.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/214.txt"
@@ -1658,8 +1658,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.69.89",
-			"timeUpdated": "2026-11-20T05:09:01+0000",
+			"version": "2.1.69.92",
+			"timeUpdated": "2026-11-20T17:08:19+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
@@ -1671,7 +1671,7 @@
 				31
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/224.txt",
-			"checksum": "aEV8tJm7tSmESV9YLYXqCA",
+			"checksum": "9D++CTPZPDNbkmMyJ5Oc/A",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/224.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/224.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/224.txt"
@@ -1782,8 +1782,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.1.45",
-			"timeUpdated": "2026-11-20T04:35:26+0000",
+			"version": "2.2.1.48",
+			"timeUpdated": "2026-11-20T16:36:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1792,7 +1792,7 @@
 				17
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/231.txt",
-			"checksum": "SwiHIfonIDgfIu2D5M0c9g",
+			"checksum": "c3y/2+9cmtmcZ1oTarTe5g",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/231.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/231.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/231.txt"
@@ -1813,8 +1813,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.90.24",
-			"timeUpdated": "2026-11-20T04:35:27+0000",
+			"version": "2.0.90.25",
+			"timeUpdated": "2026-11-20T16:36:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1822,7 +1822,7 @@
 				41
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/232.txt",
-			"checksum": "F0kzF1wYyZJdWP6TCqv+cA",
+			"checksum": "uheVP/eNkkeBVDvLHNoXKQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/232.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/232.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/232.txt"
@@ -2025,15 +2025,15 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.72.24",
-			"timeUpdated": "2026-11-20T04:35:33+0000",
+			"version": "2.1.72.25",
+			"timeUpdated": "2026-11-20T08:35:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				6
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/241.txt",
-			"checksum": "8lLxuHDmAKbUrQDqDCh+tA",
+			"checksum": "jjmfP7YA8nyJLkPGIeiFfQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/241.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/241.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/241.txt"
@@ -2049,8 +2049,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.88",
-			"timeUpdated": "2026-11-19T08:35:58+0000",
+			"version": "2.0.25.89",
+			"timeUpdated": "2026-11-20T08:35:22+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -2064,7 +2064,7 @@
 				55
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/243.txt",
-			"checksum": "Rb9XodRurbkgVIiCtEPZ9Q",
+			"checksum": "xyX2YxXYEx0gRJdcq8pCmQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/243.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/243.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/243.txt"
@@ -2115,8 +2115,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.97.51",
-			"timeUpdated": "2026-11-20T04:35:36+0000",
+			"version": "2.1.97.54",
+			"timeUpdated": "2026-11-20T16:36:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2125,7 +2125,7 @@
 				41
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/246.txt",
-			"checksum": "Q96TTcYMnJqnrYlWBhxciA",
+			"checksum": "6oLzO0QBb1bVRw5UkCdhcw",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/246.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/246.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/246.txt"
@@ -2301,8 +2301,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.94.76",
-			"timeUpdated": "2026-11-20T04:35:42+0000",
+			"version": "2.0.94.79",
+			"timeUpdated": "2026-11-20T16:36:24+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -2313,7 +2313,7 @@
 				10
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/253.txt",
-			"checksum": "EFt38YUvIofrSP5L6XqLdw",
+			"checksum": "DhOykBHflr2Ro6EbJ4NNvg",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/253.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/253.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/253.txt"
@@ -2357,15 +2357,15 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.18.64",
-			"timeUpdated": "2026-11-20T00:47:11+0000",
+			"version": "2.0.18.65",
+			"timeUpdated": "2026-11-20T12:38:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				4
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/255.txt",
-			"checksum": "Q4XEMN8xPDXwXh90b9mSnA",
+			"checksum": "22K1q/5bnI5X1jdEJJgAHA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/255.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/255.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/255.txt"
@@ -2381,15 +2381,15 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.9.51",
-			"timeUpdated": "2026-11-19T08:36:11+0000",
+			"version": "2.0.9.52",
+			"timeUpdated": "2026-11-20T08:35:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				4
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/256.txt",
-			"checksum": "UPj7hnquon3iWCDe4RNUnA",
+			"checksum": "Q6cD1tPKeX0BE1BjdKGKTA",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/256.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/256.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/256.txt"
@@ -2486,15 +2486,15 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.3.27",
-			"timeUpdated": "2026-11-20T04:35:46+0000",
+			"version": "2.0.3.28",
+			"timeUpdated": "2026-11-20T16:36:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
 				5
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium/filters/260.txt",
-			"checksum": "3+xK4dLIO4/xIbvWNCyaRA",
+			"checksum": "TOrb8UN4NVOF48tG7JXceQ",
 			"mirrorUrl": "https://raw.githubusercontent.com/gingergeek8192/adtidy-filter-mirror/main/public/extension/chromium/filters/260.txt",
 			"jsDelivrUrl": "https://cdn.jsdelivr.net/gh/gingergeek8192/adtidy-filter-mirror@main/public/extension/chromium/filters/260.txt",
 			"gitlabUrl": "https://gitlab.com/gingergeek8192/adtidy-filter-mirror/-/raw/main/public/extension/chromium/filters/260.txt"
