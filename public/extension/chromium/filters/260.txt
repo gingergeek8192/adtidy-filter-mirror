@@ -1,9 +1,9 @@
-! Checksum: vJ90VrExob89GlJBMpeTBg
-! Diff-Path: ../patches/260/260-s-1795279053-14400.patch
+! Checksum: pTx87yHXKF2VfpO2RPdmaw
+! Diff-Path: ../patches/260/260-s-1795322281-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.30
-! TimeUpdated: 2026-11-21T16:35:42+00:00
+! Version: 2.0.3.33
+! TimeUpdated: 2026-11-22T04:36:03+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -588,54 +588,51 @@ www.canva.com##[role="list"] > li:has(> [href="https://www.canva.com/safe-ai-can
 www.canva.com##[role="list"] > li:has(> [href="https://www.canva.com/ai-logo-generator/"])
 www.canva.com##[role="list"] > li:has(> [href="https://www.canva.com/business-name-generator/"])
 ! -- https://www.canva.com/ (logged in)
-! Floating AI chat button
-www.canva.com##button[aria-label="Help Assistant"]
-! Quick select - Canva code
-www.canva.com##.zAWjSA.GLyNIw:has([href^="/design/editor/shell?create&type=TAG5rX9VMoM&category=tAG5rahqeWE"])
+! Floating AI help button
+www.canva.com##button[aria-label="Get help"]
 ! Sidebar - Canva AI
-www.canva.com##div:has(> #assistant)
-! Sidebar - More > Dream Lab
-www.canva.com##._B7XGQ [href="/dream-lab"]
-! -  Create menu
-! Create > For You > Quick Actions >
-! * Image to Layers
+www.canva.com##.xdz27ya:has(#assistant)
+www.canva.com#$#.xdz27ya:has(+ .xdz27ya #assistant) { padding-bottom: 32px !important }
+! Sidebar > Dream Lab
+! * Also covers "More" overflow menu
+www.canva.com##nav .x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz.xdz27ya:has(#dream-lab)
+www.canva.com##[role="navigation"] > div:has(> [href="/dream-lab"])
+www.canva.com##[role="navigation"] > div:has(> [href="/dream-lab"]) + hr
+! - "Create" page
+! Create > For you > Quick actions
+! * Magic Layers, Canva Code, & Magic Write
 www.canva.com##.zAWjSA.GLyNIw:has([src="https://content-management-files.canva.com/assets/en/8da12929-77b6-4790-9824-38061f1b67e7"])
-! * Canva Code
-www.canva.com##.zAWjSA.GLyNIw:has([href="/ai/code?forceOpen"])
-! * Magic Write
+www.canva.com##.zAWjSA.GLyNIw:has([href^="/ai/code"])
 www.canva.com##.zAWjSA.GLyNIw:has([href^="/design/editor/shell?create&type=TAFJi5FXMSs&category=tAFK2fpTBVQ"])
-! Create > Photo Editor
-! * Magic Eraser
-www.canva.com##.zAWjSA.GLyNIw:has([src="https://static.canva.com/web/images/4798106e6919ec3efa713e286bc110d8.jpg"])
-! * Background Generator
+! Create > Photo Editor > Quick actions
+! * Grab Text, Background Generator
+www.canva.com##.zAWjSA.GLyNIw:has([src="https://static.canva.com/web/images/9a4d533e514bcd5c64c659414e5bf38f.jpg"])
 www.canva.com##.zAWjSA.GLyNIw:has([src="https://static.canva.com/web/images/58eb8e48f401eb5dfa2cb723df801370.jpg"])
-! Create > Code
-www.canva.com#?#.x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz.a6ZJUw:contains(Code)
 ! -- https://www.canva.com/design?create&type=TAGyBJVQJvY (Canva Docs)
-! Navbar - Magic Switch
-www.canva.com#?#.x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz:has(> .xjp7ctv [role="menuitem"]):contains(Magic Switch)
-! Sidebar - Canva AI
-www.canva.com##.HqCA9g:has([aria-label="Canva AI"])
-! Sidebar - Templates - Generate button
-www.canva.com##.x9f619.xeuugli.xnvo3vl.x1lca0qi.x10zg81t.xw36f2b.xn95wi4.x1mz2wy7.xxtcm4k.x1qyk479.x5lhr3w:has([aria-label="Generation options"])
-! Sidebar - Apps - AI generation tab
-www.canva.com##div:has(> [id$="_-tab-ai-generation"])
-! TODO: AI section in app list
+! Header - Magic Switch (Translate & Transform)
+www.canva.com##[role="list"] button:has([d^="M23.404 4.16c-2.034-.406-2.911-1.386-3.318-3.369a.25.25"])
+www.canva.com##[role="list"] button:has([d^="M10 9.9c-.2-.4-.5-.8-.9-1.2-.9-.8-2.3-1.5-5.1-1.5a.8.8"])
 ! Toolbar - Ask Canva
 www.canva.com##.nbY0vg > div:has([aria-label="Ask Canva"])
 www.canva.com##.nbY0vg > div:has([aria-label="Ask Canva"]) + .bm8JbQ
-! Replace "Start typing" text on blank document
+! Sidebar - Canva AI
+www.canva.com##.HqCA9g:has([aria-label="Canva AI"])
+! Sidebar - Apps - AI Generation category
+www.canva.com##div:has(> [id$="_-tab-ai-generation"])
+! Sidebar - Apps - Collections - "Your go-to apps, in Canva AI"
+www.canva.com#?#[role="tabpanel"] .x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz.xdz27ya:contains(Your go-to apps, in Canva AI)
+! TODO: AI section in app list
+! Replace "Start typing or ask Canva" text on blank document
+! * TODO: Filter has a delay
 www.canva.com#$?#.qiAA2Q:contains("Start typing or ask Canva to generate"):upward(1) { --new-text: "Start typing"; }
 www.canva.com#$?#.qiAA2Q:contains("Start typing or ask Canva to generate") { font-size: 0px !important; }
 www.canva.com#$#.qiAA2Q::before { content: var(--new-text); font-size: 42.6667px; }
-! Plus icon for quick actions menu
-www.canva.com##.lQmhtA:has([aria-label="Quick actions"])
-! TODO: Typing / on blank line opens quick actions
+! Quick Actions > Magic Write
+! * TODO: Still selectable via keyboard arrows
+www.canva.com##[role="listbox"] [role="option"]:has([d^="M11.444 5.489c-2.033-.407-2.91-1.387-3.317-3.37a.25.25"])
 ! -- https://www.canva.com/design?create&type=TAGcbLa0hys (Website Builder)
 ! Sidebar > Text > Magic Write
 www.canva.com#?#button:contains(Magic Write)
-! -- https://www.canva.com/templates
-! TODO: AI video effects section
 ! === CBC News ===
 ! -- https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218
 ! Listen to this article
@@ -3228,6 +3225,9 @@ hintaopas.fi,prisjagt.dk,prisjakt.no,prisjakt.nu##[data-test="StickyAssistantBut
 ! Search mode switcher
 hintaopas.fi,prisjagt.dk,prisjakt.no,prisjakt.nu##[data-sentry-component="HeroModeTabs"]:has(button[aria-pressed="false"] [data-sentry-component="AssistantIcon"])
 hintaopas.fi,prisjagt.dk,prisjakt.no,prisjakt.nu#$#[data-sentry-component="HeroModeTabs"]:has(button[aria-pressed="false"] [data-sentry-component="AssistantIcon"]) + div:has(> [role="search"]) { border-radius: 32px !important }
+! Promo card for AI Assistant
+hintaopas.fi##[data-sentry-component="CampaignCard"]:has(> [href="https://hintaopas.fi/teema/shoppingavustaja"])
+prisjagt.dk,prisjakt.nu,prisjakt.no##[data-sentry-component="CampaignCard"]:has(> [href$="/tema/shoppingassistent"])
 ! === Prime Video ===
 ! -- https://www.primevideo.com/search?ie=UTF8&ref_=atv_nb_sug&phrase=Avatar
 ! AI beta recommendations
@@ -3255,6 +3255,9 @@ account.proton.me##.lumo-troubleshoot-launcher
 ! -- https://account.proton.me/apps
 ! Lumo app
 account.proton.me##.explore-apps-list-item:has(> [data-testid="explore-lumo"])
+! === Public Domain Files ===
+! Navbar - AI Generated images
+www.publicdomainfiles.com##.mainmenu li:has(> [href="https://www.halfphoto.com"])
 ! === Puck ===
 ! -- https://puck.news/hollywood/2026/11/the-wachowskis-are-reclaiming-the-matrix
 ! AI powered article narration
@@ -3366,7 +3369,7 @@ www.reddit.com##.trailing-divider:has(+ .trailing-content-container > [name="tra
 www.reddit.com##.trailing-content-container:has(> [name="trailingContent"])
 ! -- https://www.reddit.com/?feed=home
 ! Recommended posts from AI subreddits
-www.reddit.com#?#shreddit-feed:not([reload-url$="?feed=following"]) shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
+www.reddit.com#?#shreddit-feed:not([reload-url$="?feed=following"]) shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|ClaudeCode|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
 ! -- https://www.reddit.com/search/?q=legal+eagle+bricks+and+minifigs
 ! "Ask" tab
 www.reddit.com###search-results-page-tab-ai_search
@@ -3383,7 +3386,7 @@ www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp) + h
 ! "People also ask about" section (Mobile only)
 www.reddit.com##[id^="answers-suggested-queries"]
 ! Suggestions to repost to AI subreddit (If post was by current user)
-www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
+www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|ClaudeCode|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
 ! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
