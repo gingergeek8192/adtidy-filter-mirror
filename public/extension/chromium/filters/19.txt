@@ -1,9 +1,9 @@
-! Checksum: TzUE6JzSpiBiRBWOmsECaA
-! Diff-Path: ../patches/19/19-s-1795302630-3600.patch
+! Checksum: t9Y67kM41SKtBjwH0aVjSA
+! Diff-Path: ../patches/19/19-s-1795417898-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.88.30
-! TimeUpdated: 2026-11-21T23:08:22+00:00
+! Version: 2.0.88.36
+! TimeUpdated: 2026-11-23T07:09:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8314,7 +8314,7 @@ autoc-one.jp##.show-up.floating
 autoc-one.jp#$##diagnoseModal { display: none !important; }
 autoc-one.jp#$#.modal-backdrop { display: none !important; }
 autoc-one.jp#$#body.modal-open { overflow: auto !important; padding-right: 0 !important; }
-lowellsun.com,denverpost.com#$#body { overflow: auto !important; }
+lowellsun.com,denverpost.com#$#html, body { overflow: auto !important; }
 lowellsun.com,denverpost.com#$#.modal-scrollable { display: none !important; }
 lowellsun.com,saratogian.com,denverpost.com#$#.modal-scrollable ~ div.connext-modal-backdrop { display: none !important; }
 saratogian.com#$#body { overflow: auto !important; }
@@ -12066,6 +12066,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+c-o-k.ru##.cok-push-panel
 fan.books.rakuten.co.jp#%#//scriptlet('set-local-storage-item', 'firstBannerClosed', 'true')
 ||epiotrkow.pl/build/theme/epiotrkow/js/push-prompt.js
 indiatimes.com,maharashtratimes.com##.topNotification
@@ -13063,6 +13064,7 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 !
 /wp-content/plugins/mailoptin/*
 !
+/newsletter-popup.min.js
 ||subscribe-forms.beehiiv.com^
 ||voltmail.io/static/js/form-embed.js$third-party
 ||zeropartyforms.com/*/lightbox.js
@@ -13107,7 +13109,7 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 !
 ! common names
 ! ###newsletter
-business-punk.com,gamebook.pl,golem.de,lecrabeinfo.net,air-journal.fr,sachsen-therme.de,visit-koblenz.de,omr.com,enikos.gr,haribo.com,farmaciasdesimilares.com,applesfera.com,xatakamovil.com,scientificamerican.com,inderes.fi,food.com,voidzero.dev,joindns4.eu,forum.golem.de,draculatheme.com,milanjovanovic.tech,finalspark.com,gamesradar.com,vimeo.com,bestmovie.it,fujinkoron.jp,territoriosamsung.com,lpnt.fr,casabrutus.com,ginzamag.com,lepoint.fr,itpro.com,epe.es,net.hr,phenomenalworld.org,rynek-rolny.pl,imore.com,hgtv.ca,coachweb.com,opendemocracy.net,fangamer.jp,tvtechnology.com,dartagnan.com,corumhaber.net,blog.pragmaticengineer.com,github.blog,nilesoft.org,heizsparer.de,zonaturistica.com,cphpost.dk,lodzkisport.pl,xetra-gold.com,karamangundem.com,lidskae.by,gibchess.com,cinestaan.com,mpbrinquedos.com.br,ladenzeile.at,thewordfinder.com,pbs.org,creditcards.com,antyweb.pl,master-and-more.de,frag-mutti.de,eurowag.com,picmix.com,bloggif.com,asgoodasnew.de,haber50.com,forumsamochodowe.pl,apollographql.com###newsletter
+usnews.com,business-punk.com,gamebook.pl,golem.de,lecrabeinfo.net,air-journal.fr,sachsen-therme.de,visit-koblenz.de,omr.com,enikos.gr,haribo.com,farmaciasdesimilares.com,applesfera.com,xatakamovil.com,scientificamerican.com,inderes.fi,food.com,voidzero.dev,joindns4.eu,forum.golem.de,draculatheme.com,milanjovanovic.tech,finalspark.com,gamesradar.com,vimeo.com,bestmovie.it,fujinkoron.jp,territoriosamsung.com,lpnt.fr,casabrutus.com,ginzamag.com,lepoint.fr,itpro.com,epe.es,net.hr,phenomenalworld.org,rynek-rolny.pl,imore.com,hgtv.ca,coachweb.com,opendemocracy.net,fangamer.jp,tvtechnology.com,dartagnan.com,corumhaber.net,blog.pragmaticengineer.com,github.blog,nilesoft.org,heizsparer.de,zonaturistica.com,cphpost.dk,lodzkisport.pl,xetra-gold.com,karamangundem.com,lidskae.by,gibchess.com,cinestaan.com,mpbrinquedos.com.br,ladenzeile.at,thewordfinder.com,pbs.org,creditcards.com,antyweb.pl,master-and-more.de,frag-mutti.de,eurowag.com,picmix.com,bloggif.com,asgoodasnew.de,haber50.com,forumsamochodowe.pl,apollographql.com###newsletter
 ! ##.newsletter-form
 meteoweb.eu,v-dem.net,hurriyet.com.tr,rosenthal.de,kiwico.com,tennisuptodate.com,publicapis.io,businessinsider.nl,usmagazine.com,visualstudiomagazine.com,goldsguide.com,frandroid.com,tennismajors.com,blog.google,timkadlec.com,braziljournal.com,leroymerlin.ro,sketchbook.com,confianca.com.br,buson.com.br,haberturk.com,mel.fm,washingtonpost.com,belsat.eu,economist.com,gitlab.com##.newsletter-form
 ! ##.newsletter
@@ -13159,6 +13161,15 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+niagarafallsreview.ca##.tncms-block > [tooltip-id="preferred-source-google"]
+businesstech.co.za###floating-newsletter-collapse
+businesstech.co.za##a[href^="https://news.google.com/publications/"]
+businesstech.co.za##.mt-3 > div.pb-3:has(> div.newsletter-subscribe)
+newsweek.com##.WUV-FW_paywallDrawer
+publicmobile.ca##div[data-testid="_global_email_submission_form_builder_banner"]
+economist.com##footer ~ div dual-offer-banner
+variety.com##.o-google-preferred-button
+zeebiz.com##.googlePreferred-mid
 zeenews.com,zee24taas.com##div[class^="GoogleCTAnew-module"]
 marathijagran.com##div[class^="notification_subscribeFrame"]
 gnttv.com,aajtak.in##.googlePreferred
@@ -13946,7 +13957,7 @@ yorkregion.com##custom-tooltip[tooltip-id^="newsletter-desktop-"]
 pciconcursos.com.br###lateral_compartilhar
 sparhandy.de##main > div.MuiBox-root:has(> div.MuiContainer-root button[label="Mit E-Mail anmelden"])
 bz-berlin.de##section[data-block-id="B.Z. folgen"]
-thespec.com,yorkregion.com,waterloochronicle.ca##custom-tooltip[tooltip-id="preferred-source-google"]
+niagarafallsreview.ca,thespec.com,yorkregion.com,waterloochronicle.ca##custom-tooltip[tooltip-id="preferred-source-google"]
 ssga.com#%#//scriptlet('trusted-click-element', '#ssmp-self-identifier-modal #js-ssmp-clrButtonLabel', '', '1500')
 verbraucherzentrale-hessen.de##article section[data-theme="white"]:has(.block-layout-builder a[href="/newsletter"])
 vzhh.de##footer .footer-top:has(.simplenews-subscribe-stay-informed)
@@ -17164,7 +17175,7 @@ agents.media##.post-article > p:has(> em > a[href="https://t.me/agentstvonews"])
 grad.ua##div[id^="tg-"]
 secretmag.ru##div[data-qa="lb-block"] div[style="margin-top:30px"]:has(> div > a[href^="https://dzen.ru/secretmag?"])
 dorama.land##.banner-march-no-rf
-rollingstone.com##.a-content > #piano-paywall
+variety.com,rollingstone.com##.a-content > #piano-paywall
 crowdstrike.com###blogSubscribe
 blog.knowbe4.com##.row-fluid-wrapper > div.row-fluid:has(> div.widget-type-blog_subscribe)
 ably.com##section[data-id="footer-newsletter"]
@@ -22631,7 +22642,7 @@ xda-developers.com###newsletter-sidebar-subscribe
 theregister.com##.newsletter_signup_unit
 theregister.com###index_page > .srow > .faux-article > .newsletter_link
 theregister.com#$?##index_page > .srow > .faux-article:has(> .newsletter_link) { visibility: hidden !important; }
-americanrifleman.org,americanhunter.org,parfum-zentrum.de,geekwire.com,gq.co.za,franceinter.fr,time.com,techbang.com,fivethirtyeight.com,eschuhe.de,kotaku.com.au,gizmodo.com.au,finanzen100.de##.newsletter-subscribe
+businesstech.co.za,americanrifleman.org,americanhunter.org,parfum-zentrum.de,geekwire.com,gq.co.za,franceinter.fr,time.com,techbang.com,fivethirtyeight.com,eschuhe.de,kotaku.com.au,gizmodo.com.au,finanzen100.de##.newsletter-subscribe
 lancashiretelegraph.co.uk##div[data-block-pull="newsletter-interstitial"]
 bestbuy.com###footer-email-block
 actualcomment.ru##.ya_dzen__container
