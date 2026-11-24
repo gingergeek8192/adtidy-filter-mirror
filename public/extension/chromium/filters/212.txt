@@ -1,15 +1,15 @@
-! Checksum: /q6Dhauo3vTNYGMjTmc5wA
-! Diff-Path: ../patches/212/212-s-1795408764-14400.patch
+! Checksum: hm/5ZUobVBjdNhTMShN9Jw
+! Diff-Path: ../patches/212/212-s-1795466243-14400.patch
 ! Title: RU AdList: Counters
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.2.0.89
-! TimeUpdated: 2026-11-23T04:37:23+00:00
+! Version: 2.2.0.93
+! TimeUpdated: 2026-11-23T20:35:28+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: gS8zdmNyi/lXAGUr78QVIQ
-! OriginalVersion: 202611230432
+! Checksum: eff9C5RcMoYLUQlisECEYQ
+! OriginalVersion: 202611232025
 ! Title: RU AdList: Counters
-! Last modified: 23 Nov 2026 04:32 UTC
+! Last modified: 23 Nov 2026 20:25 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
