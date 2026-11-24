@@ -1,15 +1,15 @@
-! Checksum: 1jWDg/+hxJldfq6mvc+hMw
-! Diff-Path: ../patches/112/112-s-1795509469-14400.patch
+! Checksum: x4zOSxFEYD7PmfLgCATKkA
+! Diff-Path: ../patches/112/112-s-1795552698-14400.patch
 ! Title: Liste AR
 ! Description: Additional filter list for websites in Arabic.
-! Version: 2.2.1.69
-! TimeUpdated: 2026-11-24T08:35:37+00:00
+! Version: 2.2.1.72
+! TimeUpdated: 2026-11-24T20:35:30+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: dU+NWMNm1Qh+3xm2Rw9EMQ
-! OriginalVersion: 202611240823
+! Checksum: 9BT4aWBL1fKP4/TM49I5kQ
+! OriginalVersion: 202611242022
 ! Title: Liste AR
-! Last modified: 24 Nov 2026 08:23 UTC
+! Last modified: 24 Nov 2026 20:22 UTC
 ! Expires: 1 days (fréquence des mises à jour automatiques)
 ! Homepage: https://code.google.com/p/liste-ar-adblock/
 !

@@ -1,15 +1,15 @@
-! Checksum: RFSHG4eGAgmPIDUTtaNaaw
-! Diff-Path: ../patches/106/106-s-1795509468-14400.patch
+! Checksum: GrRTfjBpOXwk3oEDMtGdGw
+! Diff-Path: ../patches/106/106-s-1795552698-14400.patch
 ! Title: EasyList Dutch
 ! Description: Additional filter list for websites in Dutch. Already included in AdGuard Dutch filter.
-! Version: 2.2.1.67
-! TimeUpdated: 2026-11-24T08:35:35+00:00
+! Version: 2.2.1.70
+! TimeUpdated: 2026-11-24T20:35:24+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: BITJwu2e45MgXiyM7hwsVQ
-! OriginalVersion: 202611240823
+! Checksum: X2N7H5BRJxYKSEdENTV7SA
+! OriginalVersion: 202611242022
 ! Title: EasyList Dutch
-! Last modified: 24 Nov 2026 08:23 UTC
+! Last modified: 24 Nov 2026 20:22 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 !

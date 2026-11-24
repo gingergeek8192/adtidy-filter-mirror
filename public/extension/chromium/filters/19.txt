@@ -1,9 +1,9 @@
-! Checksum: jCwsyWeYIQYO6oJW8yD4WA
-! Diff-Path: ../patches/19/19-s-1795500959-3600.patch
+! Checksum: gix1ihPkKc4Y7CABYKMfXw
+! Diff-Path: ../patches/19/19-s-1795543975-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.88.46
-! TimeUpdated: 2026-11-24T06:13:20+00:00
+! Version: 2.0.88.51
+! TimeUpdated: 2026-11-24T18:10:26+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3491,6 +3491,9 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+xn--80az8a.xn--d1aqf.xn--p1ai##div[class*="_pageLayout"] > div[class*="_containerWithCloseButton_"]:has(> button[class*="_actionButton_"])
+or24.de##.or24-autobild-badge
+krcrtv.com##div[class^="SignInWithApple_wrapper"]
 i24news.co.il##.i24-live-player
 ninjaone.com###exit-popup
 buzztvdirect.com###bf-code-popup
@@ -13170,6 +13173,9 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+or24.de##body > section.or24-nlp-section[aria-label]
+bundderversicherten.de##body > div.c-popup
+bundderversicherten.de##footer div.l-footer__news-container
 mediaite.com##.c-onesheet-module
 essentiallysports.com##.brand-share-article-section_container__8e0V8
 videogameschronicle.com##.vgc-home__top-content-promos
@@ -17397,7 +17403,7 @@ domovita.by##.subscription-messengers
 domovita.by##.mail-wrapper
 techcrunch.com##div[class*="-newsletter-signup-compact"]
 poferries.com#%#//scriptlet('set-cookie', 'SeenOptInPopup', '1')
-minval.az,rsload.net,spot.uz,securitylab.ru##.telegram-block
+xn--d1aqf.xn--p1ai,minval.az,rsload.net,spot.uz,securitylab.ru##.telegram-block
 atptour.com##.atp_newsletter--content
 atptour.com##._lpSurveyEmbed
 ||news.atptour.com/*/newsletter-registration-form
@@ -21404,7 +21410,7 @@ eepower.com#$#html { overflow: visible!important; }
 controleng.com##.subscribePromo
 vox.com,thecity.nyc##div[id="toaster"][data-cdata*="Sign up"]
 kinokong.*##.kk__telegram
-caliber.az,frankmedia.ru,baj.media,ua-cinema.com,makeagency.ru,sakhaday.ru,golos.ua,kinogo.*##.telegram
+xn--h1alcedd.xn--d1aqf.xn--p1ai,xn--e1adnd0h.xn--d1aqf.xn--p1ai,domrfdevelopment.ru,caliber.az,frankmedia.ru,baj.media,ua-cinema.com,makeagency.ru,sakhaday.ru,golos.ua,kinogo.*##.telegram
 cosmo.com.ua##form[id^="form_in_text_block_"]
 epe.es###contactPlan
 epe.es###nlt_signup_botton_desktop
@@ -22697,7 +22703,7 @@ pinknews.co.uk##.pn-single-post-wrapper__newsletter-signup
 romance.io###deals-signup
 herder.de##div[id$="upanNewsletter"]
 monstersandcritics.com##.newsletter-surround
-audacy.com,encancha.cl,inquirer.com##.newsletter-card
+gamespot.com,audacy.com,encancha.cl,inquirer.com##.newsletter-card
 intermedia.ru###subscribeForm
 intermedia.ru##.personaldata_notice
 qmaths.in#?#.sidebar > div.widget:has(> div.widget-content > form input[name="email"])
