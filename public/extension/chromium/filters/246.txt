@@ -1,15 +1,15 @@
-! Checksum: cXNvx5pUz7KtjfACR9wsyw
-! Diff-Path: ../patches/246/246-s-1795552699-14400.patch
+! Checksum: f1oUdtLyhoYfnA2jMqVjvw
+! Diff-Path: ../patches/246/246-s-1795581405-14400.patch
 ! Title: EasyList Polish
 ! Description: Additional filter list for websites in Polish.
-! Version: 2.1.97.78
-! TimeUpdated: 2026-11-24T20:36:19+00:00
+! Version: 2.1.97.80
+! TimeUpdated: 2026-11-25T04:35:12+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: Vno+kO4gu919izApgZMqhQ
-! OriginalVersion: 202611242022
+! Checksum: tUbg2bT6WavevXpHTZO6KQ
+! OriginalVersion: 202611250422
 ! Title: EasyList Polish
-! Last modified: 24 Nov 2026 20:22 UTC
+! Last modified: 25 Nov 2026 04:22 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
@@ -683,6 +683,7 @@ src="https://podhaleregion.pl/wp-content/uploads/2025/01/BANER-3-PODHALE-REGION-
 ||pultusk24.pl/static/files/inline_images/118/inline__1_334.jpg
 ||pultusk24.pl/static/files/inline_images/118/inline__1_3386.png
 ||pultusk24.pl/static/files/inline_images/118/inline__1_3388.gif
+||pultusk24.pl/static/files/inline_images/118/inline__1_4018.png
 ||pultusk24.pl/static/files/inline_images/118/inline__1_4210.png
 ||pultusk24.pl/static/files/inline_images/118/inline__1_4926.png
 ||pultusk24.pl/static/files/inline_images/118/inline__1_5080.png

@@ -1,9 +1,9 @@
-! Checksum: gix1ihPkKc4Y7CABYKMfXw
-! Diff-Path: ../patches/19/19-s-1795543975-3600.patch
+! Checksum: PnNfF8Ya3KFlt1A649n05g
+! Diff-Path: ../patches/19/19-s-1795594377-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.88.51
-! TimeUpdated: 2026-11-24T18:10:26+00:00
+! Version: 2.0.88.55
+! TimeUpdated: 2026-11-25T08:10:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12078,6 +12078,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+bitcoin.pl##div[data-testid="pasek-push"]
 c-o-k.ru##.cok-push-panel
 fan.books.rakuten.co.jp#%#//scriptlet('set-local-storage-item', 'firstBannerClosed', 'true')
 ||epiotrkow.pl/build/theme/epiotrkow/js/push-prompt.js
@@ -13173,6 +13174,11 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+businessinsider.com##.preferred-sources-module
+theconversation.com###main-content > div.my-6:has(> a[href*="/us/newsletters"])
+forums.feedspot.com###footerFloatBarModal
+forums.feedspot.com###exitPopupModal
+startitup.sk##.siu-subscribe-widget
 or24.de##body > section.or24-nlp-section[aria-label]
 bundderversicherten.de##body > div.c-popup
 bundderversicherten.de##footer div.l-footer__news-container
@@ -18453,7 +18459,7 @@ krankenhaus.de##.sign-up-modal
 krankenhaus.de##.sign-up-modal ~ div.modal-backdrop
 etonline.com##.full-bleed-newsletter
 thelocal.it###pn-header > .tp-container-inner
-tiempo.com,meteored.*,theweather.net,yourweather.co.uk,tempo.pt,tempo.com##.modulo-suscripcion
+tiempo.com,meteored.*,theweather.net,yourweather.co.uk,tempo.pt##.modulo-suscripcion
 weser-kurier.de#?#.sidebar > section:has(> div > div[class] > div.newsletter-widget)
 tulapressa.ru#?#.content > div.news_alert:has(> div.news_alert-text > a[data-href="https://zen.yandex.ru/tulapress"])
 moskvichmag.ru###mc_embed_signup_flat

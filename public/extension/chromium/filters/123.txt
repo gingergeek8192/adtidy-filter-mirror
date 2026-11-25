@@ -1,16 +1,16 @@
-! Checksum: G0UP4iQOMYWstCOHFHWW6w
-! Diff-Path: ../patches/123/123-s-1795552698-14400.patch
+! Checksum: 9lnx81Ka/TUGZjrU7EU6eQ
+! Diff-Path: ../patches/123/123-s-1795581404-14400.patch
 ! Title: Fanboy's Social Blocking List
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.72.77
-! TimeUpdated: 2026-11-24T20:35:45+00:00
+! Version: 2.1.72.79
+! TimeUpdated: 2026-11-25T04:34:49+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202611242025
+! OriginalVersion: 202611250424
 ! Title: Fanboy's Social Blocking List
-! Last modified: 24 Nov 2026 20:25 UTC
+! Last modified: 25 Nov 2026 04:24 UTC
 ! Expires: 4 days (update frequency)
-! Commit: 32984c28750c60e6be0c51d362bace9931725530
+! Commit: a6a8bd24bfea742c5fc1244d3fc1af78088fa8a6
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -10772,6 +10772,7 @@ adweek.com##.aw-social-share-container
 informationsecuritybuzz.com##.ayudawp-share-buttons
 irishtimes.com,metroecuador.com.ec,publimetro.com.mx##.b-footer__social-links-container
 irishtimes.com##.b-it-social-share-block
+carnewschina.com##.b-preferred-source
 bnnbloomberg.ca,cp24.com,ctvnews.ca,irishnews.com,tsn.ca##.b-share-bar
 protos.com##.b-sharers
 spokesman.com##.ba
@@ -11259,6 +11260,7 @@ jpost.com##.header-a
 airlive.net##.header-alert
 nova-magazine.net##.header-info-text
 israelnationalnews.com##.header-nav-addons-link
+simpleflying.com##.header-preferred-source
 archaeology.org##.header-share
 stamen.com##.header-social-media-links
 malaymail.com##.header-social-menu
