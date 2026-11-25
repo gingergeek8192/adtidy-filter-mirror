@@ -1,15 +1,15 @@
-! Checksum: bmxTS42Oqm4sxu+Ym4TgbA
-! Diff-Path: ../patches/207/207-s-1795581404-14400.patch
+! Checksum: OoRavRP8GaBvEeFee2tfRQ
+! Diff-Path: ../patches/207/207-s-1795639073-14400.patch
 ! Title: Adblock Warning Removal List
 ! Description: Removes anti-adblock warnings and other obtrusive messages.
-! Version: 2.2.1.74
-! TimeUpdated: 2026-11-25T04:34:55+00:00
+! Version: 2.2.1.78
+! TimeUpdated: 2026-11-25T20:35:32+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: Jx8NQyeozADbFMpKtvIE3Q
-! OriginalVersion: 202611250422
+! Checksum: ICkPy3RfHKfX+d6RBx3ZhA
+! OriginalVersion: 202611252023
 ! Title: Adblock Warning Removal List
-! Last modified: 25 Nov 2026 04:22 UTC
+! Last modified: 25 Nov 2026 20:23 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://github.com/easylist/antiadblockfilters
 ! Licence: https://easylist.to/pages/licence.html
@@ -2941,7 +2941,7 @@ kinoafisha.ua##.turn-off-add-block-text
 stalkerportaal.ru##.video_adsense
 bookskeeper.ru,e-xecutive.ru##.warning
 forum.bestflowers.ru##.xenOverlay
-/^https?:\/\/pikabu\.ru\/ajax\/{1,2}[^?]+\?[A-Za-z0-9]+=[A-Za-z0-9_%.-]*[0-9a-f]{20,}_[a-z0-9_]+/$xmlhttprequest,domain=pikabu.ru
+/^https?:\/\/pikabu\.ru\/ajax\/[^?]*\?[^=]+=[^&]*[0-9a-f]{20,}_[A-Za-z0-9_%-]+/$xmlhttprequest,domain=pikabu.ru
 /cookie_check.min.js$domain=acetv.me
 /gogl_detector$script,domain=meddaily.ru|newsru.com
 @@||anidub.com/ads.js|$script,domain=anidub.com

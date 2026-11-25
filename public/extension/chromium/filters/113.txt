@@ -1,15 +1,15 @@
-! Checksum: br7jIcWYO+x8naxQcc5h1w
-! Diff-Path: ../patches/113/113-s-1795581403-14400.patch
+! Checksum: DL7wFIwRHtzP5gfuLw9aog
+! Diff-Path: ../patches/113/113-s-1795639073-14400.patch
 ! Title: Liste FR
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.2.1.73
-! TimeUpdated: 2026-11-25T04:34:40+00:00
+! Version: 2.2.1.77
+! TimeUpdated: 2026-11-25T20:35:13+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: 9Okr4YKzwZ7gkzjrmBAYxQ
-! OriginalVersion: 202611250422
+! Checksum: 2UbmR2HYiWMmHXM6ZaYb6A
+! OriginalVersion: 202611252023
 ! Title: Liste FR
-! Last modified: 25 Nov 2026 04:22 UTC
+! Last modified: 25 Nov 2026 20:23 UTC
 ! Expires: 1 days (fréquence des mises a jour automatiques)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=91
 !
@@ -11498,6 +11498,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.MIXADVERT_NET
 ##.Middle-Ad
 ##.ad--desk
+##.ad-mobileTablet
+##.ad-tabletDesktop
 ##.ad.banner
 ##.ad.billboard
 ##.ad.onlyMobile
@@ -13014,7 +13016,7 @@ allotech-dz.com##.active.progressModal
 cotemaison.fr##.actu_pub
 lagazettedescommunes.com##.actus-case-pub
 lagazettedescommunes.com##.actus-home-right-pub
-aerobuzz.fr,allodocteurs.fr,auchan.fr,courrierinternational.com,directvelo.com,dna.fr,e-sante.fr,fabriquer-des-meubles.fr,freepik.com,gamer-network.fr,gqmagazine.fr,journalmetro.com,lachainemeteo.com,ladepeche.fr,lematin.ch,lequotidiendumedecin.fr,lopinion.fr,marques.expert,msn.com,p-nintendo.com,photo.fr,rue89lyon.fr,smail.fr,soundlightup.com,tetu.com,truecaller.com,ubergizmo.com,webtor.io,zapiks.fr##.ad
+aerobuzz.fr,allodocteurs.fr,auchan.fr,courrierinternational.com,directvelo.com,dna.fr,e-sante.fr,fabriquer-des-meubles.fr,freepik.com,gamer-network.fr,gqmagazine.fr,journalmetro.com,lachainemeteo.com,ladepeche.fr,lematin.ch,lequotidiendumedecin.fr,lopinion.fr,marques.expert,msn.com,p-nintendo.com,photo.fr,rue89lyon.fr,smail.fr,soundlightup.com,tetu.com,truecaller.com,ubergizmo.com,voici.fr,webtor.io,zapiks.fr##.ad
 midilibre.fr,sudouest.fr##.ad-box
 anime-sama.to##.ad-container
 basketusa.com,touchdownactu.com##.ad-large

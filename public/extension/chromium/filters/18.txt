@@ -1,9 +1,9 @@
-! Checksum: 9dZ7RG9KVtDzwtsMDgiqfw
-! Diff-Path: ../patches/18/18-s-1795594377-3600.patch
+! Checksum: Te3ZM1QlGenMObOKYWzTOw
+! Diff-Path: ../patches/18/18-s-1795633806-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.1.0.40
-! TimeUpdated: 2026-11-25T08:10:55+00:00
+! Version: 2.1.0.47
+! TimeUpdated: 2026-11-25T19:07:53+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+##div[aria-labelledby="cookie-banner-title"]
 ##cms-accept-tags
 ###komunikat_ciasteczka
 ##.accept-cookie-outer
@@ -2433,7 +2434,7 @@ nebim.com.tr,sariyersoz.com.tr,kanalben.com,tarsushaber.com,mhrs.gov.tr,malatyas
 ! ##.MuiSnackbar-anchorOriginBottomCenter
 creativefabrica.com,flickplay.co,globenewswire.com,fashionunited.*,ahaan.co.uk,afteracademy.com,shoppingcidademaringa.com.br##.MuiSnackbar-anchorOriginBottomCenter
 ! ###cc-main
-eurosender.com,prace.cz,privacyintact.com,finanzguru.de,driventic.com,znajda.org,krs-radar.pl,ceskatelevize.cz,softorino.com,oldversion.com,riot-optimizer.com,studiosus.com,getcarv.com,krakow.pl,wieliczka.eu,authgear.com,plantica.pl,bloodbornepc.wiki,transfr.me,learning.ua,anythingmcp.com,schweiker.pl,bazalt.pl,datawrapper.de,czernica.pl,vgwort.de,brasilnippou.com,medcom.com.pl,nothing.community,yourimageshare.com,app.socios.com,mking.pl,cointracker.com,cloro.dev,wasgehtapp.de,kuplio.pl,birdweather.com,frapol.com.pl,eceenerji.com.tr,brdmap.de,denebunu.com,mzyy94.com,eliveshop.de,tabstack.ai,myagd.pl,luxpoint.com.pl,denebunu.com,igs.net.tr,lulek.tv,wolverineworldwide.com,mindmarket.com,ipinfo.io,decormarket.pl,dekory24.pl,pysznekarmy.pl,booktime.pl,darwina.pl,carsystems.eu,ajtrade.pl,vivab2b.pl,ajsklep.pl,hurtowniamultistore.pl,giewontshop.com,lubieklocki.pl,naogrod.pl,elektrohome.pl,koszule-meskie.pl,visciolafashion.com,modaservis.pl,sklep.karolnienartowicz.com,slupskiemeble.pl,yokodesign.pl,ekobruk.pl,skleprzeznika.pl,seatpick.com,izapachy.pl,clinus.pl,voyah.ru,intracom.pl,1twente.nl,fimewc.com,yazio.com,futbalsfz.sk,bts.aero,online.gdu.com.tr,novotel.ba,iuc.edu.tr,comu.edu.tr,w3.sdu.edu.tr,belganewsagency.eu,kofteciyusuf.com,2te-zahnarztmeinung.de,elenianna.com,aspire.dev,formytesla.com,li.sten.to,sign.com,paulistacultural.com.br,wasdland.com,nemzetiarchivum.hu,wooting.io,erzeszow.pl,primepc.pl,steuer-beamte.de,kgm.ru,jetour-ru.com,foton-mbrus.ru,voyah.su,soueast.ru,toyota.ru,gac.ru,fastconvert.co,technologypresswirenetherlands.com,evolute.ru,prnewswire.com,roxybrowser.com,nucba.ac.jp,revenue.mt.gov,mcskincraft.com,makeforms.io,serfloor.com.tr,biletmio.com,lingscars.com,koi.ai,hackmd.io,multipolls.com,alinco.co.jp,niebieskizaulek.pl,nefisyemektarifleri.com,spark-die-klassische-band.de,bisiparis.com,toya.net.pl,mateobar.pl,whoisxmlapi.com,jagapizza.pl,tapasslupsk.com,ytlarge.com,financer.com.ua,trakt.tv,unipegaso.it,escortempire.*,videspratiba.lv,soleretriever.com,healf.com,gameship.io,xzone.pl,givesendgo.com,workstreams.ai,trae.ai,imusic.*,dobrydietetyk.pl,zeno.fm,ratujlaptopa.pl,chat.mistral.ai,subdomains.whoisxmlapi.com,derslig.com,bikeexchange.de,webtv.tv,cargiant.co.uk,r34.app,webtv.sk,rustdesk.com,praha.eu,bdm.pl,mobimatter.com,gl-inet.com,astrowarp.net,gamers-outlet.net,kinnisvara24.ee,costa-coffee.cz,sterbabike.cz,codesandbox.io,xzone.cz,dap.gov.hu,idomsoft.hu,uxpilot.ai,evaluar.com,home.s.id,skubacz.pl,restaumatic.com,any.run,rekinysukcesu.pl,nutrend.pl,app.any.run,financnihra.cz,kurczakiodeliasza.com,kontomaniak.pl,snowboard-online.pl,whitebit.com,nicelocal.com.de,ndsas.sk,trakt.tv,greptime.com,newsinslowfrench.com,happyscribe.com,saaq.gouv.qc.ca###cc-main
+libris.kb.se,eurosender.com,prace.cz,privacyintact.com,finanzguru.de,driventic.com,znajda.org,krs-radar.pl,ceskatelevize.cz,softorino.com,oldversion.com,riot-optimizer.com,studiosus.com,getcarv.com,krakow.pl,wieliczka.eu,authgear.com,plantica.pl,bloodbornepc.wiki,transfr.me,learning.ua,anythingmcp.com,schweiker.pl,bazalt.pl,datawrapper.de,czernica.pl,vgwort.de,brasilnippou.com,medcom.com.pl,nothing.community,yourimageshare.com,app.socios.com,mking.pl,cointracker.com,cloro.dev,wasgehtapp.de,kuplio.pl,birdweather.com,frapol.com.pl,eceenerji.com.tr,brdmap.de,denebunu.com,mzyy94.com,eliveshop.de,tabstack.ai,myagd.pl,luxpoint.com.pl,denebunu.com,igs.net.tr,lulek.tv,wolverineworldwide.com,mindmarket.com,ipinfo.io,decormarket.pl,dekory24.pl,pysznekarmy.pl,booktime.pl,darwina.pl,carsystems.eu,ajtrade.pl,vivab2b.pl,ajsklep.pl,hurtowniamultistore.pl,giewontshop.com,lubieklocki.pl,naogrod.pl,elektrohome.pl,koszule-meskie.pl,visciolafashion.com,modaservis.pl,sklep.karolnienartowicz.com,slupskiemeble.pl,yokodesign.pl,ekobruk.pl,skleprzeznika.pl,seatpick.com,izapachy.pl,clinus.pl,voyah.ru,intracom.pl,1twente.nl,fimewc.com,yazio.com,futbalsfz.sk,bts.aero,online.gdu.com.tr,novotel.ba,iuc.edu.tr,comu.edu.tr,w3.sdu.edu.tr,belganewsagency.eu,kofteciyusuf.com,2te-zahnarztmeinung.de,elenianna.com,aspire.dev,formytesla.com,li.sten.to,sign.com,paulistacultural.com.br,wasdland.com,nemzetiarchivum.hu,wooting.io,erzeszow.pl,primepc.pl,steuer-beamte.de,kgm.ru,jetour-ru.com,foton-mbrus.ru,voyah.su,soueast.ru,toyota.ru,gac.ru,fastconvert.co,technologypresswirenetherlands.com,evolute.ru,prnewswire.com,roxybrowser.com,nucba.ac.jp,revenue.mt.gov,mcskincraft.com,makeforms.io,serfloor.com.tr,biletmio.com,lingscars.com,koi.ai,hackmd.io,multipolls.com,alinco.co.jp,niebieskizaulek.pl,nefisyemektarifleri.com,spark-die-klassische-band.de,bisiparis.com,toya.net.pl,mateobar.pl,whoisxmlapi.com,jagapizza.pl,tapasslupsk.com,ytlarge.com,financer.com.ua,trakt.tv,unipegaso.it,escortempire.*,videspratiba.lv,soleretriever.com,healf.com,gameship.io,xzone.pl,givesendgo.com,workstreams.ai,trae.ai,imusic.*,dobrydietetyk.pl,zeno.fm,ratujlaptopa.pl,chat.mistral.ai,subdomains.whoisxmlapi.com,derslig.com,bikeexchange.de,webtv.tv,cargiant.co.uk,r34.app,webtv.sk,rustdesk.com,praha.eu,bdm.pl,mobimatter.com,gl-inet.com,astrowarp.net,gamers-outlet.net,kinnisvara24.ee,costa-coffee.cz,sterbabike.cz,codesandbox.io,xzone.cz,dap.gov.hu,idomsoft.hu,uxpilot.ai,evaluar.com,home.s.id,skubacz.pl,restaumatic.com,any.run,rekinysukcesu.pl,nutrend.pl,app.any.run,financnihra.cz,kurczakiodeliasza.com,kontomaniak.pl,snowboard-online.pl,whitebit.com,nicelocal.com.de,ndsas.sk,trakt.tv,greptime.com,newsinslowfrench.com,happyscribe.com,saaq.gouv.qc.ca###cc-main
 ! consentmanager.net (check, if embed content and videos are not broken)
 ||consentmanager.net^$domain=visions.de|gartenlexikon.de|tausendkind.de|hausgarten.net|kundendienst-info.de|baunetz.de|rabe-bike.de|heinze.de|ais-online.de|dasoertliche.de|reno.de|walbusch.de|mathe-lexikon.at|katzen-forum.net|deutsche-apotheker-zeitung.de|brandible.de|my.games|vergleich.org|finanztip.de|baunetzwissen.de|trusted.de|universal-music.de|web2.cylex.de|mey-edlich.de|schuhe.de|qiez.de|benz24.de|hervis.de|avena.de|heimwerker.de|bauemotion.de|nw.de|kicker.de|herold.at|kalledaskabel.de|bussgeldkatalog.org|plantopedia.de|poetschke.de|weltbild.de|genialokal.de|jokers.de|leoncycle.de|wolfsburger-nachrichten.de|mediengestalter.info|sugafari.com|gdv.de|uk-essen.de|dieversicherer.de|tomaten.de|aquarienpflanzen-shop.de|jobs.shz.de|leichtathletik.de|ikz-online.de|radiobollerwagen.de|hervis.at|frustfrei-lernen.de|entsorgen.org|wr.de|harzkurier.de|consentmanager.net|juraforum.de|history.de|inrlp.de|teslamag.de|e-konomista.pt|cylex-polska.pl|agrarheute.com|allesbeste.de|azubiyo.de|olympia-einkaufszentrum.de|mannheimer-morgen.de|autopay.pl|r.pl|datacenter-insider.de|eternalgod.de|news.de|quoka.de|correctiv.org|ak-kurier.de|verliebt-in-den-westerwald.de|ww-kurier.de|nzz.ch|masterstudies.com|littlebigsnake.com|skr.de|morgenpost.de|astat.pl|9monate.de|bildderfrau.de|donna-magazin.de|eatclub.tv|heftig.de|reviersport.de|winfuture-forum.de|chemie.de|sylt.de|grin.com|gpblog.com|ruhrnachrichten.de
 ! privacy-center.org / didomi
@@ -2681,6 +2682,12 @@ ziolaioleje.pl,houseofpostcards.pl,sklep.precio.pl,kim24.pl,sklep.moderat.pl,dla
 !
 ! NOTE: Regular rules
 !
+||ikea.com/pl/pl/cookieconsent/v2/scripts/
+matcopy.hu#$?#.cookie-consent-banner { remove: true; }
+yello-card.com##section[aria-labelledby="cookie-consent-title"]
+garuda-indonesia.com#%#//scriptlet('trusted-set-cookie-reload', 'consent%3Acookie', '{%22essentialCookies%22:true%2C%22marketingCookies%22:false%2C%22analyticCookies%22:false%2C%22consentStatus%22:%22Rejected%22%2C%22id%22:%22109d7bee-d7f5-4daf-9b74-a684995999fe%22}')
+blog.etoto.pl###zgoda-root
+npfsberbanka.ru##div[class*="CookieAcceptionPopup_"]
 hysenlabs.com##aside[class^="consent-module"]
 fundforum.pl###overlay-cookies
 fixlabcenter.pl##.t-rec.r:has(.cookie-toggle)
@@ -2734,6 +2741,7 @@ wearmedicine.com##div[data-test="cookiesConsentModal"]
 fluxpayroll.ai#%#//scriptlet('set-cookie', 'flux_tracking_consent', 'false')
 senet.cloud##[aria-labelledby="cookie-notice-title"]
 senet.cloud##button[data-consent-region][data-consent-country]
+j-taxrefund.com#%#//scriptlet('trusted-set-cookie', 'RFCOOK_WEB', 'v2')
 joybuggy.com##div[aria-labelledby="onboarding-modal-title"]:has(button[data-testid="accept-essential"])
 ||ncez.pzh.gov.pl/*/plugins/lightweight-cookie-consent/
 plitch.com##.cookiebar-overlay
@@ -2814,6 +2822,7 @@ fafit24.de#%#//scriptlet('trusted-click-element', 'div[aria-labelledby="cookie-c
 fortunadigital.net#%#//scriptlet('trusted-set-cookie', 'cookie_preferences', '%7B%22essential%22%3Atrue%2C%22analytics%22%3Atrue%2C%22marketing%22%3Atrue%2C%22preferences%22%3Atrue%7D')
 fortunadigital.net#%#//scriptlet('trusted-set-cookie', 'cookie_consent', 'all')
 ekorisk.pl##div[aria-label="Zgoda na cookies"]
+4ppl.pl##div[aria-label="Zgoda na pliki cookies"]
 999.md##[class^="ConsentBanner-module"]
 reraamatud.ee##.cookiesplus-move
 virtuoz.ua##div[aria-label="Налаштування cookie"]
@@ -3066,7 +3075,6 @@ iport.ru##aside[class^="CookieAcceptation-module"]
 ru.getflix.com##.tk-overlay
 paracord.co.uk,paracord.de,paracord.eu,paracord.fr,paracord.it,paracord.nl,paracord.shop,paracordshop.dk,paracordshop.es,paracordshop.pl,paracordsverige.se#%#//scriptlet('set-cookie', 'cookie-consent', 'false')
 lifeingos.ru#%#//scriptlet('set-local-storage-item', 'isCookieAccepted', 'true')
-compabase.com,iranintl.com,tarifaluzhora.es,stopkillinggames.com##div[aria-labelledby="cookie-banner-title"]
 gubdaily.ru##.gub-article-politika
 stylevana.com##.cookie-policy-notification
 s.ee##.fixed.bottom-3:has(a[href$="/privacy/"])
@@ -4100,7 +4108,6 @@ gay-blog.tomrockets.com###cc-cookie-message
 ford-salon.pl#$#body.modal-open { overflow: auto !important; }
 ford-salon.pl#$#.modal-backdrop { display: none !important; }
 blog.calif.io##div[class*="cookieBanner-"]
-armbian.com,markettamam.com##div[aria-labelledby="cookie-banner-title"]
 agendavivasp.com.br##.transition-transform.duration-300
 sub.nspk.ru###app > .transition-transform.duration-1000
 whoisfreaks.com##.w-full.justify-center > .backdrop-blur-\[19\.65px\]
@@ -4899,7 +4906,7 @@ aromatslowa.pl#%#//scriptlet('set-cookie', 'con_mngr_marketing', 'deny')
 aromatslowa.pl#%#//scriptlet('set-cookie', 'con_mngr_preferences', 'deny')
 aromatslowa.pl#%#//scriptlet('set-cookie', 'con_mngr_statistics', 'deny')
 /modules/seigicookie/*$domain=eazymut.pl|medkon.pl|tomskor.pl|madani-sports.eu|riccardo.pl|audiopolis.pl|drukmistrz.pl|senpo.pl|pomelody.com|comaxpc.pl|interprofiles.eu|krolmateracy.pl|sklep.jagiellonia.pl|jubilersezam.pl
-oddstrader.com###CookiesAlert
+velofunds.pl,oddstrader.com###CookiesAlert
 xplay.gg#%#//scriptlet('set-local-storage-item', 'cookieTypesList', 'emptyArr')
 oncf-voyages.ma#%#//scriptlet('trusted-set-cookie', 'CookieConsent', 'declined')
 teleantioquia.co##.cookie-modal-overlay
@@ -20198,8 +20205,16 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247833
+matcopy.hu#@#.cookie-consent-banner
+matcopy.hu#@##cookie-consent-banner
+! yello-card.com
+@@||yello-card.com/assets/CookieConsent-*.js$domain=yello-card.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216554
 @@||cdn.cookielaw.org^$domain=variety.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/247933
+j-taxrefund.com#@#.cookie-consent-content
+j-taxrefund.com#@##cookieNotice
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247899
 flaschenland.de#@#.cookie-permission-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247591
