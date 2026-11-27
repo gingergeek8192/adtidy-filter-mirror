@@ -1,9 +1,9 @@
-! Checksum: S+n+7oc4Jv6aGEhwNJ9iow
-! Diff-Path: ../patches/20/20-s-1795756261-3600.patch
+! Checksum: 7a5vCeltf9cbrOj8+emJpw
+! Diff-Path: ../patches/20/20-s-1795803152-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.34.53
-! TimeUpdated: 2026-11-27T05:08:50+00:00
+! Version: 2.0.34.57
+! TimeUpdated: 2026-11-27T18:10:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -60,6 +60,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+backmarket.com##div[role="dialog"][aria-labelledby="lead-collection-aria-title-id"]
 cozycozy.com##joli-phone-smartbanner
 mall.kinarino.jp###app-features-band
 bird.rent#%#//scriptlet('trusted-click-element', 'div.redirector > dialog.modal button.svelte-ccmpno')
@@ -1968,7 +1969,7 @@ tmailor.com##.noti-download-app
 lifestyleasia.com##.btt-top-add-section
 hatarako.net,askdoctors.jp##.top-app-area
 povo.jp###sectionApp
-xlcountry.com,my1035.com##.branded-app-shortcode-inarticle
+wgna.com,xlcountry.com,my1035.com##.branded-app-shortcode-inarticle
 threads.net#?#div[class*=" "][style^="width:"] > div + div[class*=" "]:has(> div:last-child > a[href^="/download"])
 gpfans.com###androidDownload
 ctinews.com#?#.promote-items > li:has(> a[href="https://deep.ctinews.com/app-cti117"])
